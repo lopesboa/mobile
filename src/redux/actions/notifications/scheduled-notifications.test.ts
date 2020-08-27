@@ -83,8 +83,8 @@ describe('Scheduled notifications', () => {
       await unscheduleLocalNotifications('finish-course')(dispatch, getState, {services});
       expect(dispatch).toHaveBeenCalledTimes(1);
       expect(Notifications.cancelLocalNotification).toHaveBeenCalledWith(1);
-      expect(services.Analytics.logEvent).toHaveBeenCalledWith('notificationsSchedule', {
-        action: 'decrement',
+      expect(services.Analytics.logEvent).toHaveBeenCalledWith('notifications', {
+        id: 'unschedule',
         type: 'finish-course',
         value: 1,
       });
@@ -191,13 +191,13 @@ describe('Scheduled notifications', () => {
       expect(dispatch).toHaveBeenCalledTimes(4);
       expect(Notifications.cancelLocalNotification).toHaveBeenCalledTimes(0);
       expect(Notifications.postLocalNotification).toHaveBeenCalledTimes(3);
-      expect(services.Analytics.logEvent).nthCalledWith(1, 'notificationsSchedule', {
-        action: 'decrement',
+      expect(services.Analytics.logEvent).nthCalledWith(1, 'notifications', {
+        id: 'unschedule',
         type: 'finish-course',
         value: 1,
       });
-      expect(services.Analytics.logEvent).nthCalledWith(2, 'notificationsSchedule', {
-        action: 'increment',
+      expect(services.Analytics.logEvent).nthCalledWith(2, 'notifications', {
+        id: 'schedule',
         type: 'finish-course',
         value: 1,
       });
@@ -234,13 +234,13 @@ describe('Scheduled notifications', () => {
       expect(dispatch).toHaveBeenCalledTimes(4);
       expect(Notifications.cancelLocalNotification).toHaveBeenCalledTimes(1);
       expect(Notifications.postLocalNotification).toHaveBeenCalledTimes(3);
-      expect(services.Analytics.logEvent).nthCalledWith(1, 'notificationsSchedule', {
-        action: 'decrement',
+      expect(services.Analytics.logEvent).nthCalledWith(1, 'notifications', {
+        id: 'unschedule',
         type: 'finish-course',
         value: 1,
       });
-      expect(services.Analytics.logEvent).nthCalledWith(2, 'notificationsSchedule', {
-        action: 'increment',
+      expect(services.Analytics.logEvent).nthCalledWith(2, 'notifications', {
+        id: 'schedule',
         type: 'finish-course',
         value: 1,
       });
@@ -281,13 +281,13 @@ describe('Scheduled notifications', () => {
       expect(dispatch).toHaveBeenCalledTimes(4);
       expect(Notifications.cancelLocalNotification).toHaveBeenCalledTimes(0);
       expect(Notifications.postLocalNotification).toHaveBeenCalledTimes(3);
-      expect(services.Analytics.logEvent).nthCalledWith(1, 'notificationsSchedule', {
-        action: 'decrement',
+      expect(services.Analytics.logEvent).nthCalledWith(1, 'notifications', {
+        id: 'unschedule',
         type: 'finish-course',
         value: 1,
       });
-      expect(services.Analytics.logEvent).nthCalledWith(2, 'notificationsSchedule', {
-        action: 'increment',
+      expect(services.Analytics.logEvent).nthCalledWith(2, 'notifications', {
+        id: 'schedule',
         type: 'finish-course',
         value: 1,
       });

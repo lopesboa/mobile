@@ -189,7 +189,7 @@ export const ANALYTICS_EVENT_TYPE = {
   NOTIFICATIONS_YES_NOTIFY_ME: 'notificationsYesNotifyMe',
   NOTIFICATIONS_OPENED: 'notificationsOpened',
   NOTIFICATIONS_TOGGLE: 'notificationsToggle',
-  NOTIFICATIONS_SCHEDULE: 'notificationsSchedule',
+  NOTIFICATIONS: 'notifications',
 } as const;
 
 export const AUTHENTICATION_TYPE = {
