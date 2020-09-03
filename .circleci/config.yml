@@ -19,7 +19,10 @@ anchors:
       brew unlink python@2
       brew install watchman
 
-version: 2
+version: 2.1
+orbs:
+  aws-cli: circleci/aws-cli@1.3.0
+
 jobs:
   dependencies:
     working_directory: ~/app
@@ -53,7 +56,7 @@ jobs:
             - src/modules/version.json
             - android/app/google-services.json
             - ios/GoogleService-Info.plist
-
+    
   # TODO: Add TS lint & check
   linting:
     working_directory: ~/app
@@ -331,19 +334,14 @@ jobs:
             - android/app/build/outputs/apk/release
 
   deploy_android:
+    executor: aws-cli/default
     working_directory: ~/app
-    docker:
-      - image: circleci/node:12
     steps:
       - checkout
+      - aws-cli/setup:
+          profile-name: default
       - attach_workspace:
           at: ~/app
-      - add_ssh_keys:
-          fingerprints:
-            - 'e0:3d:95:dd:ab:22:62:0c:6d:67:10:af:80:ca:ed:64'
-      - run:
-          name: Known hosts
-          command: ssh-keyscan -H ${AWS_DOMAIN} >> ~/.ssh/known_hosts
       - run:
           name: Prepare
           command: |
@@ -354,24 +352,18 @@ jobs:
           name: Deploy to internal store
           command: |
             [ -z "${CIRCLE_PULL_REQUEST}" ] && BRANCH_NAME="${CIRCLE_BRANCH}" || BRANCH_NAME="PR-${CIRCLE_PULL_REQUEST##*/}"
-            echo "Deploying on ${BRANCH_NAME}"
-            ssh ${AWS_USER}@${AWS_DOMAIN} "mkdir -p /var/www/html/${BRANCH_NAME} -v"
-            scp dist/* ${AWS_USER}@${AWS_DOMAIN}:/var/www/html/${BRANCH_NAME}/
+            echo "Deploying ${BRANCH_NAME} on AWS S3"
+            aws s3 cp dist/ s3://mobile-internal-store-build-buildse4fa881e-1eyeemo16i8fg/builds/${BRANCH_NAME}/ --recursive
 
   deploy_ios:
     working_directory: ~/app
-    docker:
-      - image: circleci/node:12
+    executor: aws-cli/default
     steps:
       - checkout
+      - aws-cli/setup:
+          profile-name: default
       - attach_workspace:
           at: ~/app
-      - add_ssh_keys:
-          fingerprints:
-            - 'e0:3d:95:dd:ab:22:62:0c:6d:67:10:af:80:ca:ed:64'
-      - run:
-          name: Known hosts
-          command: ssh-keyscan -H ${AWS_DOMAIN} >> ~/.ssh/known_hosts
       - run:
           name: Prepare
           command: |
@@ -386,9 +378,8 @@ jobs:
           name: Deploy to internal store
           command: |
             [ -z "${CIRCLE_PULL_REQUEST}" ] && BRANCH_NAME="${CIRCLE_BRANCH}" || BRANCH_NAME="PR-${CIRCLE_PULL_REQUEST##*/}"
-            echo "Deploying on ${BRANCH_NAME}"
-            ssh ${AWS_USER}@${AWS_DOMAIN} "mkdir -p /var/www/html/${BRANCH_NAME} -v"
-            scp dist/* ${AWS_USER}@${AWS_DOMAIN}:/var/www/html/${BRANCH_NAME}/
+            echo "Deploying ${BRANCH_NAME} on AWS S3"
+            aws s3 cp dist/ s3://mobile-internal-store-build-buildse4fa881e-1eyeemo16i8fg/builds/${BRANCH_NAME}/ --recursive
 
   publish_android:
     working_directory: ~/app
@@ -485,6 +476,7 @@ workflows:
           requires:
             - prepare_android
       - deploy_android:
+          context: aws
           requires:
             - build_android
       - prepare_ios:
@@ -494,6 +486,7 @@ workflows:
           requires:
             - prepare_ios
       - deploy_ios:
+          context: aws
           requires:
             - build_ios
       - publish_android:
