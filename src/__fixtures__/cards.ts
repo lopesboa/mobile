@@ -214,6 +214,82 @@ export const createChapterCard = ({
   accessible,
 });
 
+export const createExtCard = ({
+  ref,
+  completion,
+  title,
+  isAdaptive = false,
+  isNew = false,
+  isFavorite = false,
+  isDone = false,
+  status,
+  stars = 0,
+  authors = [createCardAuthor({})],
+  accessible = true,
+  type = 'scorm',
+}: {
+  ref: string;
+  completion: number;
+  title: string;
+  isAdaptive?: boolean;
+  isNew?: boolean;
+  isFavorite?: boolean;
+  isDone?: boolean;
+  status: CardStatus;
+  stars?: number;
+  authors?: Array<CardAuthor>;
+  accessible?: boolean;
+}): ChapterCard => ({
+  image:
+    '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_chapitre_hatier_accords-1524216190534.jpg',
+  time: 8,
+  adaptiv: isAdaptive,
+  isStandalone: false,
+  certification: false,
+  lang: 'en',
+  skills: [
+    {
+      ref: 'skill_EkRYdKYjB',
+      name: 'Written expression',
+    },
+  ],
+  thematiques: [
+    {
+      ref: 'ALL',
+      label: 'All courses',
+    },
+    {
+      ref: 'them_EJEGNqKn4',
+      label: 'Flawless French',
+    },
+  ],
+  groupsHidden: 'All courses, Flawless French',
+  course: null,
+  authors,
+  authorsListHidden: 'A good guy',
+  type,
+  title,
+  position: -1,
+  createdAt: '2018-04-26T07:38:44.779Z',
+  taggedNewUntil: '2018-04-22T12:49:05.836Z',
+  ref,
+  universalRef: ref,
+  version: '1',
+  isFirst: false,
+  moduleRef: 'mod_NyEfthPvE',
+  creditsToAccess: 0,
+  relatedContentHidden: 'Mastering the rules of agreement in French',
+  _score: null,
+  stars,
+  inProgress: completion !== 0,
+  isDone,
+  completion,
+  status,
+  isNew,
+  favorite: isFavorite,
+  accessible,
+});
+
 export const createDisciplinesCards = (disciplines: Array<Discipline>): Cards => {
   const items: Cards = disciplines.map((discipline) =>
     createDisciplineCard({

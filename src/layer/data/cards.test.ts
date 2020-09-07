@@ -9,6 +9,7 @@ import {
   createChaptersCards,
   createCardLevel,
   createChapterCard,
+  createExtCard,
 } from '../../__fixtures__/cards';
 import createCompletion from '../../__fixtures__/completion';
 import {createSections} from '../../__fixtures__/sections';
@@ -71,7 +72,7 @@ describe('cards', () => {
             hits: Array<Card>;
           }>;
         }> => {
-          expect(url).toBe(`${host}${endpoint}?offset=0&limit=2&lang=en`);
+          expect(url).toBe(`${host}${endpoint}?offset=0&limit=2&lang=en&type=course%2Cchapter`);
 
           expect(options).toHaveProperty('headers.authorization', token);
 
@@ -178,7 +179,7 @@ describe('cards', () => {
             hits: Array<Card>;
           }>;
         }> => {
-          expect(url).toBe(`${host}${section.endpoint}?contentType=all&offset=0&limit=2&lang=en`);
+          expect(url).toBe(`${host}${section.endpoint}?contentType=all&offset=0&limit=2&lang=en&type=course%2Cchapter`);
 
           expect(options).toHaveProperty('headers.authorization', token);
 
@@ -286,7 +287,7 @@ describe('cards', () => {
           }>;
         }> => {
           expect(url).toBe(
-            `${host}/api/v2/contents?fullText=foo%20bar%20baz&offset=0&limit=2&lang=en`,
+            `${host}/api/v2/contents?fullText=foo%20bar%20baz&offset=0&limit=2&lang=en&type=course%2Cchapter`,
           );
           expect(options).toHaveProperty('headers.authorization', token);
 
@@ -617,7 +618,7 @@ describe('cards', () => {
         ): Promise<{
           json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>;
         }> => {
-          expect(url).toBe(`${host}${endpoint}?offset=1&limit=3&lang=en`);
+          expect(url).toBe(`${host}${endpoint}?offset=1&limit=3&lang=en&type=course%2Cchapter`);
 
           return Promise.resolve({
             json: () => Promise.resolve({search_meta: {total: 2}, hits: [mockCard1, mockCard2]}),
@@ -666,7 +667,7 @@ describe('cards', () => {
         ): Promise<{
           json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>;
         }> => {
-          expect(url).toBe(`${host}${endpoint}?offset=1&limit=3&lang=en`);
+          expect(url).toBe(`${host}${endpoint}?offset=1&limit=3&lang=en&type=course%2Cchapter`);
 
           return Promise.resolve({
             json: () => Promise.resolve({search_meta: {total: 2}, hits: [mockCard1, mockCard2]}),
@@ -1142,6 +1143,27 @@ describe('cards', () => {
 
       expect(result).toEqual(chapterCard);
     });
+  });
+
+  it('should not refresh if type is not chapter or course. ', async () => {
+    const AsyncStorage = require('@react-native-community/async-storage');
+    const {refreshCard} = require('./cards');
+
+    const nbChapters = 1;
+    const extCard = createExtCard({
+      ref: 'lol',
+      nbChapters,
+      completion: 0,
+      status: 'isStarted',
+      title: 'fakeTitle',
+      stars: 0,
+    });
+
+    AsyncStorage.getItem = jest.fn().mockImplementation(() => Promise.resolve(undefined));
+
+    const result = await refreshCard(extCard);
+
+    expect(result).toEqual(undefined);
   });
 
   describe('saveDashboardCardsInAsyncStorage', () => {

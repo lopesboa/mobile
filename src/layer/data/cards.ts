@@ -124,16 +124,19 @@ const refreshChapterCard = async (chapterCard: ChapterCard): Promise<ChapterCard
   return updateChapterCardAccordingToCompletion(mergedCompletion, chapterCard);
 };
 
-export const refreshCard = (card: Card): Promise<Card> => {
+export const refreshCard = (card: Card): Promise<Card> | void => {
   if (card && card.type === 'course') {
     return refreshDisciplineCard(card);
   }
-  return refreshChapterCard(card);
+  if (card && card.type === 'chapter') {
+    return refreshChapterCard(card);
+  }
+  return undefined;
 };
 
 export const getCardFromLocalStorage = async (
   ref: string,
-): Promise<DisciplineCard | ChapterCard> => {
+): Promise<DisciplineCard | ChapterCard | void> => {
   const language = translations.getLanguage();
   // @ts-ignore
   const card = await getItem('card', language, ref);
@@ -305,6 +308,7 @@ export const fetchCards = async (
       offset,
       limit,
       lang: language,
+      type: 'course,chapter',
     };
     const response = await fetch(`${host}${endpoint}?${buildUrlQueryParams(query)}`, {
       headers: {authorization: token},
