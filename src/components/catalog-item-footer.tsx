@@ -85,6 +85,17 @@ const styles = StyleSheet.create({
   },
 });
 
+const getCompletion = (item: ChapterCard | DisciplineCard) => {
+  // If a course(even the adaptives ones) have more than a level
+  // we want to show users' progressions for each one of them.
+  if (item.type === 'course' && item.modules?.length > 1) {
+    return item.completion;
+  }
+  // otherwise we just alternate between 0 & 1 if it's an adaptive chapter
+  // or we show the real completion if it's not.
+  return item.adaptiv && item.completion < 1 ? 0 : item.completion;
+};
+
 const CatalogItemFooter = ({item, testID, size}: Props) => {
   const isHero = size === 'hero';
 
@@ -138,7 +149,7 @@ const CatalogItemFooter = ({item, testID, size}: Props) => {
   const titleStyle = {fontSize: titleFontSize};
   const subtitleStyle = {fontSize: subtitleFontSize};
 
-  const itemCompletion = item.adaptiv && item.completion < 1 ? 0 : item.completion;
+  const itemCompletion = getCompletion(item);
 
   return (
     <View style={styles.container} testID={testID}>

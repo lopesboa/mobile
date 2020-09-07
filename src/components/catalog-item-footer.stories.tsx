@@ -19,6 +19,13 @@ const disciplineCardAdaptive = createDisciplineCard({
   title: 'Discipline card',
   isAdaptive: true,
 });
+const disciplineCardAdaptiveWithThreeLevels = createDisciplineCard({
+  ref: 'foo',
+  completion: 0.3,
+  levels: [levelCard, levelCard, levelCard],
+  title: 'Discipline card',
+  isAdaptive: true,
+});
 const disciplineCardWithoutAuthor = createDisciplineCard({
   ref: 'foo',
   completion: 0.3,
@@ -66,6 +73,9 @@ storiesOf('CatalogItemFooter', module)
   .add('Discipline', () => <CatalogItemFooter item={disciplineCard} testID="catalog-item-footer" />)
   .add('Discipline (adaptive)', () => (
     <CatalogItemFooter item={disciplineCardAdaptive} testID="catalog-item-footer" />
+  ))
+  .add('Discipline (adaptive with three levels)', () => (
+    <CatalogItemFooter item={disciplineCardAdaptiveWithThreeLevels} testID="catalog-item-footer" />
   ))
   .add('Discipline (cover)', () => (
     <CatalogItemFooter size="cover" item={disciplineCard} testID="catalog-item-footer" />

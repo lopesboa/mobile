@@ -1567,6 +1567,236 @@ exports[`Storyshots CatalogItemFooter Default 1`] = `
 </View>
 `;
 
+exports[`Storyshots CatalogItemFooter Discipline (adaptive with three levels) 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "justifyContent": "flex-end",
+    }
+  }
+  testID="catalog-item-footer"
+>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+      }
+    }
+  >
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight={15}
+      bbWidth={15}
+      color={4294967295}
+      focusable={false}
+      height={15}
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "flex": 0,
+            "height": 15,
+            "width": 15,
+          },
+        ]
+      }
+      testID="infinite-catalog-item-footer"
+      tintColor={4294967295}
+      vbHeight={46}
+      vbWidth={46}
+      width={15}
+    >
+      <RNSVGGroup>
+        <RNSVGPath
+          d="M10.6 15.3h2.5V11l9.2 6.4-9.2 6.5v-4.4h-2.8-.1c-3.3.2-5.8 2.9-5.8 6.1 0 3.5 2.5 6.1 5.9 6.1 3.9 0 7.1-3.4 9.8-6.1l2.8-2.8c3.5-3.5 7.2-7.4 12.8-7.4 5.9 0 10 4.3 10 10.3 0 5.5-4.4 10.3-10.5 10.3-2.8 0-5.2-1.2-7.3-2.8-.1-.1-.3-.2-.4-.3-.4-.4-.6-.9-.6-1.4 0-1.1.9-2 2-2 .4 0 .8.1 1.1.3.1 0 .1.1.2.1 1.5 1.1 3.1 1.9 5 1.9 3.5 0 6.1-2.8 6.1-6.1 0-3.5-2.5-6.1-5.9-6.1-3.9 0-7.1 3.4-9.8 6.1l-2.8 2.8c-3.5 3.5-7.2 7.4-12.8 7.4-5.8 0-10-4.3-10-10.3 0-2.6 1-5 2.7-6.9 1-1.1 2.2-1.9 3.6-2.5.1 0 .1-.1.2-.1 1.1-.5 2.4-.7 3.7-.8h.4z"
+          fill={4294967295}
+          fillRule={1}
+          propList={
+            Array [
+              "fill",
+              "fillRule",
+            ]
+          }
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 8,
+        "width": 8,
+      }
+    }
+  />
+  <Text
+    style={
+      Array [
+        Object {},
+        Array [
+          Object {
+            "color": "#FFFFFF",
+            "fontWeight": "700",
+          },
+          Object {
+            "fontSize": 15,
+          },
+          false,
+        ],
+      ]
+    }
+    testID="title-catalog-item-footer"
+  >
+    Discipline card
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 8,
+        "width": 8,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "alignItems": "flex-start",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {},
+          Array [
+            Object {
+              "color": "#FFFFFF",
+              "flex": 1,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontSize": 12,
+            },
+            false,
+          ],
+        ]
+      }
+      testID="subtitle-catalog-item-footer"
+    >
+      A good guy with blue eyes
+    </Text>
+    <View
+      style={
+        Object {
+          "height": 8,
+          "width": 8,
+        }
+      }
+    />
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight={13.200000000000001}
+      bbWidth={13.200000000000001}
+      color={4294967295}
+      focusable={false}
+      height={13.200000000000001}
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "flex": 0,
+            "height": 13,
+            "width": 13,
+          },
+        ]
+      }
+      testID="certified-catalog-item-footer"
+      tintColor={4294967295}
+      vbHeight={24}
+      vbWidth={24}
+      width={13.200000000000001}
+    >
+      <RNSVGGroup>
+        <RNSVGPath
+          d="M0 .001h24v24H0z"
+          fill={null}
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+        />
+        <RNSVGPath
+          d="M12.042 2c-5.523 0-10 4.477-10 10s4.477 10 10 10 10-4.477 10-10-4.478-10-10-10zm-.75 15.75l-5-3.75 1.5-2 3 2.25 5.25-7 2 1.5-6.75 9z"
+          fill={4294967295}
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 16,
+        "width": 16,
+      }
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "borderRadius": 3,
+          "overflow": "hidden",
+        },
+        false,
+      ]
+    }
+    testID="progress-bar-catalog-item-footer"
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFFFFF",
+        }
+      }
+      testID="progression-bar"
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#3EC483",
+            "borderBottomRightRadius": 1,
+            "borderTopRightRadius": 1,
+            "height": 2,
+            "width": "30%",
+          }
+        }
+        testID="progression-bar-0.3"
+      />
+    </View>
+  </View>
+</View>
+`;
+
 exports[`Storyshots CatalogItemFooter Discipline (adaptive) 1`] = `
 <View
   style={
