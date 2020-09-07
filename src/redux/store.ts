@@ -105,7 +105,7 @@ const createMiddlewares = (options: Options, reduxDevTools?: ReduxDevTools) => {
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  whiteList: ['appSession', 'permissions', 'notifications'],
+  whitelist: ['appSession', 'permissions', 'notifications'],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);
