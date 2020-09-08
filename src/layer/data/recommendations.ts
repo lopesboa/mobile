@@ -36,7 +36,7 @@ const fetchRecommendations = async (): Promise<Array<DisciplineCard | ChapterCar
     const jwt: JWT = decode(token);
 
     const query: QueryParams = {
-      contentType: 'all',
+      contentType: 'course,chapter',
       lang: language,
     };
 
