@@ -2,7 +2,7 @@ import {ENGINE, CONTENT_TYPE} from '../../../const';
 import {createProgression} from '../../../__fixtures__/progression';
 import type {Migrations} from '../../types';
 
-describe('Migrate Progressions', () => {
+describe('Migration - Progressions', () => {
   beforeEach(() => {
     jest.resetAllMocks();
   });

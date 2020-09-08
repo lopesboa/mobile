@@ -179,7 +179,9 @@ describe('cards', () => {
             hits: Array<Card>;
           }>;
         }> => {
-          expect(url).toBe(`${host}${section.endpoint}?contentType=all&offset=0&limit=2&lang=en&type=course%2Cchapter`);
+          expect(url).toBe(
+            `${host}${section.endpoint}?contentType=all&offset=0&limit=2&lang=en&type=course%2Cchapter`,
+          );
 
           expect(options).toHaveProperty('headers.authorization', token);
 

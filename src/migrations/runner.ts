@@ -16,7 +16,7 @@ const applyMigration = (predicate: Predicate, transformer: Transformer) => async
       const value = await asyncStorage.getItem(key);
       if (value) {
         const nextValue = await transformer(value, key);
-        if (value !== nextValue) {
+        if (nextValue && value !== nextValue) {
           await asyncStorage.setItem(key, nextValue);
         }
       }

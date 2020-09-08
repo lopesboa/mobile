@@ -216,7 +216,7 @@ export const saveAndRefreshCards = async (
   language: SupportedLanguage,
 ) => {
   await saveDashboardCardsInAsyncStorage(cards, language);
-  return Promise.all(cards.map(refreshCard));
+  return Promise.all(cards.map(refreshCard).filter(Boolean));
 };
 
 export const fetchCard = async (content: Content): Promise<DisciplineCard | ChapterCard | void> => {
@@ -350,8 +350,8 @@ export const fetchSearchCards = (
   limit: number,
 ) =>
   fetchCards(token, host, '/api/v2/contents', offset, limit, {
-    fullText: search,
     ...queryParams,
+    fullText: search,
   });
 
 export default {
