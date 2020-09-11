@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 import {StackScreenProps} from '@react-navigation/stack';
-import {HEADER_HEIGHT, HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
-import {getStatusBarHeight} from '../modules/status-bar';
+import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
+import {getHeaderHeight} from '../modules/status-bar';
 import HeaderBackIcon from '../components/header-back-icon';
 import Touchable from '../components/touchable';
 import theme, {getHitSlop} from '../modules/theme';
@@ -13,11 +13,11 @@ import {useBackHandler} from './with-backhandler';
 
 const styles = StyleSheet.create({
   container: {
-    height: HEADER_HEIGHT + getStatusBarHeight(),
+    height: getHeaderHeight(),
     backgroundColor: HEADER_BACKGROUND_COLOR,
   },
   sides: {
-    paddingTop: getStatusBarHeight(),
+    paddingTop: getHeaderHeight(0),
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',

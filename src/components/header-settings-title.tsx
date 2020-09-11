@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, Platform, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 
 import {NovaCompositionCoorpacademyCog as SettingsIcon} from '@coorpacademy/nova-icons';
 import {HEADER_HEIGHT} from '../navigator/navigation-options';
@@ -12,11 +12,6 @@ const ICON_WIDTH = 16;
 
 const styles = StyleSheet.create({
   container: {
-    ...Platform.select({
-      android: {
-        left: -29,
-      },
-    }),
     flex: 1,
     justifyContent: 'center',
   },

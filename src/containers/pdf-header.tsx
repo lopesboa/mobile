@@ -2,10 +2,9 @@ import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 import {StackScreenProps} from '@react-navigation/stack';
 import navigationOptions, {
-  HEADER_HEIGHT,
   SETTINGS_SCREEN_HEADER_BACKGROUND_COLOR,
 } from '../navigator/navigation-options';
-import {getStatusBarHeight} from '../modules/status-bar';
+import {getHeaderHeight} from '../modules/status-bar';
 import Touchable from '../components/touchable';
 import Text from '../components/text';
 import theme, {getHitSlop} from '../modules/theme';
@@ -16,7 +15,7 @@ const SIDE_WIDTH = 20 + ICON_SPACING;
 
 const styles = StyleSheet.create({
   container: {
-    height: HEADER_HEIGHT + getStatusBarHeight(),
+    height: getHeaderHeight(),
   },
   header: {
     ...navigationOptions.headerStyle,
@@ -32,8 +31,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    height: HEADER_HEIGHT + getStatusBarHeight(),
-    paddingTop: getStatusBarHeight(),
+    height: getHeaderHeight(),
+    paddingTop: getHeaderHeight(0),
   },
   side: {
     width: SIDE_WIDTH,
