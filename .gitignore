@@ -96,3 +96,6 @@ app/src/main/res/raw/*
 # Firebase
 android/app/google-services.json
 ios/GoogleService-Info.plist
+
+#rn
+package-lock.json
