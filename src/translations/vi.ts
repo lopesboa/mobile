@@ -57,7 +57,7 @@ const translations: Translations = {
       description: 'Hãy hoàn thành \\"{{contentName}}\\"',
     },
     {
-      title: '{{givenName}}, hãy chấp nhận thử thách 💪',
+      title: 'Tham gia thử thách {{givenName}} 💪',
       description: 'Hoàn thành khóa học: \\"{{contentName}}\\"',
     },
     {
@@ -85,7 +85,7 @@ const translations: Translations = {
       description: 'Còn vài câu hỏi nữa là xong \\"{{contentName}}\\"',
     },
     {
-      title: '{{givenName}}, bạn sắp hoàn thành rồi ☑',
+      title: 'Cố lên nào {{givenName}}! Gần xong rồi ☑️',
       description: 'Hoàn thành khóa học: \\"{{contentName}}\\"',
     },
   ],
@@ -157,6 +157,45 @@ const translations: Translations = {
   signInDesktop: 'Không',
   signInMobile: 'Rồi',
   step: 'Bước',
+  suggestion: 'Đề xuất khóa học',
+  suggestionWordings: [
+    {
+      title: '{{givenName}} ơi, đây là khóa học dành cho bạn! 👀',
+      description: 'Tìm hiểu bằng cách tham gia khóa học \\"{{contentName}}\\" này',
+    },
+    {
+      title: '{{givenName}} ơi, bạn có tâm trạng để học không? 🚀',
+      description: 'Xem khóa học \\"{{contentName}}\\"',
+    },
+    {
+      title: 'Nhiệm vụ của bạn, bạn có nên chấp nhận nhiệm vụ này không 😎',
+      description: 'Xem khóa học \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}} ơi, thử thách trong ngày đang chờ đợi bạn! 😉',
+      description: 'Bắt đầu khóa học \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}} ơi, hãy thực hiện thử thách này nhé 💪',
+      description: 'Bắt đầu khóa học \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}} ơi, hãy mở rộng chân trời tri thức của bạn!',
+      description: 'Tìm hiểu thêm về khóa học \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}} ơi, đã đến lúc học rồi! 😉',
+      description: 'Bắt đầu khóa học \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}} ơi, đã đến lúc bắt đầu (lại) rồi 🚀',
+      description: 'Bắt đầu khóa học \\"{{contentName}}\\" này',
+    },
+    {
+      title: '{{givenName}} ơi, đố bạn làm được đấy! 💪',
+      description: 'Bắt đầu khóa học \\"{{contentName}}\\"',
+    },
+  ],
   typeHere: 'Nhập vào đây',
   validate: 'Xác nhận',
   version: 'Phiên bản',

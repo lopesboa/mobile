@@ -41,8 +41,8 @@ Array [
     data={
       Array [
         Object {
-          "isActive": false,
           "label": "New courses",
+          "status": "deactivated",
           "type": "finish-course",
         },
       ]
@@ -209,14 +209,6 @@ Array [
             />
           </View>
         </View>
-        <View
-          style={
-            Object {
-              "backgroundColor": "#ECEFF1",
-              "height": 1,
-            }
-          }
-        />
       </View>
     </View>
   </RCTScrollView>,

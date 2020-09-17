@@ -53,7 +53,7 @@ const translations: Translations = {
       description: 'Ukończ \\"{{contentName}}\\"',
     },
     {
-      title: '{{givenName}}, podejmij wyzwanie 💪',
+      title: 'Podejmij wyzwanie, {{givenName}}. 💪',
       description: 'Ukończ kurs: \\"{{contentName}}\\"',
     },
     {
@@ -149,6 +149,42 @@ const translations: Translations = {
   signInDesktop: 'Nie',
   signInMobile: 'Tak',
   step: 'Krok',
+  suggestion: 'Propozycja kursu',
+  suggestionWordings: [
+    {
+      title: '{{givenName}}, oto kurs dla Ciebie! 👀',
+      description: 'Dowiedz się dzięki temu kursowi: „{{contentName}}”',
+    },
+    {
+      title: '{{givenName}}, masz ochotę na naukę? 🚀',
+      description: 'Sprawdź kurs „{{contentName}}”',
+    },
+    {
+      title: 'To Twoja misja, jeśli zdecydujesz się na jej podjęcie 😎',
+      description: 'Sprawdź kurs „{{contentName}}”',
+    },
+    {
+      title: '{{givenName}}, wyzwanie dnia czeka na Ciebie! 😉',
+      description: 'Rozpocznij kurs „{{contentName}}”',
+    },
+    {
+      title: '{{givenName}}, podejmij wyzwanie 💪',
+      description: 'Rozpocznij kurs „{{contentName}}”',
+    },
+    {
+      title: '{{givenName}}, poszerz swoje horyzonty!',
+      description: 'Dowiedz się więcej o kursie „{{contentName}}”',
+    },
+    {title: '{{givenName}}, czas na naukę! 😉', description: 'Rozpocznij kurs „{{contentName}}”'},
+    {
+      title: 'Czas na (ponowny) start, {{givenName}} 🚀',
+      description: 'Rozpocznij ten kurs: „{{contentName}}”',
+    },
+    {
+      title: '{{givenName}}, założę się, że dasz radę! 💪',
+      description: 'Rozpocznij kurs „{{contentName}}”',
+    },
+  ],
   typeHere: 'Wpisz tutaj',
   validate: 'Zweryfikuj',
   version: 'Wersja',

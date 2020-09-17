@@ -56,8 +56,13 @@ const fetchRecommendations = async (): Promise<Array<DisciplineCard | ChapterCar
 };
 
 // @todo replace fetchRecommendation() by find(type: string, ref: string)
-const fetchRecommendation = async (): Promise<DisciplineCard | ChapterCard | void> => {
+const fetchRecommendation = async (
+  random = false,
+): Promise<DisciplineCard | ChapterCard | void> => {
   const cards = await fetchRecommendations();
+  if (random) {
+    return cards[Math.floor(Math.random() * cards.length)];
+  }
   return cards[0];
 };
 

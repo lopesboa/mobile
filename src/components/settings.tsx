@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {View, FlatList, StyleSheet} from 'react-native';
-import {ANALYTICS_EVENT_TYPE} from '../const';
+import {ANALYTICS_EVENT_TYPE, NOTIFICATION_SETTINGS_STATUS} from '../const';
 import theme from '../modules/theme';
-import {NotificationType} from '../types';
+import {NotificationSettingStatus, NotificationType} from '../types';
 import withAnalytics, {WithAnalyticsProps} from '../containers/with-analytics';
 import Switch from './switch';
 import Version from './version';
@@ -11,7 +11,7 @@ import Text from './text';
 export type SettingsItem = {
   type: NotificationType;
   label: string;
-  isActive: boolean;
+  status: NotificationSettingStatus;
 };
 
 interface Props extends WithAnalyticsProps {
@@ -76,26 +76,26 @@ const styles = StyleSheet.create({
 });
 
 const Settings = ({settings, onSettingToggle, analytics, testID}: Props) => {
-  function renderItem({item}: {index: number; item: SettingsItem}) {
+  function renderItem({item, index}: {index: number; item: SettingsItem}) {
     async function handleOnSettingsItemToggle() {
       analytics?.logEvent(ANALYTICS_EVENT_TYPE.NOTIFICATIONS_TOGGLE, {
         type: item.type,
-        value: item.isActive,
+        value: item.status,
       });
       await onSettingToggle(item.type);
     }
     return (
       <React.Fragment>
-        <Separator />
+        {index % settings.length !== 1 ? <Separator /> : null}
         <View style={styles.notificationItemContainer}>
           <Text style={styles.text}>{item.label}</Text>
           <Switch
-            isActive={item.isActive}
+            isActive={item.status === NOTIFICATION_SETTINGS_STATUS.ACTIVATED}
             onPress={handleOnSettingsItemToggle}
             testID={testID + '-switch-' + item.type}
           />
         </View>
-        <Separator />
+        {index % settings.length !== 0 ? <Separator /> : null}
       </React.Fragment>
     );
   }

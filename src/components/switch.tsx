@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {View, TouchableWithoutFeedback, Animated, Easing, StyleSheet} from 'react-native';
+import {NotificationSettingStatus} from '../types';
 import theme from '../modules/theme';
 
 const styles = StyleSheet.create({

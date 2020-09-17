@@ -57,7 +57,7 @@ const translations: Translations = {
       description: 'Haideți să terminăm „{{contentName}}”',
     },
     {
-      title: '{{givenName}}, acceptați provocarea 💪',
+      title: 'Acceptați provocarea, {{givenName}} 💪',
       description: 'Finalizați cursul: „{{contentName}}”',
     },
     {
@@ -85,7 +85,7 @@ const translations: Translations = {
       description: 'Mai multe întrebări pentru a finaliza „{{contentName}}”',
     },
     {
-      title: '{{givenName}}, aproape ați terminat ☑',
+      title: 'Haideți, {{givenName}}! Aproape ați terminat ☑️',
       description: 'Finalizați-vă cursul: „{{contentName}}”',
     },
   ],
@@ -153,6 +153,42 @@ const translations: Translations = {
   signInDesktop: 'Nu',
   signInMobile: 'Da',
   step: 'Pas',
+  suggestion: 'Sugestie de curs',
+  suggestionWordings: [
+    {
+      title: '{{givenName}}, iată un curs pentru dvs.! 👀',
+      description: 'Aflați cu acest curs „{{contentName}}”',
+    },
+    {title: 'Aveți chef de învățat, {{givenName}}? 🚀', description: 'Vedeți „{{contentName}}”'},
+    {
+      title: 'Misiunea dvs., dacă alegeți să o acceptați 😎',
+      description: 'Vedeți „{{contentName}}”',
+    },
+    {
+      title: '{{givenName}}, provocarea zilei vă așteaptă! 😉',
+      description: 'Începeți cursul „{{contentName}}”',
+    },
+    {
+      title: '{{givenName}}, acceptați provocarea 💪',
+      description: 'Începeți cursul „{{contentName}}”',
+    },
+    {
+      title: '{{givenName}}, lărgiți-vă orizonturile!',
+      description: 'Aflați mai multe despre „{{contentName}}”',
+    },
+    {
+      title: '{{givenName}}, este timpul să învățați! 😉',
+      description: 'Începeți cursul „{{contentName}}”',
+    },
+    {
+      title: 'Este timpul să vă (re)lansați, {{givenName}} 🚀',
+      description: 'Începeți acest curs „{{contentName}}”',
+    },
+    {
+      title: '{{givenName}}, cu siguranță veți reuși! 💪',
+      description: 'Începeți cursul „{{contentName}}”',
+    },
+  ],
   typeHere: 'Tastați aici',
   validate: 'Validează',
   version: 'Versiune',

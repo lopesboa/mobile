@@ -1,5 +1,12 @@
-import {toggle as toggleFinishCourseNotification} from '../notifications/finish-course';
-import {ANALYTICS_EVENT_TYPE, PERMISSION_STATUS, PERMISSION_TYPE} from '../../../const';
+import {toggle as toggleNotificationSetting} from '../notifications/settings';
+
+import {
+  ANALYTICS_EVENT_TYPE,
+  NOTIFICATION_TYPE,
+  PERMISSION_STATUS,
+  PERMISSION_TYPE,
+  NOTIFICATION_SETTINGS_STATUS,
+} from '../../../const';
 import type {PermissionStatus} from '../../../types';
 import translations from '../../../translations';
 import type {Options} from '../../_types';
@@ -65,12 +72,11 @@ const _requestPermission = (onDeny?: () => void) => async (
   }
   if (currentPermissionStatus !== systemStatus) {
     dispatch(change(systemStatus));
-
-    dispatch(
-      toggleFinishCourseNotification(
-        ![PERMISSION_STATUS.DENIED, PERMISSION_STATUS.BLOCKED].includes(systemStatus),
-      ),
-    );
+    const status = [PERMISSION_STATUS.DENIED, PERMISSION_STATUS.BLOCKED].includes(systemStatus)
+      ? NOTIFICATION_SETTINGS_STATUS.DEACTIVATED
+      : NOTIFICATION_SETTINGS_STATUS.ACTIVATED;
+    dispatch(toggleNotificationSetting(NOTIFICATION_TYPE.FINISH_COURSE, status));
+    dispatch(toggleNotificationSetting(NOTIFICATION_TYPE.SUGGESTION, status));
   }
 
   services.Analytics.logEvent(ANALYTICS_EVENT_TYPE.PERMISSION, {
@@ -142,9 +148,31 @@ export const check = () => async (
   if (permissionStatus !== PERMISSION_STATUS.MAYBE_LATER && permissionStatus !== systemStatus) {
     dispatch(change(systemStatus));
     if (PERMISSION_STATUS.GRANTED === systemStatus) {
-      dispatch(toggleFinishCourseNotification(true));
+      dispatch(
+        toggleNotificationSetting(
+          NOTIFICATION_TYPE.FINISH_COURSE,
+          NOTIFICATION_SETTINGS_STATUS.ACTIVATED,
+        ),
+      );
+      dispatch(
+        toggleNotificationSetting(
+          NOTIFICATION_TYPE.SUGGESTION,
+          NOTIFICATION_SETTINGS_STATUS.ACTIVATED,
+        ),
+      );
     } else if ([PERMISSION_STATUS.DENIED, PERMISSION_STATUS.BLOCKED].includes(permissionStatus)) {
-      dispatch(toggleFinishCourseNotification(false));
+      dispatch(
+        toggleNotificationSetting(
+          NOTIFICATION_TYPE.FINISH_COURSE,
+          NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
+        ),
+      );
+      dispatch(
+        toggleNotificationSetting(
+          NOTIFICATION_TYPE.SUGGESTION,
+          NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
+        ),
+      );
     }
   }
 

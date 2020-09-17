@@ -80,7 +80,7 @@ const translations: Translations = {
       description: "Meer dan een paar vragen om '{{contentName}}' te voltooien",
     },
     {
-      title: '{{givenName}}, u bent bijna klaar ☑',
+      title: 'Kom op {{givenName}}! Bijna klaar ☑️',
       description: "Voltooi uw cursus: '{{contentName}}'",
     },
   ],
@@ -149,6 +149,45 @@ const translations: Translations = {
   signInDesktop: 'Nee',
   signInMobile: 'Ja',
   step: 'Stap',
+  suggestion: 'Cursussuggestie',
+  suggestionWordings: [
+    {
+      title: '{{givenName}}, hier is een cursus voor je! 👀',
+      description: 'Kom erachter met deze cursus \\"{{contentName}}\\"',
+    },
+    {
+      title: 'Heb je zin om iets te leren, {{givenName}}? 🚀',
+      description: 'Bekijk \\"{{contentName}}\\"',
+    },
+    {
+      title: 'Je missie, als je ervoor kiest om hem te accepteren😎',
+      description: 'Bekijk \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, je dagelijkse uitdaging wacht op je! 😉',
+      description: 'Start de cursus \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, accepteer de uitdaging 💪',
+      description: 'Start de cursus \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, verbreed je horizon!',
+      description: 'Meer informatie over \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, het is tijd om iets te leren! 😉',
+      description: 'Start de cursus \\"{{contentName}}\\"',
+    },
+    {
+      title: 'Het is tijd om {{givenName}} (opnieuw) te lanceren🚀',
+      description: 'Start deze cursus \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, ik geloof dat je het kunt! 💪',
+      description: 'Start de cursus \\"{{contentName}}\\"',
+    },
+  ],
   typeHere: 'Schrijf hier',
   validate: 'Valideren',
   version: 'Versie',

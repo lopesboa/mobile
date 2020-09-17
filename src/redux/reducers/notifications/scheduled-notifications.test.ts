@@ -12,6 +12,7 @@ describe('Scheduled notifications(reducer)', () => {
       const initialState = undefined;
       const expectedResult = {
         'finish-course': [],
+        suggestion: [],
       };
 
       const action = {

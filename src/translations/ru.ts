@@ -53,7 +53,7 @@ const translations: Translations = {
       title: '{{givenName}}, вы почти завершили курс 🙃',
       description: 'Давайте закончим «{{contentName}}»',
     },
-    {title: '{{givenName}}, примите вызов 💪', description: 'Пройдите курс «{{contentName}}»'},
+    {title: 'Примите вызов, {{givenName}} 💪', description: 'Пройдите курс «{{contentName}}»'},
     {title: '{{givenName}}, вот ваш вызов дня! 😉', description: 'Пройдите курс {{contentName}}'},
     {title: '{{givenName}}, пора учиться! 😉', description: 'Продолжите курс «{{contentName}}»'},
     {
@@ -70,7 +70,7 @@ const translations: Translations = {
       description: 'До завершения курса «{{contentName}}» осталось еще несколько вопросов',
     },
     {
-      title: '{{givenName}}, вы почти закончили курс ☑',
+      title: 'Давайте, {{givenName}}! Вы почти закончили ☑️',
       description: 'Пройдите курс «{{contentName}}»',
     },
   ],
@@ -139,6 +139,33 @@ const translations: Translations = {
   signInDesktop: 'Нет',
   signInMobile: 'Да',
   step: 'Этап',
+  suggestion: 'Рекомендации курсов',
+  suggestionWordings: [
+    {
+      title: '{{givenName}}, вот подходящий курс! 👀',
+      description: 'Узнайте из этого курса «{{contentName}}»',
+    },
+    {
+      title: 'Есть настроение учиться, {{givenName}}? 🚀',
+      description: 'Посмотрите {{contentName}}',
+    },
+    {title: 'Ваша миссия, если вы решите ее принять 😎', description: 'Посмотрите {{contentName}}'},
+    {title: '{{givenName}}, задача дня ждет вас! 😉', description: 'Начать курс {{contentName}}'},
+    {title: '{{givenName}}, примите вызов 💪', description: 'Начать курс {{contentName}}'},
+    {
+      title: '{{givenName}}, расширяйте свой кругозор!',
+      description: 'Узнайте больше о {{contentName}}',
+    },
+    {title: '{{givenName}}, пора учиться! 😉', description: 'Начать курс {{contentName}}'},
+    {
+      title: 'Пришло время (еще раз) запустить {{givenName}} 🚀',
+      description: 'Начните курс «{{contentName}}»',
+    },
+    {
+      title: '{{givenName}}, держим пари, что вы справитесь! 💪',
+      description: 'Начать курс {{contentName}}',
+    },
+  ],
   typeHere: 'Введите текст здесь',
   validate: 'Подтвердить',
   version: 'Версия',

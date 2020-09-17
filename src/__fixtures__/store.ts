@@ -45,6 +45,7 @@ import type {State as PermissionsState} from '../redux/reducers/permissions';
 import type {State as NotitificationsState} from '../redux/reducers/notifications';
 import type {State as ProgressionsState} from '../redux/reducers/progressions/synchronize';
 import type {State as VideoState} from '../redux/reducers/video';
+import {NOTIFICATION_SETTINGS_STATUS} from '../const';
 import {
   mapToLevel,
   mapToSlide,
@@ -53,8 +54,7 @@ import {
   mapToExitNode,
 } from './utils/mappers';
 import {createBrand} from './brands';
-import { createUser } from './user';
-import {NOTIFICATION_TYPE} from '../const';
+import {createUser} from './user';
 
 type MappableObject =
   | {
@@ -343,14 +343,19 @@ export const createPermissionsState = ({
 
 export const createNotificationsState = (
   notification = {
-    finishCourse: {
-      type: NOTIFICATION_TYPE.FINISH_COURSE,
+    'finish-course': {
       label: 'Weekly Reminder',
-      isActive: true,
+      status: NOTIFICATION_SETTINGS_STATUS.ACTIVATED,
+    },
+    suggestion: {
+      label: 'You might like it',
+      status: NOTIFICATION_SETTINGS_STATUS.ACTIVATED,
     },
   },
 ): NotitificationsState => ({
-  ...notification,
+  settings: {
+    ...notification,
+  },
 });
 
 export const createVideoState = ({isFullScreen = false}: {isFullScreen?: boolean}): VideoState => ({

@@ -109,6 +109,8 @@ export type Translations = {
   startDemo: string;
   startLearning: string;
   step: string;
+  suggestion: string;
+  suggestionWordings: NotificationWording[];
   typeHere: string;
   unlockNextLevel: string;
   upgrade: string;

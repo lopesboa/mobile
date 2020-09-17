@@ -16,6 +16,7 @@ import type {
   SpaceType,
   TooltipType,
   PermissionType,
+  NotificationSettingStatus,
   NotificationType,
   PartialRecord,
 } from './types';
@@ -136,8 +137,9 @@ export const PERMISSION_TYPE: Record<'CAMERA' | 'NOTIFICATIONS', PermissionType>
   NOTIFICATIONS: 'notifications',
 };
 
-export const NOTIFICATION_TYPE: Record<'FINISH_COURSE', NotificationType> = {
+export const NOTIFICATION_TYPE: Record<'FINISH_COURSE' | 'SUGGESTION', NotificationType> = {
   FINISH_COURSE: 'finish-course',
+  SUGGESTION: 'suggestion',
 };
 
 export const APP_STATE: PartialRecord<'ACTIVE' | 'BACKGROUND' | 'INACTIVE', AppState> = {
@@ -166,6 +168,15 @@ export const RESOURCE_MIME_TYPE: Record<
   PNG: 'image/png',
   MP4: 'video/mp4',
   JPEG: 'image/jpeg',
+};
+
+export const NOTIFICATION_SETTINGS_STATUS: Record<
+  'IDLE' | 'ACTIVATED' | 'DEACTIVATED',
+  NotificationSettingStatus
+> = {
+  IDLE: 'idle',
+  ACTIVATED: 'activated',
+  DEACTIVATED: 'deactivated',
 };
 
 export const ANALYTICS_EVENT_TYPE = {

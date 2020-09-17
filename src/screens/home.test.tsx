@@ -7,7 +7,7 @@ import {createStoreState} from '../__fixtures__/store';
 import {createProgression} from '../__fixtures__/progression';
 import {createChapterCard} from '../__fixtures__/cards';
 import {CARD_STATUS} from '../layer/data/_const';
-import {ENGINE, CONTENT_TYPE} from '../const';
+import {ENGINE, CONTENT_TYPE, NOTIFICATION_SETTINGS_STATUS} from '../const';
 import {mapStateToProps} from './home';
 import type {ConnectedStateProps} from './home';
 
@@ -17,6 +17,14 @@ const card = createChapterCard({
   title: 'Fake chapter',
   status: CARD_STATUS.ACTIVE,
 });
+
+const notificationSettings = {
+  'finish-course': {
+    label: 'Currently doing reminder',
+    status: NOTIFICATION_SETTINGS_STATUS.ACTIVATED,
+  },
+  suggestion: {label: 'Course recommendations', status: NOTIFICATION_SETTINGS_STATUS.ACTIVATED},
+};
 
 describe('Home', () => {
   it('should return the accurate props', () => {
@@ -45,6 +53,16 @@ describe('Home', () => {
         camera: 'granted',
         notifications: 'granted',
       },
+      notifications: {
+        settings: {
+          'finish-course': {label: 'Currently doing reminder', status: 'activated'},
+          suggestion: {label: 'Course recommandations', status: 'activated'},
+        },
+        scheduledNotifications: {
+          'finish-course': [],
+          suggestion: [],
+        },
+      },
     });
 
     const result = mapStateToProps(store);
@@ -53,6 +71,10 @@ describe('Home', () => {
       notificationStatus: 'granted',
       isFetching: false,
       isFocused: false,
+      notificationSettings: {
+        'finish-course': {label: 'Currently doing reminder', status: 'activated'},
+        suggestion: {label: 'Course recommandations', status: 'activated'},
+      },
     };
     expect(expected).toEqual(result);
   });
@@ -70,6 +92,7 @@ describe('Home', () => {
         isFocused={false}
         appSession={3}
         notificationStatus="granted"
+        notificationSettings={notificationSettings}
       />,
     );
 
@@ -88,7 +111,13 @@ describe('Home', () => {
     const selectCard = jest.fn();
     const navigation = createNavigation({});
     const component = renderer.create(
-      <Home navigation={navigation} selectCard={selectCard} isFetching isFocused={false} />,
+      <Home
+        navigation={navigation}
+        selectCard={selectCard}
+        isFetching
+        isFocused={false}
+        notificationSettings={notificationSettings}
+      />,
     );
 
     const home = component.root.find((el) => el.props.testID === 'home');
@@ -111,11 +140,42 @@ describe('Home', () => {
         isFocused={false}
         appSession={1}
         notificationStatus="undetermined"
+        notificationSettings={notificationSettings}
       />,
     );
 
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
     expect(navigation.navigate).toHaveBeenCalledWith('Modals', {screen: 'NotifyMe'});
+  });
+
+  it('setup notification settings when the app has been updated and a new notification type added', () => {
+    const {Component: Home} = require('./home');
+
+    const selectCard = jest.fn();
+    const toggle = jest.fn();
+    const navigation = createNavigation({});
+    const notificationSettingsIddle = {
+      'finish-course': {
+        label: 'Currently doing reminder',
+        status: NOTIFICATION_SETTINGS_STATUS.ACTIVATED,
+      },
+      suggestion: {label: 'Course recommendations', status: NOTIFICATION_SETTINGS_STATUS.IDLE},
+    };
+    renderer.create(
+      <Home
+        navigation={navigation}
+        selectCard={selectCard}
+        toggle={toggle}
+        isFetching
+        isFocused={false}
+        appSession={1}
+        notificationStatus="granted"
+        notificationSettings={notificationSettingsIddle}
+      />,
+    );
+
+    expect(toggle).toHaveBeenCalledTimes(1);
+    expect(toggle).toHaveBeenCalledWith('suggestion', NOTIFICATION_SETTINGS_STATUS.ACTIVATED);
   });
 
   it('opens notify-me modal for the first time after a component update', () => {
@@ -131,6 +191,7 @@ describe('Home', () => {
         isFocused={false}
         appSession={1}
         notificationStatus="blocked"
+        notificationSettings={notificationSettings}
       />,
     );
 
@@ -142,6 +203,7 @@ describe('Home', () => {
         isFocused={false}
         appSession={1}
         notificationStatus="undetermined"
+        notificationSettings={notificationSettings}
       />,
     );
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
@@ -161,6 +223,7 @@ describe('Home', () => {
         isFocused={false}
         appSession={1}
         notificationStatus="undetermined"
+        notificationSettings={notificationSettings}
       />,
     );
 
@@ -181,6 +244,7 @@ describe('Home', () => {
         isFocused={false}
         appSession={10}
         notificationStatus="maybe-later"
+        notificationSettings={notificationSettings}
       />,
     );
 
@@ -201,6 +265,7 @@ describe('Home', () => {
         isFocused={false}
         appSession={30}
         notificationStatus="maybe-later"
+        notificationSettings={notificationSettings}
       />,
     );
 
@@ -221,6 +286,7 @@ describe('Home', () => {
         isFocused={false}
         appSession={3}
         notificationStatus="granted"
+        notificationSettings={notificationSettings}
       />,
     );
 

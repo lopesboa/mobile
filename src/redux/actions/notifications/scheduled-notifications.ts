@@ -4,9 +4,13 @@ import {StoreState} from '../../store';
 // import {StoreAction} from '../../_types';
 import {Services} from '../../../services';
 import {/* ScheduledNotificationPayload*/ NotificationType} from '../../../types';
-import {ANALYTICS_EVENT_TYPE, NOTIFICATION_TYPE} from '../../../const';
+import {
+  ANALYTICS_EVENT_TYPE,
+  NOTIFICATION_TYPE,
+  NOTIFICATION_SETTINGS_STATUS,
+} from '../../../const';
 import translations from '../../../translations';
-import {getUser, isFinishCourseNotificationActive} from '../../utils/state-extract';
+import {getUser, getNotificationsSettings} from '../../utils/state-extract';
 import {ChapterCard, DisciplineCard} from '../../../layer/data/_types';
 
 export const SCHEDULE_NOTIFICATION = '@@notifications/SCHEDULE_NOTIFICATION';
@@ -30,18 +34,22 @@ export type Action =
       };
     };
 
-const getNotificationWording = () => {
-  const {finishCourseWordings} = translations;
-  return finishCourseWordings[Math.floor(Math.random() * finishCourseWordings.length)];
+const getNotificationWording = (type: NotificationType) => {
+  const {finishCourseWordings, suggestionWordings} = translations;
+  if (type === NOTIFICATION_TYPE.FINISH_COURSE) {
+    return finishCourseWordings[Math.floor(Math.random() * finishCourseWordings.length)];
+  }
+  return suggestionWordings[Math.floor(Math.random() * suggestionWordings.length)];
 };
 
 const scheduleNotificationOnDevice = (
+  type: NotificationType,
   userName: string | undefined,
   content: DisciplineCard | ChapterCard,
   date: Date,
   id: number,
 ) => {
-  const {title, description} = getNotificationWording();
+  const {title, description} = getNotificationWording(type);
   if (!userName || !content.title) return;
   const notification = {
     title: title.replace('{{givenName}}', userName),
@@ -53,16 +61,18 @@ const scheduleNotificationOnDevice = (
   Notifications.postLocalNotification(notification, id);
 };
 
-const scheduleFinishCourseNotification = (
+const _scheduleNotification = (
+  type: NotificationType,
   userName: string | undefined,
   content: DisciplineCard | ChapterCard,
   index: number,
   id: number,
+  daysGap: number,
 ) => {
-  // 48h hours later * index + 1
+  const NOTIFICATION_DAYS = daysGap * (index + 1);
   let currentDate: Date = new Date(Date.now());
-  const delay = new Date(currentDate.setDate(currentDate.getDate() + 2 * (index + 1)));
-  return scheduleNotificationOnDevice(userName, content, delay, id);
+  const delay = new Date(currentDate.setDate(currentDate.getDate() + NOTIFICATION_DAYS));
+  return scheduleNotificationOnDevice(type, userName, content, delay, id);
 };
 
 const scheduleNotification = (
@@ -83,7 +93,12 @@ const scheduleNotification = (
   };
   switch (type) {
     case NOTIFICATION_TYPE.FINISH_COURSE: {
-      scheduleFinishCourseNotification(userName, content, index, id);
+      _scheduleNotification(type, userName, content, index, id, 2);
+      break;
+    }
+    case NOTIFICATION_TYPE.SUGGESTION: {
+      _scheduleNotification(type, userName, content, index, id, 7);
+      break;
     }
   }
   return dispatch(action);
@@ -101,32 +116,35 @@ export const unscheduleLocalNotifications = (type: NotificationType) => async (
     },
   };
 
-  switch (type) {
-    case NOTIFICATION_TYPE.FINISH_COURSE: {
-      const {scheduledNotifications} = getState().notifications;
+  const {scheduledNotifications} = getState().notifications;
 
-      scheduledNotifications[type]?.forEach((notification) => {
-        Notifications.cancelLocalNotification(notification.id);
-      });
-      services.Analytics.logEvent(ANALYTICS_EVENT_TYPE.NOTIFICATIONS, {
-        id: 'unschedule',
-        type,
-        value: 1,
-      });
-      break;
-    }
-  }
+  scheduledNotifications[type]?.forEach((notification) => {
+    Notifications.cancelLocalNotification(notification.id);
+  });
+  services.Analytics.logEvent(ANALYTICS_EVENT_TYPE.NOTIFICATIONS, {
+    id: 'unschedule',
+    type,
+    value: 1,
+  });
+
   return dispatch(action);
 };
 
 /**
  * - Local notifications are scheduled once the user quits the player/app
  * - We first unschedule the existing local notifications before scheduling new ones
- * - Only 3 notifications are sent to the user on a week, the first one is sent 48h hours
- * later, the second one 96 and the last one 144.
+ * -
+ * - FINISH COURSE NOTIFICATIONS
+ * - Only 3 notifications are sent to the user on a week, the first one is sent 2 days
+ * later, the second one 4 days and the last one 6 days.
  * - If user has only started one content, schedule 3 notifications for given content
  * - If user has started two contents, schedule 3 notifications with the order: [1, 2, 1]
  * - If user has started three contents, schedule 3 notifications with the order: [1, 2, 3]
+ * -
+ * - SUGGESTION NOTIFICATIONS
+ * - Seven notifications are sent to the user, they're spread in gaps of 7 days for the
+ * - first four, then 14 days for the 5th and the 6th and the last one is sent 28 days after
+ * - the first one
  */
 export const scheduleNotifications = (type: NotificationType) => async (
   dispatch,
@@ -134,31 +152,56 @@ export const scheduleNotifications = (type: NotificationType) => async (
   options: {services: Services},
 ) => {
   const state = getState();
-  if (isFinishCourseNotificationActive(state)) {
+  const settings = getNotificationsSettings(state);
+  if (settings[type].status === NOTIFICATION_SETTINGS_STATUS.ACTIVATED) {
     const {services} = options;
-    const [
-      firstContent,
-      secondContent,
-      thirdContent,
-    ] = await services.NotificationContent.getAllContentByMostRecent();
-    await unscheduleLocalNotifications(type)(dispatch, getState, options);
+    switch (type) {
+      case NOTIFICATION_TYPE.FINISH_COURSE: {
+        const [
+          firstContent,
+          secondContent,
+          thirdContent,
+        ] = await services.NotificationContent.getAllContentByMostRecent();
+        await unscheduleLocalNotifications(type)(dispatch, getState, options);
 
-    const user = getUser(state);
+        const user = getUser(state);
 
-    if (firstContent && !secondContent && !thirdContent) {
-      await dispatch(scheduleNotification(user?.givenName, firstContent, type, 0));
-      await dispatch(scheduleNotification(user?.givenName, firstContent, type, 1));
-      await dispatch(scheduleNotification(user?.givenName, firstContent, type, 2));
-    } else if (firstContent && secondContent && !thirdContent) {
-      await dispatch(scheduleNotification(user?.givenName, firstContent, type, 0));
-      await dispatch(scheduleNotification(user?.givenName, secondContent, type, 1));
-      await dispatch(scheduleNotification(user?.givenName, firstContent, type, 2));
-    } else if (firstContent && secondContent && thirdContent) {
-      await dispatch(scheduleNotification(user?.givenName, firstContent, type, 0));
-      await dispatch(scheduleNotification(user?.givenName, secondContent, type, 1));
-      await dispatch(scheduleNotification(user?.givenName, thirdContent, type, 2));
-    } else {
-      return;
+        // [2, 4, 6] days later
+        if (firstContent && !secondContent && !thirdContent) {
+          await dispatch(scheduleNotification(user?.givenName, firstContent, type, 0));
+          await dispatch(scheduleNotification(user?.givenName, firstContent, type, 1));
+          await dispatch(scheduleNotification(user?.givenName, firstContent, type, 2));
+        } else if (firstContent && secondContent && !thirdContent) {
+          await dispatch(scheduleNotification(user?.givenName, firstContent, type, 0));
+          await dispatch(scheduleNotification(user?.givenName, secondContent, type, 1));
+          await dispatch(scheduleNotification(user?.givenName, firstContent, type, 2));
+        } else if (firstContent && secondContent && thirdContent) {
+          await dispatch(scheduleNotification(user?.givenName, firstContent, type, 0));
+          await dispatch(scheduleNotification(user?.givenName, secondContent, type, 1));
+          await dispatch(scheduleNotification(user?.givenName, thirdContent, type, 2));
+        } else {
+          return;
+        }
+        break;
+      }
+      case NOTIFICATION_TYPE.SUGGESTION: {
+        const content = await services.NotificationContent.getRecommendationContent();
+        await unscheduleLocalNotifications(type)(dispatch, getState, options);
+        if (content) {
+          const user = getUser(state);
+          // [7, 14, 21, 28, 42, 56, 84] days later
+          await dispatch(scheduleNotification(user?.givenName, content, type, 0));
+          await dispatch(scheduleNotification(user?.givenName, content, type, 1));
+          await dispatch(scheduleNotification(user?.givenName, content, type, 2));
+          await dispatch(scheduleNotification(user?.givenName, content, type, 3));
+          await dispatch(scheduleNotification(user?.givenName, content, type, 5));
+          await dispatch(scheduleNotification(user?.givenName, content, type, 7));
+          await dispatch(scheduleNotification(user?.givenName, content, type, 11));
+        } else {
+          return;
+        }
+        break;
+      }
     }
     services.Analytics.logEvent(ANALYTICS_EVENT_TYPE.NOTIFICATIONS, {
       id: 'schedule',

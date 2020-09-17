@@ -113,7 +113,7 @@ export type PermissionStatus =
 
 export type PermissionType = 'camera' | 'notifications';
 
-export type NotificationType = 'finish-course';
+export type NotificationType = 'finish-course' | 'suggestion';
 
 export type UnlockedLevelInfo = {
   isUnlocked: boolean;
@@ -176,3 +176,5 @@ export type PartialRecord<K extends keyof any, T> = {
 };
 
 export type ValueOf<T> = T[keyof T];
+
+export type NotificationSettingStatus = 'idle' | 'activated' | 'deactivated';

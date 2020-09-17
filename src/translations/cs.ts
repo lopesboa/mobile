@@ -76,7 +76,7 @@ const translations: Translations = {
       description: 'K dokončení „ {{contentName}}“ zbývá několik otázek',
     },
     {
-      title: '{{givenName}}, už máš téměř hotovo ☑',
+      title: 'Máš na to, {{givenName}}! Už máš skoro hotovo ☑️',
       description: 'Dokonči svůj kurz: „ {{contentName}}“',
     },
   ],
@@ -145,6 +145,33 @@ const translations: Translations = {
   signInDesktop: 'Ne',
   signInMobile: 'Ano',
   step: 'Krok',
+  suggestion: 'Doporučení kurzu',
+  suggestionWordings: [
+    {
+      title: '{{givenName}}, tady je kurz pro vás! 👀',
+      description: 'Zjistěte to s tímto kurzem „{{contentName}}“',
+    },
+    {
+      title: 'Máte náladu na učení {{givenName}}? 🚀',
+      description: 'Podívejte se na „{{contentName}}“',
+    },
+    {title: 'Vaše mise, pokud ji přijmete 😎', description: 'Podívejte se na „{{contentName}}“'},
+    {
+      title: '{{givenName}}, vaše výzva dne na vás čeká! 😉',
+      description: 'Začít kurz „{{contentName}}“',
+    },
+    {title: '{{givenName}}, přijměte výzvu 💪', description: 'Začít kurz „{{contentName}}“'},
+    {title: '{{givenName}}, rozšiřte si obzory!', description: 'Zjistěte více o „{{contentName}}“'},
+    {title: '{{givenName}}, je čas se učit! 💪', description: 'Začít kurz „{{contentName}}“'},
+    {
+      title: 'Je čas to (znovu) odpálit {{givenName}} 🚀',
+      description: 'Začít tento kurz „{{contentName}}“',
+    },
+    {
+      title: '{{givenName}}, vsadím se, že to zvládnete! 💪',
+      description: 'Začít kurz „{{contentName}}“',
+    },
+  ],
   typeHere: 'Zapište sem',
   validate: 'Potvrdit',
   version: 'Verze',

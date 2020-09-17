@@ -54,7 +54,7 @@ const translations: Translations = {
       description: '\\"{{contentName}}\\" kursunu bitirelim',
     },
     {
-      title: '{{givenName}}, bu meydan okumayı kabul et 💪',
+      title: 'Bu meydan okumayı kabul et {{givenName}} 💪',
       description: 'Kursu tamamla: \\"{{contentName}}\\"',
     },
     {
@@ -76,7 +76,7 @@ const translations: Translations = {
       description: '\\"{{contentName}}\\" kursunu tamamlamak için birkaç sorudan fazlası',
     },
     {
-      title: '{{givenName}}, neredeyse bitirdin ☑',
+      title: 'Hadi {{givenName}}! Neredeyse bitti ☑️',
       description: 'Kursunu tamamla: \\"{{contentName}}\\"',
     },
   ],
@@ -144,6 +144,45 @@ const translations: Translations = {
   signInDesktop: 'Hayır',
   signInMobile: 'Evet',
   step: 'Adım',
+  suggestion: 'Ders önerisi',
+  suggestionWordings: [
+    {
+      title: '{{givenName}}, işte sizin için bir ders! 👀',
+      description: '\\"{{contentName}}\\" dersiyle öğrenin',
+    },
+    {
+      title: '{{givenName}} öğrenme havasında mısınız? 🚀',
+      description: '\\"{{contentName}}\\" içeriğine göz atın',
+    },
+    {
+      title: 'Kabul etmeyi tercih ederseniz işte göreviniz 😎',
+      description: '\\"{{contentName}}\\" içeriğine göz atın',
+    },
+    {
+      title: '{{givenName}}, günün meydan okuması sizi bekliyor! 😉',
+      description: '\\"{{contentName}}\\" dersini başlatın',
+    },
+    {
+      title: '{{givenName}}, meydan okumayı kabul et 💪',
+      description: '\\"{{contentName}}\\" dersini başlatın',
+    },
+    {
+      title: '{{givenName}}, ufkunuzu genişletin!',
+      description: '\\"{{contentName}}\\" hakkında daha fazla şey öğrenin',
+    },
+    {
+      title: '{{givenName}}, şimdi öğrenme zamanı!',
+      description: '\\"{{contentName}}\\" dersini başlatın',
+    },
+    {
+      title: 'Şimdi yeniden başlama zamanı {{givenName}} 🚀',
+      description: '\\"{{contentName}}\\" adlı bu dersi başlatın',
+    },
+    {
+      title: '{{givenName}}, bunu yapabileceğinize bahse girerim! 💪',
+      description: '\\"{{contentName}}\\" dersini başlatın',
+    },
+  ],
   typeHere: 'Buraya yazın',
   validate: 'Onayla',
   version: 'Sürüm',

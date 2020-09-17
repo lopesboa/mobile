@@ -10,7 +10,6 @@ import {
   SPECIFIC_CONTENT_REF,
   PERMISSION_STATUS,
   ERROR_TYPE,
-  NOTIFICATION_TYPE,
 } from '../../const';
 import {createBrand} from '../../__fixtures__/brands';
 import {createUser} from '../../__fixtures__/user';
@@ -55,7 +54,6 @@ import {
   getEngineVersions,
   isGodModeEnabled,
   isFastSlideEnabled,
-  isFinishCourseNotificationActive,
   getNotificationsSettings,
   getCurrentScreenName,
   getCurrentTabName,
@@ -762,40 +760,28 @@ describe('State-extract', () => {
     });
   });
 
-  describe('isFinishCourseNotificationActive', () => {
-    it('should get value from state', () => {
-      const state = createState({
-        notifications: {
-          finishCourse: {
-            type: NOTIFICATION_TYPE.FINISH_COURSE,
+  describe('getNotificationsSettings', () => {
+    it('should all notifications settings from state', () => {
+      const notifications = {
+        settings: {
+          'finish-course': {
+            label: 'reminder',
+            isActive: false,
+          },
+          suggestion: {
             label: 'reminder',
             isActive: false,
           },
         },
-      });
-
-      const result = isFinishCourseNotificationActive(state);
-
-      expect(result).toEqual(false);
-    });
-  });
-
-  describe('getNotificationsSettings', () => {
-    it('should get value from state', () => {
-      const notifications = {
-        finishCourse: {
-          id: 'reminder',
-          label: 'reminder',
-          isActive: false,
-        },
       };
+
       const state = createState({
         notifications,
       });
 
-      const result = getNotificationsSettings(['finishCourse'])(state);
+      const result = getNotificationsSettings(state);
 
-      expect(result).toEqual(notifications);
+      expect(result).toEqual(notifications.settings);
     });
   });
 

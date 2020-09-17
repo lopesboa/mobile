@@ -57,7 +57,7 @@ const translations: Translations = {
       description: 'Terminemos \\"{{contentName}}\\"',
     },
     {
-      title: '{{givenName}}, acepta el desafío 💪',
+      title: 'Acepte el reto, {{givenName}} 💪',
       description: 'Completa el curso: \\"{{contentName}}\\"',
     },
     {
@@ -85,7 +85,7 @@ const translations: Translations = {
       description: 'Más que unas pocas preguntas para completar \\"{{contentName}}\\"',
     },
     {
-      title: '{{givenName}}, casi has terminado ☑',
+      title: '¡Venga, {{givenName}}! Casi ha terminado ☑️',
       description: 'Completa tu curso: \\"{{contentName}}\\"',
     },
   ],
@@ -154,6 +154,45 @@ const translations: Translations = {
   signInDesktop: 'No',
   signInMobile: 'Sí',
   step: 'Paso',
+  suggestion: 'Sugerencia de curso',
+  suggestionWordings: [
+    {
+      title: '{{givenName}}, aquí hay un curso para ti 👀',
+      description: 'Descúbrelo con este curso: \\"{{contentName}}\\"',
+    },
+    {
+      title: '¿Tienes ganas de aprender, {{givenName}}? 🚀',
+      description: 'Echa un vistazo a \\"{{contentName}}\\"',
+    },
+    {
+      title: 'Tu misión, si decides aceptarla 😎',
+      description: 'Echa un vistazo a \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, tu desafío del día te espera 😉',
+      description: 'Empieza el curso \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, acepta el desafío 💪',
+      description: 'Empieza el curso \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, ¡amplía tus horizontes!',
+      description: 'Obtén más información sobre \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, ¡es hora de aprender! 😉',
+      description: 'Empieza el curso \\"{{contentName}}\\"',
+    },
+    {
+      title: 'Es hora de lanzar {{givenName}} 🚀',
+      description: 'Empieza este curso \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, ¡seguro que puedes hacerlo! 💪',
+      description: 'Empieza el curso \\"{{contentName}}\\"',
+    },
+  ],
   typeHere: 'Escribe aquí',
   validate: 'Validar',
   version: 'Licencia',

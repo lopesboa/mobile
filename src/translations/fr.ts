@@ -60,11 +60,11 @@ const translations: Translations = {
       description: 'Terminez le cours \\"{{contentName}}\\"',
     },
     {
-      title: 'Votre défi du jour {{givenName}} ? 😉',
+      title: 'Votre défi du jour {{givenName}} ! 😉',
       description: 'Terminez le cours \\"{{contentName}}\\"',
     },
     {
-      title: '{{givenName}}, même pas cap 😉',
+      title: '{{givenName}}, lancez-vous ! 😉',
       description: 'Terminez votre cours : \\"{{contentName}}\\"',
     },
     {
@@ -128,7 +128,7 @@ const translations: Translations = {
   ],
   permissionNotificationHeadline: 'Bravo, vous prenez en main votre formation !',
   permissionNotificationDescription:
-    'Bravo, vous prenez en main votre formation ! Continuez à progresser en activant vos notifications personnalisées. Promis, pas de spam.',
+    'Continuez à progresser en activant vos notifications personnalisées.',
   permissionNotificationAuthorize: 'Autoriser les notifications',
   currentlyDoingReminder: 'Rappel leçons en cours',
   yesNotifyMe: 'Activer les notifications',
@@ -157,6 +157,42 @@ const translations: Translations = {
   signInDesktop: 'Non',
   signInMobile: 'Oui',
   step: 'Étape',
+  suggestion: 'Recommandations de cours',
+  suggestionWordings: [
+    {
+      title: '{{givenName}}, voici un cours qui devrait vous plaire ! 👀',
+      description: 'Découvrez ce cours : \\"{{contentName}}\\"',
+    },
+    {
+      title: "Envie d'apprendre {{givenName}} ?  🚀",
+      description: 'Découvrez \\"{{contentName}}\\"',
+    },
+    {title: "Votre mission si vous l'acceptez 😎", description: 'Découvrez \\"{{contentName}}\\"'},
+    {
+      title: '{{givenName}}, votre défi du jours vous attend ! 😉',
+      description: 'Commencez le cours \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, relevez le défi  💪',
+      description: 'Commencez le cours \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, étendez vos horizons !',
+      description: 'Découvrez \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, soyez prêt pour votre cours ! 😉',
+      description: 'Commencez le cours \\"{{contentName}}\\"',
+    },
+    {
+      title: "C'est le moment de vous (re)lancer {{givenName}} 🚀",
+      description: 'Commencez ce cours : \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, je parie que vous pouvez le faire ! 💪',
+      description: 'Commencez ce cours : \\"{{contentName}}\\"',
+    },
+  ],
   typeHere: 'Saisissez ici',
   validate: 'Valider',
   version: 'Version',

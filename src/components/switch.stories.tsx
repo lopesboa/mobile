@@ -9,6 +9,7 @@ const SwitchWithState = () => {
   async function handleOnPress() {
     await setIsActive((prev) => !prev);
   }
+
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <Switch isActive={isActive} onPress={handleOnPress} testID="switch" />

@@ -53,7 +53,7 @@ const translations: Translations = {
       description: '\\"{{contentName}}\\"(을)를 끝냅시다',
     },
     {
-      title: '{{givenName}}님, 도전에 응해 주세요 💪',
+      title: '{{givenName}}님, 도전을 받아들이세요 💪',
       description: '\\"{{contentName}}\\" 코스를 완료해 주세요',
     },
     {
@@ -148,6 +148,36 @@ const translations: Translations = {
   signInDesktop: '아니요',
   signInMobile: '예',
   step: '단계',
+  suggestion: '강의 추천',
+  suggestionWordings: [
+    {
+      title: '{{givenName}} 님, 여기 귀하에게 적합한 강의가 있습니다! 👀',
+      description: '이 \\"{{contentName}}\\" 강의로 알아보기',
+    },
+    {
+      title: '학습할 기분이 드나요, {{givenName}} 님? 🚀',
+      description: '\\"{{contentName}}\\" 살펴보기',
+    },
+    {title: '귀하의 임무, 받아들여야 할까요 😎', description: '\\"{{contentName}}\\" 살펴보기'},
+    {
+      title: '{{givenName}} 님, 오늘의 도전이 기다리고 있습니다! 😉',
+      description: '\\"{{contentName}}\\" 강의 시작',
+    },
+    {title: '{{givenName}} 님, 도전하세요 💪', description: '\\"{{contentName}}\\" 강의 시작'},
+    {
+      title: '{{givenName}} 님, 시야를 넓히세요!',
+      description: '\\"{{contentName}}\\"에 대해 더 알아보기',
+    },
+    {
+      title: '{{givenName}} 님, 학습할 시간입니다! 😉',
+      description: '\\"{{contentName}}\\" 강의 시작',
+    },
+    {
+      title: '(다시) 시작할 시간입니다, {{givenName}} 님 🚀',
+      description: '이 \\"{{contentName}}\\" 강의 시작',
+    },
+    {title: '{{givenName}} 님, 할 수 있습니다! 💪', description: '\\"{{contentName}}\\" 강의 시작'},
+  ],
   typeHere: '여기에 입력하세요',
   validate: '인증하기',
   version: '버전',

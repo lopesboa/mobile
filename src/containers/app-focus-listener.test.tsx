@@ -63,7 +63,7 @@ describe('AppState[Active]', () => {
     );
 
     expect(scheduleNotifications).toHaveBeenCalledTimes(0);
-    expect(unscheduleLocalNotifications).toHaveBeenCalledTimes(1);
+    expect(unscheduleLocalNotifications).toHaveBeenCalledTimes(2);
   });
 });
 
@@ -93,7 +93,7 @@ describe('AppState[Background]', () => {
       />,
     );
 
-    expect(scheduleNotifications).toHaveBeenCalledTimes(1);
+    expect(scheduleNotifications).toHaveBeenCalledTimes(2);
     expect(unscheduleLocalNotifications).toHaveBeenCalledTimes(0);
   });
 });

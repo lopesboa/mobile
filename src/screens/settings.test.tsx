@@ -7,13 +7,71 @@ import {
   createNotificationsState,
 } from '../__fixtures__/store';
 import {createProgression} from '../__fixtures__/progression';
-import {ENGINE, CONTENT_TYPE, PERMISSION_STATUS, NOTIFICATION_TYPE} from '../const';
+import {
+  ENGINE,
+  CONTENT_TYPE,
+  PERMISSION_STATUS,
+  NOTIFICATION_TYPE,
+  NOTIFICATION_SETTINGS_STATUS,
+} from '../const';
 import {TestContextProvider} from '../utils/tests';
 import {createNavigation} from '../__fixtures__/navigation';
 import type {ConnectedStateProps} from './settings';
-import {Component as Settings} from './settings';
+import {Component as Settings, transformNotificationSettings} from './settings';
 
 describe('Settings', () => {
+  describe('transformNotificationSettings', () => {
+    it('keeps the order of the elements', () => {
+      const expected = [
+        {
+          label: 'Reminder',
+          status: NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
+          type: 'finish-course',
+        },
+        {
+          label: 'Suggestion',
+          status: NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
+          type: 'suggestion',
+        },
+      ];
+      const result = transformNotificationSettings({
+        'finish-course': {
+          label: 'Reminder',
+          status: NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
+        },
+        suggestion: {
+          label: 'Suggestion',
+          status: NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
+        },
+      });
+      expect(result).toEqual(expected);
+    });
+    it('reorders the elements', () => {
+      const expected = [
+        {
+          label: 'Reminder',
+          status: NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
+          type: 'finish-course',
+        },
+        {
+          label: 'Suggestion',
+          status: NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
+          type: 'suggestion',
+        },
+      ];
+      const result = transformNotificationSettings({
+        suggestion: {
+          label: 'Suggestion',
+          status: NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
+        },
+        'finish-course': {
+          label: 'Reminder',
+          status: NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
+        },
+      });
+      expect(result).toEqual(expected);
+    });
+  });
   describe('props', () => {
     it('should return the accurate props', () => {
       const {mapStateToProps} = require('./settings');
@@ -33,10 +91,15 @@ describe('Settings', () => {
         slides: [],
         progression,
         notifications: {
-          finishCourse: {
-            type: NOTIFICATION_TYPE.FINISH_COURSE,
-            label: 'Reminder',
-            isActive: false,
+          settings: {
+            'finish-course': {
+              label: 'Reminder',
+              status: NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
+            },
+            suggestion: {
+              label: 'Suggestion',
+              status: NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
+            },
           },
         },
         permissions: createPermissionsState({
@@ -49,10 +112,13 @@ describe('Settings', () => {
         canReceiveNotifications: true,
         currentNotificationsPermission: PERMISSION_STATUS.GRANTED,
         notificationsSettings: {
-          finishCourse: {
-            type: NOTIFICATION_TYPE.FINISH_COURSE,
+          'finish-course': {
             label: 'Reminder',
-            isActive: false,
+            status: NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
+          },
+          suggestion: {
+            label: 'Suggestion',
+            status: NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
           },
         },
       };
@@ -63,7 +129,7 @@ describe('Settings', () => {
 
   it('sets finish-course notification to false if notification permission is not granted', async () => {
     const navigation = createNavigation({});
-    const toggleFinishCourseNotification = jest.fn();
+    const toggleNotificationSetting = jest.fn();
     const notificationsSettings = createNotificationsState();
     const requestNotificationsPermission = jest.fn(() =>
       Promise.resolve('denied'),
@@ -75,18 +141,27 @@ describe('Settings', () => {
           canReceiveNotifications={false}
           notificationsSettings={notificationsSettings}
           requestNotificationsPermission={requestNotificationsPermission}
-          toggleFinishCourseNotification={toggleFinishCourseNotification}
+          toggleNotificationSetting={toggleNotificationSetting}
         />
       </TestContextProvider>,
     );
 
-    expect(toggleFinishCourseNotification).toHaveBeenCalledTimes(1);
-    expect(toggleFinishCourseNotification).toHaveBeenCalledWith(false);
+    expect(toggleNotificationSetting).toHaveBeenCalledTimes(2);
+    expect(toggleNotificationSetting).nthCalledWith(
+      1,
+      NOTIFICATION_TYPE.FINISH_COURSE,
+      NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
+    );
+    expect(toggleNotificationSetting).nthCalledWith(
+      2,
+      NOTIFICATION_TYPE.SUGGESTION,
+      NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
+    );
   });
 
-  it('toggles finish-course notification if notification permission is granted', async () => {
+  it('toggles finish-course and suggestion notification if notification permission is granted', async () => {
     const navigation = createNavigation({});
-    const toggleFinishCourseNotification = jest.fn();
+    const toggleNotificationSetting = jest.fn();
     const notificationsSettings = createNotificationsState();
     const requestNotificationsPermission = jest.fn(() =>
       Promise.resolve('granted'),
@@ -98,21 +173,23 @@ describe('Settings', () => {
           notificationsSettings={notificationsSettings}
           canReceiveNotifications
           requestNotificationsPermission={requestNotificationsPermission}
-          toggleFinishCourseNotification={toggleFinishCourseNotification}
+          toggleNotificationSetting={toggleNotificationSetting}
         />
       </TestContextProvider>,
     );
 
     const button = component.root.find((el) => el.props.testID === 'settings-notifications');
-    await button.props.onSettingToggle('finish-course');
+    await button.props.onSettingToggle(NOTIFICATION_TYPE.FINISH_COURSE);
+    await button.props.onSettingToggle(NOTIFICATION_TYPE.SUGGESTION);
 
-    expect(toggleFinishCourseNotification).toHaveBeenCalledTimes(1);
+    expect(toggleNotificationSetting).toHaveBeenCalledTimes(2);
+    expect(toggleNotificationSetting).toHaveBeenCalledTimes(2);
     expect(requestNotificationsPermission).toHaveBeenCalledTimes(0);
   });
 
-  it('does not toggles finish-course notification if notification permission is not granted', async () => {
+  it('does not toggles finish-course and suggestion notification if notification permission is not granted', async () => {
     const navigation = createNavigation({});
-    const toggleFinishCourseNotification = jest.fn();
+    const toggleNotificationSetting = jest.fn();
     const notificationsSettings = createNotificationsState();
     const requestNotificationsPermission = jest.fn(() =>
       Promise.resolve('granted'),
@@ -124,22 +201,24 @@ describe('Settings', () => {
           notificationsSettings={notificationsSettings}
           canReceiveNotifications={false}
           requestNotificationsPermission={requestNotificationsPermission}
-          toggleFinishCourseNotification={toggleFinishCourseNotification}
+          toggleNotificationSetting={toggleNotificationSetting}
         />
       </TestContextProvider>,
     );
 
     const button = component.root.find((el) => el.props.testID === 'settings-notifications');
-    await button.props.onSettingToggle('finish-course');
+    await button.props.onSettingToggle(NOTIFICATION_TYPE.FINISH_COURSE);
+    await button.props.onSettingToggle(NOTIFICATION_TYPE.SUGGESTION);
 
-    expect(toggleFinishCourseNotification).toHaveBeenCalledTimes(1);
-    expect(requestNotificationsPermission).toHaveBeenCalledTimes(1);
+    expect(toggleNotificationSetting).toHaveBeenCalledTimes(2);
+    expect(toggleNotificationSetting).toHaveBeenCalledTimes(2);
+    expect(requestNotificationsPermission).toHaveBeenCalledTimes(2);
   });
 
   it('handles Android BackHandler', () => {
     const BackHandlerModule = require('../containers/with-backhandler');
     const navigation = createNavigation({});
-    const toggleFinishCourseNotification = jest.fn();
+    const toggleNotificationSetting = jest.fn();
     const notificationsSettings = createNotificationsState();
     const requestNotificationsPermission = jest.fn(() =>
       Promise.resolve('granted'),
@@ -152,7 +231,7 @@ describe('Settings', () => {
           notificationsSettings={notificationsSettings}
           canReceiveNotifications
           requestNotificationsPermission={requestNotificationsPermission}
-          toggleFinishCourseNotification={toggleFinishCourseNotification}
+          toggleNotificationSetting={toggleNotificationSetting}
         />
       </TestContextProvider>,
     );

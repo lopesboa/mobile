@@ -11,18 +11,23 @@ import {selectCard} from '../redux/actions/catalog/cards/select';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import {getToken, getCurrentScreenName} from '../redux/utils/state-extract';
 import theme from '../modules/theme';
-import {PERMISSION_STATUS, PERMISSION_RECURENCE} from '../const';
+import {PERMISSION_STATUS, PERMISSION_RECURENCE, NOTIFICATION_SETTINGS_STATUS} from '../const';
 import {StoreState} from '../redux/store';
+import {toggle} from '../redux/actions/notifications/settings';
+import {NotificationType} from 'src/types';
+import type {State as NotificationsSettingsState} from '../redux/reducers/notifications/settings';
 
 export interface ConnectedStateProps {
   isFetching: boolean;
   isFocused: boolean;
   appSession: number;
   notificationStatus: string;
+  notificationSettings: NotificationsSettingsState;
 }
 
 interface ConnectedDispatchProps {
   selectCard: typeof selectCard;
+  toggle: typeof toggle;
 }
 
 type ScreenParams = {
@@ -45,14 +50,28 @@ class HomeScreen extends React.PureComponent<Props> {
 
   componentDidMount() {
     this.showNotifyMe();
+    this.checkIddle(this.props.notificationSettings, this.props.notificationStatus);
   }
 
   componentDidUpdate() {
     this.showNotifyMe();
   }
 
+  checkIddle(notificationSettings: NotificationsSettingsState, notificationStatus: string): void {
+    Object.keys(notificationSettings).forEach((key) => {
+      const type: NotificationType = key as NotificationType;
+      if (
+        notificationSettings[type].status === NOTIFICATION_SETTINGS_STATUS.IDLE &&
+        notificationStatus === PERMISSION_STATUS.GRANTED
+      ) {
+        this.props.toggle(type, NOTIFICATION_SETTINGS_STATUS.ACTIVATED);
+      }
+    });
+  }
+
   showNotifyMe() {
     const {notificationStatus, appSession, navigation} = this.props;
+
     if (Platform.OS === 'android') return false;
     if (
       notificationStatus === PERMISSION_STATUS.UNDETERMINED ||
@@ -110,10 +129,12 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
   isFocused: getIsFocusedState(state),
   appSession: state.appSession,
   notificationStatus: state.permissions.notifications,
+  notificationSettings: state.notifications.settings,
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {
   selectCard,
+  toggle,
 };
 
 export {HomeScreen as Component};

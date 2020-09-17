@@ -56,15 +56,15 @@ const translations: Translations = {
       description: 'Let\'s finish \\"{{contentName}}\\"',
     },
     {
-      title: '{{givenName}}, take up the challenge 💪',
+      title: 'Do you accept the challenge {{givenName}}? 💪',
       description: 'Complete the course: \\"{{contentName}}\\"',
     },
     {
-      title: '{{givenName}}, your challenge of the day ! 😉',
+      title: '{{givenName}}, your challenge of the day! 😉',
       description: 'Complete the course: \\"{{contentName}}\\"',
     },
     {
-      title: "{{givenName}}, it's time to learn ! 😉",
+      title: "{{givenName}}, it's time to learn! 😉",
       description: 'Continue your course: \\"{{contentName}}\\"',
     },
     {
@@ -72,19 +72,19 @@ const translations: Translations = {
       description: 'Complete the course: \\"{{contentName}}\\"',
     },
     {
-      title: 'What is done is no longer to be done 🙃',
+      title: "Once it's done, it's done 🙃",
       description: 'Complete the course: \\"{{contentName}}\\"',
     },
     {
-      title: 'Your course is almost completed ! ✓',
+      title: 'Your course is almost completed! ✓',
       description: 'Complete the course: \\"{{contentName}}\\"',
     },
     {
       title: '{{givenName}}, you are so close! 🙃',
-      description: 'More than a few questions to complete \\"{{contentName}}\\"',
+      description: 'Just a few questions to complete \\"{{contentName}}\\"',
     },
     {
-      title: '{{givenName}}, you have almost finished ☑',
+      title: 'Come on {{givenName}}, almost finished ☑',
       description: 'Complete your course: \\"{{contentName}}\\"',
     },
   ],
@@ -152,6 +152,45 @@ const translations: Translations = {
   signInDesktop: 'No',
   signInMobile: 'Yes',
   step: 'Step',
+  suggestion: 'Course recommendations',
+  suggestionWordings: [
+    {
+      title: '{{givenName}}, here is a course for you! 👀',
+      description: 'Find out with this course \\"{{contentName}}\\"',
+    },
+    {
+      title: 'In the mood for learning {{givenName}}? 🚀',
+      description: 'Check out \\"{{contentName}}\\"',
+    },
+    {
+      title: 'Your mission, should you choose to accept it 😎',
+      description: 'Check out \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, your challenge of the day awaits you! 😉',
+      description: 'Start the course \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, take on the challenge 💪',
+      description: 'Start the course \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, broaden your horizons!',
+      description: 'Find out more about \\"{{contentName}}\\"',
+    },
+    {
+      title: "{{givenName}}, it's time to learn! 😉",
+      description: 'Start the course \\"{{contentName}}\\"',
+    },
+    {
+      title: "It's time to (re) launch {{givenName}} 🚀",
+      description: 'Start this course \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, I bet you can do it! 💪',
+      description: 'Start the course \\"{{contentName}}\\"',
+    },
+  ],
   typeHere: 'Type here',
   validate: 'Submit',
   version: 'Version',

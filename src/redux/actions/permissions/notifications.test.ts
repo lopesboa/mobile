@@ -49,7 +49,7 @@ describe('Permissions', () => {
           status: PERMISSION_STATUS.UNDETERMINED,
         },
       };
-      expect(dispatch.mock.calls.length).toBe(3);
+      expect(dispatch.mock.calls.length).toBe(4);
       expect(dispatch.mock.calls[0]).toEqual([expected]);
       expect(dispatch.mock.calls[1]).toEqual([expectedChangeAction]);
       expect(services.Permissions.checkNotifications.mock.calls.length).toBe(1);
@@ -71,7 +71,7 @@ describe('Permissions', () => {
           status: PERMISSION_STATUS.GRANTED,
         },
       };
-      expect(dispatch.mock.calls.length).toBe(3);
+      expect(dispatch.mock.calls.length).toBe(4);
       expect(dispatch.mock.calls[0]).toEqual([expected]);
       expect(dispatch.mock.calls[1]).toEqual([expectedChangeAction]);
       expect(services.Permissions.checkNotifications.mock.calls.length).toBe(1);
@@ -198,7 +198,7 @@ describe('Permissions', () => {
             status: PERMISSION_STATUS.DENIED,
           },
         };
-        expect(dispatch.mock.calls.length).toBe(3);
+        expect(dispatch.mock.calls.length).toBe(4);
         expect(dispatch.mock.calls[0]).toEqual([expected]);
         expect(dispatch.mock.calls[1]).toEqual([expectedChangeAction]);
         expect(handleDeny.mock.calls.length).toBe(1);
@@ -242,6 +242,39 @@ describe('Permissions', () => {
           status: PERMISSION_STATUS.UNDETERMINED,
         });
       });
+
+
+
+      it('when permission is granted', async () => {
+        const {getState, dispatch} = createStore(PERMISSION_STATUS.UNDETERMINED);
+        const handleDeny = jest.fn();
+        const services = {
+          Analytics: createFakeAnalytics(),
+          Permissions: {
+            checkNotifications: jest.fn(() =>
+              Promise.resolve({status: PERMISSION_STATUS.UNDETERMINED}),
+            ),
+            requestNotifications: jest.fn(() =>
+              Promise.resolve({status: PERMISSION_STATUS.GRANTED}),
+            ),
+          },
+        };
+        // @ts-ignore we dont want to mock the entire services object
+        await request('foo bar baz', handleDeny)(dispatch, getState, {services});
+        expect(dispatch.mock.calls.length).toBe(4);
+        expect(dispatch.mock.calls[0]).toEqual([expected]);
+        expect(handleDeny.mock.calls.length).toBe(0);
+        expect(services.Permissions.requestNotifications.mock.calls.length).toBe(1);
+        expect(services.Permissions.requestNotifications.mock.calls[0]).toEqual([
+          ['alert', 'badge', 'sound'],
+        ]);
+
+        expect(services.Analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.PERMISSION, {
+          type: 'notifications',
+          status: PERMISSION_STATUS.GRANTED,
+        });
+      });
+
       it('should open settings if notification permission is denied', async () => {
         const {getState, dispatch} = createStore(PERMISSION_STATUS.DENIED);
         const handleDeny = jest.fn();

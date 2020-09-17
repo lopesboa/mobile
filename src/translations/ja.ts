@@ -53,7 +53,7 @@ const translations: Translations = {
       description: '\\"{{contentName}}\\"の課程を終わらせましょう',
     },
     {
-      title: '{{givenName}}さん、さあ、挑戦してみましょう 💪',
+      title: '{{givenName}}さん、挑戦してみましょう 💪',
       description: '\\"{{contentName}}\\"の課程を完了させましょう ',
     },
     {
@@ -81,7 +81,7 @@ const translations: Translations = {
       description: '\\"{{contentName}}\\"の完了まであと2、3問です',
     },
     {
-      title: '{{givenName}}さん、あともう少しで終わりですよ ☑',
+      title: 'Come on {{givenName}}さん、がんばって! あともう少しで終わりですよ ☑️',
       description: '\\"{{contentName}}\\"の課程を完了させましょう ',
     },
   ],
@@ -149,6 +149,42 @@ const translations: Translations = {
   signInDesktop: 'いいえ',
   signInMobile: 'はい',
   step: 'ステップ',
+  suggestion: 'コースの提案',
+  suggestionWordings: [
+    {
+      title: '{{givenName}}さん、あなたのためのコースはこれです！👀',
+      description: 'このコース「{{contentName}}」について知る',
+    },
+    {
+      title: '{{givenName}}さん、学びたい気分ですか？🚀',
+      description: '「{{contentName}}」をチェック',
+    },
+    {title: 'ミッションを受け入れてみますか😎', description: '「{{contentName}}」をチェック'},
+    {
+      title: '{{givenName}}さん、今日の課題があなたを待っていますよ！',
+      description: '「{{contentName}}」のコースを開始',
+    },
+    {
+      title: '{{givenName}}さん、課題に挑戦しましょう💪',
+      description: '「{{contentName}}」のコースを開始',
+    },
+    {
+      title: '{{givenName}}さん、視野を広げましょう！',
+      description: '「{{contentName}}」についてさらに知る',
+    },
+    {
+      title: '{{givenName}}さん、学習の時間です！😉',
+      description: '「{{contentName}}」のコースを開始',
+    },
+    {
+      title: '{{givenName}}を開始（再開）するときです🚀',
+      description: 'この「{{contentName}}」のコースを開始',
+    },
+    {
+      title: '{{givenName}}さん、あなたならできますよ！💪',
+      description: '「{{contentName}}」のコースを開始',
+    },
+  ],
   typeHere: 'ここに入力します',
   validate: '回答',
   version: 'バージョン',

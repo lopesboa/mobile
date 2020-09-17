@@ -1,7 +1,7 @@
 import type {QCMQuestion, Lesson} from '../types/coorpacademy/progression-engine';
 
 import type {StoreState} from '../redux/store';
-import {PERMISSION_STATUS, NOTIFICATION_TYPE} from '../const';
+import {PERMISSION_STATUS, NOTIFICATION_SETTINGS_STATUS} from '../const';
 import {createBrand} from './brands';
 import {createMapObject, createStoreState, createAuthenticationState} from './store';
 import {createLevel} from './levels';
@@ -144,6 +144,7 @@ describe('storeFixture', () => {
 
     const catalogState = {
       heroRef: undefined,
+      searchRef: undefined,
       sectionsRef: undefined,
       entities: {
         cards: {},
@@ -262,11 +263,13 @@ describe('storeFixture', () => {
       data: data,
       errors: {
         isVisible: false,
+        type: undefined,
       },
       select: null,
       isValidating: false,
       search: {
         isFetching: false,
+        value: undefined,
       },
       ui: {
         answers: {},
@@ -294,10 +297,15 @@ describe('storeFixture', () => {
       catalog: catalogState,
       permissions: permissionsState,
       notifications: {
-        finishCourse: {
-          type: NOTIFICATION_TYPE.FINISH_COURSE,
-          label: 'Weekly Reminder',
-          isActive: true,
+        settings: {
+          'finish-course': {
+            label: 'Weekly Reminder',
+            status: NOTIFICATION_SETTINGS_STATUS.ACTIVATED,
+          },
+          suggestion: {
+            label: 'You might like it',
+            status: NOTIFICATION_SETTINGS_STATUS.ACTIVATED,
+          },
         },
       },
       authentication: authenticationState,

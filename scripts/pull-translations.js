@@ -239,6 +239,10 @@ const generate = async (locale: string) => {
     signInDesktop: formatTranslation(moocLoginTranslations.mobile.signInDesktop),
     signInMobile: formatTranslation(moocLoginTranslations.mobile.signInMobile),
     step: formatTranslation(moocLoginTranslations.mobile.step),
+    suggestion: formatTranslation(moocTranslations.mobile.notificationsTypes.suggestion),
+    suggestionWordings: formatNotificationWordings(
+      Object.values(moocTranslations.mobile.notificationsWordings.suggestion),
+    ),
     typeHere: formatTranslation(playerTranslations['Type here']),
     validate: formatTranslation(playerTranslations.Validate),
     version: formatTranslation(moocTranslations.mobile.version.title),

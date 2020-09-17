@@ -64,6 +64,7 @@ describe('Services', () => {
       },
       NotificationContent: {
         getAllContentByMostRecent: expect.any(Function),
+        getRecommendationContent: expect.any(Function),
       },
       Progressions: {
         acceptExtraLife: expect.any(Function),

@@ -10,6 +10,7 @@ export type State = ScheduledNotification;
 
 const initialState: State = {
   [NOTIFICATION_TYPE.FINISH_COURSE]: [],
+  [NOTIFICATION_TYPE.SUGGESTION]: [],
 };
 
 const reducer = (state: State = initialState, action: Action): State => {

@@ -56,7 +56,7 @@ const translations: Translations = {
       description: 'Vamos terminar \\"{{contentName}}\\"',
     },
     {
-      title: '{{givenName}}, aceite o desafio 💪',
+      title: 'Aceita o desafio {{givenName}} 💪',
       description: 'Conclua o curso: \\"{{contentName}}\\"',
     },
     {
@@ -84,7 +84,7 @@ const translations: Translations = {
       description: 'Mais do que algumas perguntas para concluir \\"{{contentName}}\\"',
     },
     {
-      title: '{{givenName}}, está quase a terminar ☑',
+      title: 'Vamos {{givenName}}! Quase no fim ☑️',
       description: 'Conclua o seu curso: \\"{{contentName}}\\"',
     },
   ],
@@ -152,6 +152,39 @@ const translations: Translations = {
   signInDesktop: 'Não',
   signInMobile: 'Sim',
   step: 'Passo',
+  suggestion: 'Sugestão de curso',
+  suggestionWordings: [
+    {
+      title: '{{givenName}}, aqui está um curso para ti! 👀',
+      description: 'Descobre com este curso \\"{{contentName}}\\"',
+    },
+    {title: 'Apetece-te aprender {{givenName}}? 🚀', description: 'Vê \\"{{contentName}}\\"'},
+    {title: 'Está é a tua missão, se a aceitares 😎', description: 'Vê \\"{{contentName}}\\"'},
+    {
+      title: '{{givenName}}, o teu desafio diário espera-te! 😉',
+      description: 'Iniciar o curso \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, aceita o desafio 💪',
+      description: 'Iniciar o curso \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, expande os teus horizontes!',
+      description: 'Descobre mais sobre \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, chegou o momento de aprender! 😉',
+      description: 'Iniciar o curso \\"{{contentName}}\\"',
+    },
+    {
+      title: 'É o momento de fazer o (re)lançamento {{givenName}} 🚀',
+      description: 'Iniciar este curso \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, tenho a certeza de que consegues! 💪',
+      description: 'Iniciar o curso \\"{{contentName}}\\"',
+    },
+  ],
   typeHere: 'Escreva aqui',
   validate: 'Validar',
   version: 'Versão',

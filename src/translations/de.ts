@@ -85,7 +85,7 @@ const translations: Translations = {
       description: 'Mehr als ein paar Frage, um „{{contentName}}“ abzuschließen',
     },
     {
-      title: '{{givenName}}, Sie sind fast fertig ☑',
+      title: 'Komm schon {{givenName}}! Du hast es fast geschafft ☑️',
       description: 'Absolvieren Sie Ihren Kurs: „{{contentName}}“',
     },
   ],
@@ -157,6 +157,45 @@ const translations: Translations = {
   signInDesktop: 'Nein',
   signInMobile: 'Ja',
   step: 'Schritt',
+  suggestion: 'Kursempfehlungen',
+  suggestionWordings: [
+    {
+      title: '{{givenName}}, ein Kursvorschlag für Sie! 👀',
+      description: 'Finden Sie es mit diesem Kurs heraus \\"{{contentName}}\\"',
+    },
+    {
+      title: 'In der Stimmung zum Lernen {{givenName}}? 🚀 ',
+      description: 'Werfen Sie einen Blick auf \\"{{contentName}}\\"',
+    },
+    {
+      title: 'Ihre Mission ist es, einen Kurs abzuschliessen 😎',
+      description: 'Werfen Sie einen Blick auf \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, die Herausforderung des Tages wartet auf Sie! 😉',
+      description: 'Beginnen Sie den Kurs \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, nehmen Sie die Herausforderung an 💪 ',
+      description: 'Beginnen Sie den Kurs \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, erweitern Sie Ihren Horizont!',
+      description: 'Erfahren Sie mehr über \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, es ist Lernzeit! 😉',
+      description: 'Legen Sie mit dem: \\"{{contentName}}\\" los',
+    },
+    {
+      title: 'Es ist Zeit für den (Neu)Start {{givenName}}! 🚀 ',
+      description: 'Starten Sie den Kurs \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, Ich wette, Sie schaffen das 💪 ',
+      description: 'Starten Sie den Kurs \\"{{contentName}}\\"',
+    },
+  ],
   typeHere: 'Hier einfügen',
   validate: 'Bestätigen',
   version: 'Version',

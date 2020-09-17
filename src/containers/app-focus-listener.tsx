@@ -25,11 +25,13 @@ const AppFocusListener = ({
     switch (nextAppState) {
       case 'active': {
         _unscheduleLocalNotifications(NOTIFICATION_TYPE.FINISH_COURSE);
+        _unscheduleLocalNotifications(NOTIFICATION_TYPE.SUGGESTION);
         break;
       }
       case 'background':
       case 'inactive': {
         _scheduleNotifications(NOTIFICATION_TYPE.FINISH_COURSE);
+        _scheduleNotifications(NOTIFICATION_TYPE.SUGGESTION);
         break;
       }
     }

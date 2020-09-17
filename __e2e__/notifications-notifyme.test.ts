@@ -15,14 +15,20 @@ describe('Notifications [Notify Me]', () => {
     await waitForExist('home');
   });
 
-  it('should have finish-course notification set to on', async () => {
+  it('should have finish-course notification and suggestion set to on', async () => {
     await element(by.id('settings-icon')).tap();
     await waitForVisible('settings-screen');
     await expect(element(by.id('settings-notifications-switch-finish-course-on'))).toBeVisible();
+    await expect(element(by.id('settings-notifications-switch-suggestion-on'))).toBeVisible();
   });
 
   it('deactivates the finish-course notification', async () => {
     await element(by.id('settings-notifications-switch-finish-course-on')).tap();
     await expect(element(by.id('settings-notifications-switch-finish-course-off'))).toBeVisible();
+  });
+
+  it('deactivates the suggestion notification', async () => {
+    await element(by.id('settings-notifications-switch-suggestion-on')).tap();
+    await expect(element(by.id('settings-notifications-switch-suggestion-off'))).toBeVisible();
   });
 });

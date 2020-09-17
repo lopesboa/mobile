@@ -56,7 +56,7 @@ const translations: Translations = {
       description: 'Fejezzük be, \\"{{contentName}}\\"',
     },
     {
-      title: '{{givenName}}, fogadd el a kihívást 💪',
+      title: 'Teljesítse a kihívást, {{givenName}} 💪',
       description: 'Végezd el a(z) \\"{{contentName}}\\" kurzust',
     },
     {
@@ -81,7 +81,7 @@ const translations: Translations = {
       description: 'Még néhány kérdés a(z) \\"{{contentName}}\\" befejezéséig',
     },
     {
-      title: '{{givenName}}, már majdnem végeztél ☑',
+      title: 'Gyerünk, {{givenName}}! Mindjárt végez ☑️',
       description: 'Végezd el \\"{{contentName}}\\" kurzusodat',
     },
   ],
@@ -149,6 +149,45 @@ const translations: Translations = {
   signInDesktop: 'Nem',
   signInMobile: 'Igen',
   step: 'Lépés',
+  suggestion: 'Javasolt tanfolyam',
+  suggestionWordings: [
+    {
+      title: '{{givenName}}, íme egy tanfolyam Önnek! 👀',
+      description: 'Ebből a tanfolyamból megtudhatja: „{{contentName}}”',
+    },
+    {
+      title: 'Kedve támadt a tanuláshoz, {{givenName}}? 🚀',
+      description: 'Figyelmébe ajánljuk: „{{contentName}}”',
+    },
+    {
+      title: 'Az Ön küldetése, ha elfogadja 😎',
+      description: 'Figyelmébe ajánljuk: „{{contentName}}”',
+    },
+    {
+      title: '{{givenName}}, várja Önt a nap kihívása! 😉',
+      description: 'Kezdje el a(z) „{{contentName}}” tanfolyamot! ',
+    },
+    {
+      title: '{{givenName}}, vállalja a kihívást! 💪',
+      description: 'Kezdje el a(z) „{{contentName}}” tanfolyamot! ',
+    },
+    {
+      title: '{{givenName}}, szélesítse a látókörét!',
+      description: 'További információ erről: „{{contentName}}”',
+    },
+    {
+      title: '{{givenName}}, itt az ideje a tanulásnak! 😉',
+      description: 'Kezdje el a(z) „{{contentName}}” tanfolyamot! ',
+    },
+    {
+      title: '(Újra) itt az ideje a kilövésnek, {{givenName}}! 🚀',
+      description: 'Kezdje el a(z) „{{contentName}}” tanfolyamot! ',
+    },
+    {
+      title: '{{givenName}}, fogadjunk, hogy meg tudja csinálni! 💪',
+      description: 'Kezdje el a(z) „{{contentName}}” tanfolyamot! ',
+    },
+  ],
   typeHere: 'Írjon ide',
   validate: 'Érvényesít',
   version: 'Verzió',

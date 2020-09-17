@@ -56,7 +56,7 @@ const translations: Translations = {
       description: 'Finiamo \\"{{contentName}}\\"',
     },
     {
-      title: '{{givenName}}, accetta la sfida 💪',
+      title: 'Accetta la sfida {{givenName}} 💪',
       description: 'Completa il corso: \\"{{contentName}}\\"',
     },
     {
@@ -84,7 +84,7 @@ const translations: Translations = {
       description: 'Hai solo poche domande per completare \\"{{contentName}}\\"',
     },
     {
-      title: '{{givenName}}, hai quasi finito ☑',
+      title: 'Forza {{givenName}}! Hai quasi finito ☑️',
       description: 'Completa il tuo corso: \\"{{contentName}}\\"',
     },
   ],
@@ -153,6 +153,45 @@ const translations: Translations = {
   signInDesktop: 'No',
   signInMobile: 'Sì',
   step: 'Fase',
+  suggestion: 'Suggerimenti per i corsi',
+  suggestionWordings: [
+    {
+      title: '{{givenName}}, ecco un corso per te! 👀',
+      description: 'Scopri con il corso \\"{{contentName}}\\"',
+    },
+    {
+      title: 'Sei in vena di imparare, {{givenName}}? 🚀',
+      description: 'Dai un\'occhiata a \\"{{contentName}}\\"',
+    },
+    {
+      title: 'Nel caso decidessi di accettare, questa è la tua missione 😎',
+      description: 'Dai un\'occhiata a \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, la sfida giornaliera ti aspetta! 😉',
+      description: 'Partecipa al corso \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, accetta la sfida 💪',
+      description: 'Partecipa al corso \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, allarga i tuoi orizzonti!',
+      description: 'Maggiori informazioni su \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, è ora di imparare! 😉',
+      description: 'Partecipa al corso \\"{{contentName}}\\"',
+    },
+    {
+      title: ' È ora di (ri) partire {{givenName}} 🚀',
+      description: 'Inizia il corso \\"{{contentName}}\\"',
+    },
+    {
+      title: '{{givenName}}, scommetto che ce la puoi fare! 💪',
+      description: 'Partecipa al corso \\"{{contentName}}\\"',
+    },
+  ],
   typeHere: 'Digita qui',
   validate: 'Convalida',
   version: 'Versione',
