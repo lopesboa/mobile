@@ -5,13 +5,15 @@ import PushNotification from 'react-native-push-notification';
 import createServices from './services';
 import createDataLayer from './layer/data';
 import {ANALYTICS_EVENT_TYPE} from './const';
+import {NotificationType} from './types';
+import {ChapterCard, DisciplineCard} from './layer/data/_types';
 
 const dataLayer = createDataLayer();
 const services = createServices(dataLayer);
 const analytics = services.Analytics;
 
 export default class NotificationHandler {
-  constructor(onNotification) {
+  constructor(onNotification: (content: DisciplineCard | ChapterCard) => void) {
     if (Platform.OS === 'android') {
       Notifications.events().registerNotificationReceivedForeground(
         (notification: Notification, completion) => {
@@ -23,7 +25,11 @@ export default class NotificationHandler {
         (notification: Notification, completion) => {
           if (notification?.payload) {
             const userInfo = notification?.payload.userInfo;
-            return this.handleNotificationContent(userInfo?.content ?? '{}', onNotification);
+            return this.handleNotificationContent(
+              userInfo?.notificationType ?? '',
+              userInfo?.content ?? '{}',
+              onNotification,
+            );
           }
           completion();
         },
@@ -33,7 +39,12 @@ export default class NotificationHandler {
         .then((notification) => {
           if (notification?.payload) {
             const userInfo = notification?.payload.userInfo;
-            return this.handleNotificationContent(userInfo?.content ?? '{}', onNotification, true);
+            return this.handleNotificationContent(
+              userInfo?.notificationType ?? '',
+              userInfo?.content ?? '{}',
+              onNotification,
+              true,
+            );
           }
           return;
         })
@@ -48,7 +59,12 @@ export default class NotificationHandler {
           notification.finish(PushNotificationIOS.FetchResult.NoData);
           if (notification) {
             const userInfo = notification.data.userInfo;
-            return this.handleNotificationContent(userInfo?.content ?? '{}', onNotification);
+            return this.handleNotificationContent(
+              userInfo?.notificationType ?? '',
+              userInfo?.content ?? '{}',
+              onNotification,
+              false,
+            );
           }
         },
         permissions: {
@@ -64,7 +80,12 @@ export default class NotificationHandler {
         .then((notification) => {
           if (notification) {
             const userInfo = notification?.getData().userInfo;
-            return this.handleNotificationContent(userInfo?.content ?? '{}', onNotification, true);
+            return this.handleNotificationContent(
+              userInfo?.notificationType ?? '',
+              userInfo?.content ?? '{}',
+              onNotification,
+              true,
+            );
           }
           return;
         })
@@ -75,16 +96,17 @@ export default class NotificationHandler {
   }
 
   handleNotificationContent = (
+    type: NotificationType,
     content: string,
-    onNotification: (parseContent: unknown) => void,
-    timeOut = false,
-  ) => {
-    const parsedContent = JSON.parse(content);
+    onNotification: (parseContent: DisciplineCard | ChapterCard) => void,
+    defer = false,
+  ): void => {
+    const parsedContent: undefined | DisciplineCard | ChapterCard = JSON.parse(content);
     if (!parsedContent || (parsedContent && !parsedContent.universalRef)) return;
     analytics?.logEvent(ANALYTICS_EVENT_TYPE.NOTIFICATIONS_OPENED, {
-      type: 'finish-course',
+      type,
     });
-    if (timeOut) {
+    if (defer) {
       setTimeout(() => {
         onNotification(parsedContent);
       }, 0);

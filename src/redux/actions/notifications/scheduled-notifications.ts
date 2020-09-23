@@ -52,10 +52,11 @@ const scheduleNotificationOnDevice = (
   const {title, description} = getNotificationWording(type);
   if (!userName || !content.title) return;
   const notification = {
+    id,
     title: title.replace('{{givenName}}', userName),
     body: description.replace(/\\/g, '').replace('{{contentName}}', content.title),
     silent: false,
-    userInfo: {id: content?.universalRef, content: JSON.stringify(content)},
+    userInfo: {id: content?.universalRef, notificationType: type, content: JSON.stringify(content)},
     fireDate: +date,
   };
   Notifications.postLocalNotification(notification, id);
