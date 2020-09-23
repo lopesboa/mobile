@@ -37,6 +37,12 @@ export const initialState: State = {
   },
 };
 
+const hasAllNotificationsSettingsOff = (settings: State): boolean => {
+  return Object.entries(settings)
+    .filter(([key]) => key !== NOTIFICATION_SETTINGS_TYPE.AUTHORIZE_ALL)
+    .every((setting) => setting[1].status === NOTIFICATION_SETTINGS_STATUS.DEACTIVATED);
+};
+
 const reducer = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case TOGGLE: {
@@ -73,16 +79,24 @@ const reducer = (state: State = initialState, action: Action): State => {
           },
         };
       }
-      const newSetting = {
+      const newState = {
+        ...state,
         [action.payload.type]: {
           ...currentSetting,
           status: action.payload.value,
         },
       };
-      return {
-        ...state,
-        ...newSetting,
-      };
+
+      if (hasAllNotificationsSettingsOff(newState)) {
+        return {
+          ...newState,
+          [NOTIFICATION_SETTINGS_TYPE.AUTHORIZE_ALL]: {
+            ...currentSettingAll,
+            status: NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
+          },
+        };
+      }
+      return newState;
     }
     default:
       return state;

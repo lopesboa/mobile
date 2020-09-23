@@ -38,7 +38,7 @@ describe('Notifications [Notify Me]', () => {
 
     // deactivates
     await element(by.id('settings-notifications-switch-finish-course-on')).tap();
-    await expect(element(by.id('settings-notifications-switch-authorizeAll-on'))).toBeVisible();
+    await expect(element(by.id('settings-notifications-switch-authorizeAll-off'))).toBeVisible();
     await expect(element(by.id('settings-notifications-switch-finish-course-off'))).toBeVisible();
   });
 
@@ -50,7 +50,22 @@ describe('Notifications [Notify Me]', () => {
 
     // deactivates
     await element(by.id('settings-notifications-switch-suggestion-on')).tap();
+    await expect(element(by.id('settings-notifications-switch-authorizeAll-off'))).toBeVisible();
+    await expect(element(by.id('settings-notifications-switch-suggestion-off'))).toBeVisible();
+  });
+
+  it('only deactivates a single notification and keeps the rest as is', async () => {
+    // activates
+    await element(by.id('settings-notifications-switch-suggestion-off')).tap();
+    await element(by.id('settings-notifications-switch-finish-course-off')).tap();
     await expect(element(by.id('settings-notifications-switch-authorizeAll-on'))).toBeVisible();
+    await expect(element(by.id('settings-notifications-switch-suggestion-on'))).toBeVisible();
+    await expect(element(by.id('settings-notifications-switch-finish-course-on'))).toBeVisible();
+
+    // deactivates
+    await element(by.id('settings-notifications-switch-suggestion-on')).tap();
+    await expect(element(by.id('settings-notifications-switch-authorizeAll-on'))).toBeVisible();
+    await expect(element(by.id('settings-notifications-switch-finish-course-on'))).toBeVisible();
     await expect(element(by.id('settings-notifications-switch-suggestion-off'))).toBeVisible();
   });
 });

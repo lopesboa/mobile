@@ -245,4 +245,46 @@ describe('Notifications Settings', () => {
     };
     expect(result).toEqual(expected);
   });
+
+  it('toggles off the authorize notifications when we toggle off the only activated notification', () => {
+    const action: Action = {
+      type: TOGGLE,
+      payload: {
+        type: NOTIFICATION_SETTINGS_TYPE.FINISH_COURSE,
+        value: NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
+      },
+    };
+
+    const state = {
+      authorizeAll: {
+        label: 'Authorize notifications',
+        status: NOTIFICATION_SETTINGS_STATUS.ACTIVATED,
+      },
+      'finish-course': {
+        label: 'Currently doing reminder',
+        status: NOTIFICATION_SETTINGS_STATUS.ACTIVATED,
+      },
+      suggestion: {
+        label: 'Course recommendations',
+        status: NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
+      },
+    };
+
+    const result = reducer(state, action);
+    const expected: State = {
+      authorizeAll: {
+        label: 'Authorize notifications',
+        status: NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
+      },
+      'finish-course': {
+        label: 'Currently doing reminder',
+        status: NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
+      },
+      suggestion: {
+        label: 'Course recommendations',
+        status: NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
+      },
+    };
+    expect(result).toEqual(expected);
+  });
 });
