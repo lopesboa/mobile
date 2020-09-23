@@ -15,8 +15,9 @@ import {
   ResourceMimeType,
 } from '../progression-engine';
 
-// @ts-ignore
-export type {RecommendationsService} from './recommendations';
+export type {ChapterRule} from '../progression-engine';
+
+export * from './recommendations';
 
 export const CONTENT_TYPE: {
   [key: string]: ContentType;

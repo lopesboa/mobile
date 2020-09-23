@@ -40,11 +40,9 @@ export type Resource = Lesson & {
   url: string;
 };
 
-export type GenericContent = $Exact<
-  GenericContentBase & {
-    type: ContentType;
-  }
->;
+export type GenericContent = GenericContentBase & {
+  type: ContentType;
+};
 
 export type ProgressionCount = {
   current: number;

@@ -157,8 +157,8 @@ export type CardLevel = {
   status: CardStatus;
   label: string;
 };
-// @todo add properties to use
-export type CardCondition = {};
+
+export type CardCondition = string;
 
 export type ICard = {
   image: string;

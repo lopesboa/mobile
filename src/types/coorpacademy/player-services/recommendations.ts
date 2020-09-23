@@ -1,11 +1,11 @@
 import {ContentType} from '../progression-engine';
-import {ChapterAPI, LevelAPI, RecommendationAPI} from '.';
 
-export type FindRecommendations = (
+export type FindRecommendations = <RecommendationAPI>(
   type: ContentType,
   ref: string,
 ) => Promise<Array<RecommendationAPI>>;
-export type GetNextRecommendation = (
+
+export type GetNextRecommendation = <ChapterAPI, LevelAPI>(
   type: ContentType,
   ref: string,
 ) => Promise<void | ChapterAPI | LevelAPI>;

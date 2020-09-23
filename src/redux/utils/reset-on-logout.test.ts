@@ -3,7 +3,7 @@ import resetOnLogout, {SIGN_OUT} from './reset-on-logout';
 it('resetOnLogout', () => {
   const INITIAL_VALUE = 0;
   const INCREMENT = {type: 'INCREMENT'};
-  const counter = (state?: number = INITIAL_VALUE, action: unknown) => {
+  const counter = (state: number = INITIAL_VALUE, action: {type: string}) => {
     switch ((action && action.type) || '') {
       case INCREMENT.type: {
         return state + 1;
