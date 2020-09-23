@@ -17,6 +17,7 @@ const translations: Translations = {
   authenticationQRCodeStepThreeDescription:
     '<b>ほら！</b><br/>下のボタンを使ってあなたのQRコードをスキャンしてください',
   authenticationQRCodeTitle: 'QRコード',
+  authorizeNotifications: '通知を許可する',
   askForHelp: 'ヘルプをリクエストしてください。',
   backToHome: 'ホームへ戻る',
   bonus: 'ボーナスポイント',

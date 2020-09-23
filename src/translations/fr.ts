@@ -19,6 +19,7 @@ const translations: Translations = {
   authenticationQRCodeStepThreeDescription:
     '<b>Voilà !</b><br/>Scannez votre QR code en utilisant le bouton ci-dessous',
   authenticationQRCodeTitle: 'QR Code',
+  authorizeNotifications: 'Autoriser les notifications',
   askForHelp: "Demander de l'aide",
   backToHome: 'Accueil',
   bonus: 'Bonus!',
@@ -169,7 +170,7 @@ const translations: Translations = {
     },
     {title: "Votre mission si vous l'acceptez 😎", description: 'Découvrez \\"{{contentName}}\\"'},
     {
-      title: '{{givenName}}, votre défi du jours vous attend ! 😉',
+      title: '{{givenName}}, votre défi du jour vous attend ! 😉',
       description: 'Commencez le cours \\"{{contentName}}\\"',
     },
     {

@@ -20,6 +20,7 @@ const translations: Translations = {
   authenticationQRCodeStepThreeDescription:
     '<b>Voilà!</b><br/>Naskenujte svůj kód QR pomocí tlačítka níže',
   authenticationQRCodeTitle: 'Kód QR',
+  authorizeNotifications: 'Autorizovat oznámení',
   askForHelp: 'Požádejte o pomoc',
   backToHome: 'Zpět domů',
   bonus: 'Bonus!',

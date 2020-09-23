@@ -16,6 +16,7 @@ const translations: Translations = {
   authenticationQRCodeStepThreeDescription:
     '<b>자 보세요!</b><br/> 아래 버튼을 사용하여 QR 코드를 스캔하세요',
   authenticationQRCodeTitle: 'QR 코드',
+  authorizeNotifications: '알림 승인',
   askForHelp: '문의하기',
   backToHome: '홈으로 돌아가기',
   bonus: '보너스!',

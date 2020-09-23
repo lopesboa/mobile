@@ -2,7 +2,11 @@ import * as React from 'react';
 import renderer from 'react-test-renderer';
 import {storiesOf} from '@storybook/react-native';
 import {__TEST__} from '../modules/environment';
-import {ANALYTICS_EVENT_TYPE, NOTIFICATION_TYPE, NOTIFICATION_SETTINGS_STATUS} from '../const';
+import {
+  ANALYTICS_EVENT_TYPE,
+  NOTIFICATION_SETTINGS_TYPE,
+  NOTIFICATION_SETTINGS_STATUS,
+} from '../const';
 import {createFakeAnalytics} from '../utils/tests';
 import {Component as Settings} from './settings';
 
@@ -15,7 +19,17 @@ storiesOf('Settings', module).add('default', () => (
     testID="settings"
     settings={[
       {
-        type: NOTIFICATION_TYPE.FINISH_COURSE,
+        type: NOTIFICATION_SETTINGS_TYPE.AUTHORIZE_ALL,
+        label: 'New courses',
+        status: NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
+      },
+      {
+        type: NOTIFICATION_SETTINGS_TYPE.FINISH_COURSE,
+        label: 'New courses',
+        status: NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
+      },
+      {
+        type: NOTIFICATION_SETTINGS_TYPE.SUGGESTION,
         label: 'New courses',
         status: NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
       },
@@ -34,7 +48,17 @@ if (__TEST__) {
           testID="settings"
           settings={[
             {
-              type: NOTIFICATION_TYPE.FINISH_COURSE,
+              type: NOTIFICATION_SETTINGS_TYPE.AUTHORIZE_ALL,
+              label: 'New courses',
+              status: NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
+            },
+            {
+              type: NOTIFICATION_SETTINGS_TYPE.FINISH_COURSE,
+              label: 'New courses',
+              status: NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
+            },
+            {
+              type: NOTIFICATION_SETTINGS_TYPE.SUGGESTION,
               label: 'New courses',
               status: NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
             },
@@ -61,13 +85,18 @@ if (__TEST__) {
           testID="settings"
           settings={[
             {
-              type: NOTIFICATION_TYPE.FINISH_COURSE,
+              type: NOTIFICATION_SETTINGS_TYPE.AUTHORIZE_ALL,
               label: 'New courses',
               status: NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
             },
             {
-              type: NOTIFICATION_TYPE.SUGGESTION,
-              label: 'Suggestion course',
+              type: NOTIFICATION_SETTINGS_TYPE.FINISH_COURSE,
+              label: 'New courses',
+              status: NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
+            },
+            {
+              type: NOTIFICATION_SETTINGS_TYPE.SUGGESTION,
+              label: 'New courses',
               status: NOTIFICATION_SETTINGS_STATUS.DEACTIVATED,
             },
           ]}

@@ -14,9 +14,10 @@ describe('Notifications [Dont Notify Me]', () => {
     await waitForExist('home');
   });
 
-  it('should have finish-course and suggestion notification set to false', async () => {
+  it('should have all notifications settings set to false', async () => {
     await element(by.id('settings-icon')).tap();
     await waitForVisible('settings-screen');
+    await expect(element(by.id('settings-notifications-switch-authorizeAll-off'))).toBeVisible();
     await expect(element(by.id('settings-notifications-switch-finish-course-off'))).toBeVisible();
     await expect(element(by.id('settings-notifications-switch-suggestion-off'))).toBeVisible();
   });

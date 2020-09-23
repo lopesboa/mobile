@@ -18,6 +18,7 @@ const translations: Translations = {
   authenticationQRCodeStepThreeDescription:
     '<b>Voilà!</b><br/>Sca uw QR-code met de knop hieronder',
   authenticationQRCodeTitle: 'QR-code',
+  authorizeNotifications: 'Autoriseer meldingen',
   askForHelp: 'Ask for help',
   backToHome: 'Terug naar startpagina',
   bonus: 'Bonus!',

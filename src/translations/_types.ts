@@ -36,6 +36,7 @@ export type Translations = {
   authenticationQRCodeStepTwoDescription: string;
   authenticationQRCodeStepThreeDescription: string;
   authenticationQRCodeTitle: string;
+  authorizeNotifications: string;
   askForHelp: string;
   backToHome: string;
   bonus: string;

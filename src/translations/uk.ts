@@ -19,6 +19,7 @@ const translations: Translations = {
   authenticationQRCodeStepThreeDescription:
     '<b>Вуаля!</b><br/>Відскануйте свій QR-код, використовуючи кнопку нижче',
   authenticationQRCodeTitle: 'QR-код',
+  authorizeNotifications: 'Авторизуйте сповіщення',
   askForHelp: 'Попросити про допомогу',
   backToHome: 'Назад на домашню сторінку',
   bonus: 'Бонус!',

@@ -29,20 +29,24 @@ describe('Scheduled notifications(reducer)', () => {
       const createdAt = new Date('2020-06-06');
       const initialState: State = {
         'finish-course': [],
+        suggestion: [],
       };
       const expectedResult = {
         'finish-course': [
           {
-            id: 'cha_fake1',
+            id: 22,
+            courseID: 'cha_fake1',
             createdAt,
           },
         ],
+        suggestion: [],
       };
 
       const action: Action = {
         type: SCHEDULE_NOTIFICATION,
         payload: {
-          id: 'cha_fake1',
+          id: 22,
+          courseID: 'cha_fake1',
           type: 'finish-course',
           createdAt,
         },
@@ -58,25 +62,27 @@ describe('Scheduled notifications(reducer)', () => {
       const initialState: State = {
         'finish-course': [
           {
-            id: '453',
+            id: 22,
             courseID: 'cha_fake1',
             createdAt,
           },
           {
-            id: '352',
+            id: 22,
             courseID: 'cha_fake2',
             createdAt,
           },
         ],
+        suggestion: [],
       };
       const expectedResult = {
         'finish-course': [],
+        suggestion: [],
       };
 
       const action: Action = {
         type: UNSCHEDULE_NOTIFICATION,
         payload: {
-          id: 'cha_fake1',
+          id: 22,
           type: 'finish-course',
         },
       };

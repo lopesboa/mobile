@@ -1,22 +1,23 @@
 import * as React from 'react';
 import {View, FlatList, StyleSheet} from 'react-native';
-import {ANALYTICS_EVENT_TYPE, NOTIFICATION_SETTINGS_STATUS} from '../const';
+import {ANALYTICS_EVENT_TYPE, NOTIFICATION_SETTINGS_STATUS, SPACE} from '../const';
 import theme from '../modules/theme';
-import {NotificationSettingStatus, NotificationType} from '../types';
+import {NotificationSettingStatus, NotificationSettingType} from '../types';
 import withAnalytics, {WithAnalyticsProps} from '../containers/with-analytics';
 import Switch from './switch';
 import Version from './version';
 import Text from './text';
+import Space from './space';
 
 export type SettingsItem = {
-  type: NotificationType;
+  type: NotificationSettingType;
   label: string;
   status: NotificationSettingStatus;
 };
 
 interface Props extends WithAnalyticsProps {
   settings: Array<SettingsItem>;
-  onSettingToggle: (type: NotificationType) => Promise<void>;
+  onSettingToggle: (type: NotificationSettingType) => Promise<void>;
   testID: string;
 }
 
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
     elevation: 9,
   },
   headerContainer: {
-    height: 90,
+    height: 180,
   },
   titleContainer: {
     height: 110,
@@ -108,6 +109,8 @@ const Settings = ({settings, onSettingToggle, analytics, testID}: Props) => {
     return item.type;
   }
 
+  const [mainSetting, ...otherSettings] = settings;
+
   return (
     <React.Fragment>
       <FlatList
@@ -115,11 +118,18 @@ const Settings = ({settings, onSettingToggle, analytics, testID}: Props) => {
         contentContainerStyle={styles.container}
         ListHeaderComponentStyle={styles.headerContainer}
         ListHeaderComponent={
-          <View style={styles.titleContainer}>
-            <Text style={styles.title}>Notifications</Text>
-          </View>
+          <React.Fragment>
+            <View style={styles.titleContainer}>
+              <Text style={styles.title}>Notifications</Text>
+            </View>
+            <View>
+              {/* @ts-ignore - we can just ignore the index to have both separators */}
+              {renderItem({item: mainSetting})}
+              <Space type={SPACE.BASE} />
+            </View>
+          </React.Fragment>
         }
-        data={settings.slice(0, settings.length)}
+        data={otherSettings}
         ItemSeparatorComponent={Separator}
         keyExtractor={keyExtractor}
         renderItem={renderItem}

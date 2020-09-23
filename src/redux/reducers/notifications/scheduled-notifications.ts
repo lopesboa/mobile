@@ -8,7 +8,7 @@ import {NOTIFICATION_TYPE} from '../../../const';
 
 export type State = ScheduledNotification;
 
-const initialState: State = {
+export const initialState: State = {
   [NOTIFICATION_TYPE.FINISH_COURSE]: [],
   [NOTIFICATION_TYPE.SUGGESTION]: [],
 };

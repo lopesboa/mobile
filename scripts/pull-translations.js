@@ -148,6 +148,9 @@ const generate = async (locale: string) => {
       moocLoginTranslations.mobile.qrCode.stepThree,
     ),
     authenticationQRCodeTitle: formatTranslation(moocLoginTranslations.mobile.qrCode.title),
+    authorizeNotifications: formatTranslation(
+      moocTranslations.mobile.settings.authorizeNotifications,
+    ),
     askForHelp: formatTranslation(moocErrorTranslations.modal.mobile.ask_for_help),
     backToHome: formatTranslation(playerTranslations['Back to home']),
     bonus: formatTranslation(playerTranslations['Bonus!']),

@@ -115,6 +115,8 @@ export type PermissionType = 'camera' | 'notifications';
 
 export type NotificationType = 'finish-course' | 'suggestion';
 
+export type NotificationSettingType = 'authorizeAll' | NotificationType;
+
 export type UnlockedLevelInfo = {
   isUnlocked: boolean;
   levelName: string;

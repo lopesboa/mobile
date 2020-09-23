@@ -169,6 +169,7 @@ jest.mock('redux-persist', () => ({
   __esModule: true,
   persistReducer: jest.fn((config, reducer) => reducer),
   persistStore: jest.fn((store) => store),
+  createMigrate: jest.fn(),
 }));
 
 // react-native-notifications

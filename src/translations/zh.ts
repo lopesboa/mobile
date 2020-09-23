@@ -12,6 +12,7 @@ const translations: Translations = {
   authenticationQRCodeStepTwoDescription: '前往<b>您的账户</b> <br/>位于右上角',
   authenticationQRCodeStepThreeDescription: '<b>好了！</b><br/>使用下面的按钮扫描您的二维码',
   authenticationQRCodeTitle: '二维码',
+  authorizeNotifications: '授予发送通知权限',
   askForHelp: '寻求帮助',
   backToHome: '回到首页',
   bonus: '奖励！',

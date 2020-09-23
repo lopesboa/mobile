@@ -1,7 +1,7 @@
 import {getNotificationsSettings} from '../../utils/state-extract';
 import {GetState} from '../../../types/coorpacademy/player-store/definitions/redux';
-import {NotificationSettingStatus, NotificationType} from '../../../types';
-import type { StoreAction } from '../../_types';
+import {NotificationSettingStatus, NotificationSettingType} from '../../../types';
+import type {StoreAction} from '../../_types';
 import {NOTIFICATION_SETTINGS_STATUS} from '../../../const';
 
 export const TOGGLE = '@@notifications/SETTINGS_TOGGLE';
@@ -9,13 +9,13 @@ export const TOGGLE = '@@notifications/SETTINGS_TOGGLE';
 export type Action = {
   type: '@@notifications/SETTINGS_TOGGLE';
   payload: {
-    type: 'finish-course' | 'suggestion';
+    type: NotificationSettingType;
     value: NotificationSettingStatus;
   };
 };
 
 export const toggle = (
-  type: NotificationType,
+  type: NotificationSettingType,
   value?: NotificationSettingStatus,
 ): StoreAction<Action> => (dispatch: Dispatch, getState: GetState) => {
   const state = getState();

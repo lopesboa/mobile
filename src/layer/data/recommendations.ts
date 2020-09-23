@@ -57,11 +57,11 @@ const fetchRecommendations = async (): Promise<Array<DisciplineCard | ChapterCar
 
 // @todo replace fetchRecommendation() by find(type: string, ref: string)
 const fetchRecommendation = async (
-  random = false,
-): Promise<DisciplineCard | ChapterCard | void> => {
+  limit = 1,
+): Promise<DisciplineCard | ChapterCard | Array<DisciplineCard | ChapterCard> | void> => {
   const cards = await fetchRecommendations();
-  if (random) {
-    return cards[Math.floor(Math.random() * cards.length)];
+  if (limit > 1) {
+    return cards.slice(0, limit);
   }
   return cards[0];
 };

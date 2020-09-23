@@ -19,6 +19,7 @@ const translations: Translations = {
   authenticationQRCodeStepThreeDescription:
     '<b>Voilà!</b><br/>Digitalize o seu código QR utilizando o botão abaixo',
   authenticationQRCodeTitle: 'Código QR',
+  authorizeNotifications: 'Autorizar notificações',
   askForHelp: 'Pedir ajuda',
   backToHome: 'Voltar ao início ',
   bonus: 'Bónus!',

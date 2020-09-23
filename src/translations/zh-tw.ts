@@ -12,6 +12,7 @@ const translations: Translations = {
   authenticationQRCodeStepTwoDescription: '前往右上角的「<b>您的帳戶</b> <br/>」',
   authenticationQRCodeStepThreeDescription: '<b>看！</b><br/>用下方的按鈕掃描您的 QR 碼',
   authenticationQRCodeTitle: 'QR 碼',
+  authorizeNotifications: '授權通知',
   askForHelp: '尋求協助',
   backToHome: '返回首頁',
   bonus: '獎勵！',

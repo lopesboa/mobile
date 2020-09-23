@@ -20,6 +20,7 @@ const translations: Translations = {
   authenticationQRCodeStepThreeDescription:
     '<b>Voilà!</b><br/>Scanează codul QR folosind butonul de mai jos',
   authenticationQRCodeTitle: 'Cod QR',
+  authorizeNotifications: 'Autorizați notificările',
   askForHelp: 'Cere ajutor',
   backToHome: 'Înapoi la pagina de start',
   bonus: 'Bonus!',

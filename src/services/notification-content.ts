@@ -17,7 +17,7 @@ const isOnGoing = (aggregation: FinishCourseRecommendation): boolean =>
 
 export type NotificationContentService = {
   getAllContentByMostRecent: () => Promise<Array<DisciplineCard | ChapterCard | void>>;
-  getRecommendationContent: () => Promise<DisciplineCard | ChapterCard | void>;
+  getRecommendationContent: () => Promise<Array<DisciplineCard | ChapterCard> | void>;
 };
 
 const getMostRecentContent = (dataLayer: DataLayer) => async () => {
@@ -35,8 +35,8 @@ const getMostRecentContent = (dataLayer: DataLayer) => async () => {
 };
 
 const getRecommendationContent = ({fetchRecommendation}: DataLayer) => async () => {
-  const content = await fetchRecommendation(true);
-  return content;
+  const contents = await fetchRecommendation(7);
+  return contents;
 };
 
 const service = (dataLayer: DataLayer): NotificationContentService => ({

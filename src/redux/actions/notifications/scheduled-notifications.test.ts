@@ -35,6 +35,10 @@ const createStore = ({
     },
     notifications: {
       settings: {
+        authorizeAll: {
+          label: 'Authorize notifications',
+          status: NOTIFICATION_SETTINGS_STATUS.ACTIVATED,
+        },
         'finish-course': {
           label: 'Finish course',
           status: isFinishCourseSettingActive
@@ -369,7 +373,7 @@ describe('Scheduled notifications', () => {
 
         const services = {
           NotificationContent: {
-            getRecommendationContent: jest.fn(() =>
+            getRecommendationContent: jest.fn(() => [
               createChapterCard({
                 ref: 'cha_fake1',
                 completion: 0,
@@ -377,7 +381,7 @@ describe('Scheduled notifications', () => {
                 // @ts-ignore for testing purpose
                 title: undefined,
               }),
-            ),
+            ]),
           },
           Analytics: {
             logEvent: jest.fn(),
@@ -397,15 +401,57 @@ describe('Scheduled notifications', () => {
 
         const services = {
           NotificationContent: {
-            getRecommendationContent: jest.fn(() =>
+            getRecommendationContent: jest.fn(() => [
               createChapterCard({
                 ref: 'cha_fake1',
                 completion: 0,
-                status: CARD_STATUS.ACTIVE,
                 // @ts-ignore for testing purpose
                 title: undefined,
+                status: CARD_STATUS.ACTIVE,
               }),
-            ),
+              createChapterCard({
+                ref: 'cha_fake12',
+                completion: 0,
+                // @ts-ignore for testing purpose
+                title: undefined,
+                status: CARD_STATUS.ACTIVE,
+              }),
+              createChapterCard({
+                ref: 'cha_fake123',
+                completion: 0,
+                // @ts-ignore for testing purpose
+                title: undefined,
+                status: CARD_STATUS.ACTIVE,
+              }),
+              createChapterCard({
+                ref: 'cha_fake1234',
+                completion: 0,
+                // @ts-ignore for testing purpose
+                title: undefined,
+                status: CARD_STATUS.ACTIVE,
+              }),
+              createChapterCard({
+                ref: 'cha_fake1235',
+                completion: 0,
+                // @ts-ignore for testing purpose
+                title: undefined,
+                status: CARD_STATUS.ACTIVE,
+              }),
+              createChapterCard({
+                ref: 'cha_fake12346',
+                completion: 0,
+                // @ts-ignore for testing purpose
+                title: undefined,
+                status: CARD_STATUS.ACTIVE,
+              }),
+              createChapterCard({
+                ref: 'cha_fake1234567',
+                completion: 0,
+                // @ts-ignore for testing purpose
+                title: undefined,
+                status: CARD_STATUS.ACTIVE,
+              }),
+            ]),
           },
           Analytics: {
             logEvent: jest.fn(),
@@ -418,20 +464,56 @@ describe('Scheduled notifications', () => {
         expect(Notifications.cancelLocalNotification).toHaveBeenCalledTimes(0);
         expect(Notifications.postLocalNotification).toHaveBeenCalledTimes(0);
       });
-      it('schedules a notification seven times for given content', async () => {
+      it('schedules seven notifications with random content for each', async () => {
         const {Notifications} = require('@coorpacademy/react-native-notifications');
         const {dispatch, getState} = createStore({isSuggestionSettingActive: true});
 
         const services = {
           NotificationContent: {
-            getRecommendationContent: jest.fn(() =>
+            getRecommendationContent: jest.fn(() => [
               createChapterCard({
                 ref: 'cha_fake1',
                 completion: 0,
                 title: 'Fake chapter',
                 status: CARD_STATUS.ACTIVE,
               }),
-            ),
+              createChapterCard({
+                ref: 'cha_fake12',
+                completion: 0,
+                title: 'Fake chapter - 1',
+                status: CARD_STATUS.ACTIVE,
+              }),
+              createChapterCard({
+                ref: 'cha_fake123',
+                completion: 0,
+                title: 'Fake chapter - 2',
+                status: CARD_STATUS.ACTIVE,
+              }),
+              createChapterCard({
+                ref: 'cha_fake1234',
+                completion: 0,
+                title: 'Fake chapter - 3',
+                status: CARD_STATUS.ACTIVE,
+              }),
+              createChapterCard({
+                ref: 'cha_fake1235',
+                completion: 0,
+                title: 'Fake chapter - 4',
+                status: CARD_STATUS.ACTIVE,
+              }),
+              createChapterCard({
+                ref: 'cha_fake12346',
+                completion: 0,
+                title: 'Fake chapter - 5',
+                status: CARD_STATUS.ACTIVE,
+              }),
+              createChapterCard({
+                ref: 'cha_fake1234567',
+                completion: 0,
+                title: 'Fake chapter - 6',
+                status: CARD_STATUS.ACTIVE,
+              }),
+            ]),
           },
           Analytics: {
             logEvent: jest.fn(),

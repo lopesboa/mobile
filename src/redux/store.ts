@@ -1,12 +1,14 @@
 /* eslint-disable import/max-dependencies*/
 
 import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
-import {persistStore, persistReducer} from 'redux-persist';
+import {persistStore, persistReducer, createMigrate} from 'redux-persist';
 import {middlewares, reducers as storeReducers} from '@coorpacademy/player-store';
 import AsyncStorage from '@react-native-community/async-storage';
 import {reducer as network} from 'react-native-offline';
+import autoMergeLevel1 from 'redux-persist/lib/stateReconciler/autoMergeLevel1';
 import type {ReduxState} from '../types/coorpacademy/player-store';
 import type {NetworkState} from '../types';
+import createMigration from './migrate';
 
 import type {State as NavigationState} from './reducers/navigation';
 import navigation from './reducers/navigation';
@@ -102,10 +104,14 @@ const createMiddlewares = (options: Options, reduxDevTools?: ReduxDevTools) => {
   );
 };
 
+const reduxPersistedStoreMigration = createMigration<StoreState>();
 const persistConfig = {
+  version: 2,
   key: 'root',
   storage: AsyncStorage,
+  stateReconciler: autoMergeLevel1,
   whitelist: ['appSession', 'permissions', 'notifications'],
+  migrate: createMigrate(reduxPersistedStoreMigration),
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);

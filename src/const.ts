@@ -19,6 +19,7 @@ import type {
   NotificationSettingStatus,
   NotificationType,
   PartialRecord,
+  NotificationSettingType,
 } from './types';
 
 export const RESOURCE_TYPE = {
@@ -140,6 +141,14 @@ export const PERMISSION_TYPE: Record<'CAMERA' | 'NOTIFICATIONS', PermissionType>
 export const NOTIFICATION_TYPE: Record<'FINISH_COURSE' | 'SUGGESTION', NotificationType> = {
   FINISH_COURSE: 'finish-course',
   SUGGESTION: 'suggestion',
+};
+
+export const NOTIFICATION_SETTINGS_TYPE: Record<
+  'FINISH_COURSE' | 'SUGGESTION' | 'AUTHORIZE_ALL',
+  NotificationSettingType
+> = {
+  ...NOTIFICATION_TYPE,
+  AUTHORIZE_ALL: 'authorizeAll',
 };
 
 export const APP_STATE: PartialRecord<'ACTIVE' | 'BACKGROUND' | 'INACTIVE', AppState> = {

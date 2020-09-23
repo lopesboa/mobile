@@ -185,18 +185,18 @@ export const scheduleNotifications = (type: NotificationType) => async (
         break;
       }
       case NOTIFICATION_TYPE.SUGGESTION: {
-        const content = await services.NotificationContent.getRecommendationContent();
+        const contents = await services.NotificationContent.getRecommendationContent();
         await unscheduleLocalNotifications(type)(dispatch, getState, options);
-        if (content) {
+        if (contents) {
           const user = getUser(state);
           // [7, 14, 21, 28, 42, 56, 84] days later
-          await dispatch(scheduleNotification(user?.givenName, content, type, 0));
-          await dispatch(scheduleNotification(user?.givenName, content, type, 1));
-          await dispatch(scheduleNotification(user?.givenName, content, type, 2));
-          await dispatch(scheduleNotification(user?.givenName, content, type, 3));
-          await dispatch(scheduleNotification(user?.givenName, content, type, 5));
-          await dispatch(scheduleNotification(user?.givenName, content, type, 7));
-          await dispatch(scheduleNotification(user?.givenName, content, type, 11));
+          await dispatch(scheduleNotification(user?.givenName, contents[0], type, 0));
+          await dispatch(scheduleNotification(user?.givenName, contents[1], type, 1));
+          await dispatch(scheduleNotification(user?.givenName, contents[2], type, 2));
+          await dispatch(scheduleNotification(user?.givenName, contents[3], type, 3));
+          await dispatch(scheduleNotification(user?.givenName, contents[4], type, 5));
+          await dispatch(scheduleNotification(user?.givenName, contents[5], type, 7));
+          await dispatch(scheduleNotification(user?.givenName, contents[6], type, 11));
         } else {
           return;
         }

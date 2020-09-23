@@ -19,6 +19,7 @@ const translations: Translations = {
   authenticationQRCodeStepThreeDescription:
     '<b>Voilà!</b><br/>Az alábbi gombbal olvasd be QR-kódodat',
   authenticationQRCodeTitle: 'QR-kód',
+  authorizeNotifications: 'Értesítések engedélyezése',
   askForHelp: 'Kérj segítséget',
   backToHome: 'Vissza a főoldalra',
   bonus: 'Bónusz!',

@@ -17,6 +17,7 @@ const translations: Translations = {
   authenticationQRCodeStepThreeDescription:
     '<b>Voilà!</b><br/>Aşağıdaki düğmeyi kullanarak QR kodunu tara',
   authenticationQRCodeTitle: 'QR Kodu',
+  authorizeNotifications: 'Bildirimleri yetkilendir',
   askForHelp: 'Yardım İste',
   backToHome: 'Ana sayfaya dön',
   bonus: 'Bonus!',
