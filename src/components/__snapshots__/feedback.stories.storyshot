@@ -3,21 +3,9 @@
 exports[`Storyshots Feedback Description only 1`] = `
 <View
   style={
-    Array [
-      Object {
-        "borderRadius": 5,
-      },
-      Object {
-        "elevation": 4,
-        "shadowColor": "#14171A",
-        "shadowOffset": Object {
-          "height": 0,
-          "width": 0,
-        },
-        "shadowOpacity": 0.15,
-        "shadowRadius": 8,
-      },
-    ]
+    Object {
+      "borderRadius": 5,
+    }
   }
   testID="feedback"
 >
@@ -944,21 +932,9 @@ exports[`Storyshots Feedback Empty 1`] = `null`;
 exports[`Storyshots Feedback Image 1`] = `
 <View
   style={
-    Array [
-      Object {
-        "borderRadius": 5,
-      },
-      Object {
-        "elevation": 4,
-        "shadowColor": "#14171A",
-        "shadowOffset": Object {
-          "height": 0,
-          "width": 0,
-        },
-        "shadowOpacity": 0.15,
-        "shadowRadius": 8,
-      },
-    ]
+    Object {
+      "borderRadius": 5,
+    }
   }
   testID="feedback"
 >
@@ -988,21 +964,9 @@ exports[`Storyshots Feedback Image 1`] = `
     >
       <View
         style={
-          Array [
-            Object {
-              "borderRadius": 5,
-            },
-            Object {
-              "elevation": 4,
-              "shadowColor": "#14171A",
-              "shadowOffset": Object {
-                "height": 0,
-                "width": 0,
-              },
-              "shadowOpacity": 0.15,
-              "shadowRadius": 8,
-            },
-          ]
+          Object {
+            "borderRadius": 5,
+          }
         }
       >
         <View
@@ -1988,21 +1952,9 @@ exports[`Storyshots Feedback Image 1`] = `
 exports[`Storyshots Feedback Image only 1`] = `
 <View
   style={
-    Array [
-      Object {
-        "borderRadius": 5,
-      },
-      Object {
-        "elevation": 4,
-        "shadowColor": "#14171A",
-        "shadowOffset": Object {
-          "height": 0,
-          "width": 0,
-        },
-        "shadowOpacity": 0.15,
-        "shadowRadius": 8,
-      },
-    ]
+    Object {
+      "borderRadius": 5,
+    }
   }
   testID="feedback"
 >
@@ -2032,21 +1984,9 @@ exports[`Storyshots Feedback Image only 1`] = `
     >
       <View
         style={
-          Array [
-            Object {
-              "borderRadius": 5,
-            },
-            Object {
-              "elevation": 4,
-              "shadowColor": "#14171A",
-              "shadowOffset": Object {
-                "height": 0,
-                "width": 0,
-              },
-              "shadowOpacity": 0.15,
-              "shadowRadius": 8,
-            },
-          ]
+          Object {
+            "borderRadius": 5,
+          }
         }
       >
         <View
@@ -2113,21 +2053,9 @@ exports[`Storyshots Feedback Image only 1`] = `
 exports[`Storyshots Feedback No media 1`] = `
 <View
   style={
-    Array [
-      Object {
-        "borderRadius": 5,
-      },
-      Object {
-        "elevation": 4,
-        "shadowColor": "#14171A",
-        "shadowOffset": Object {
-          "height": 0,
-          "width": 0,
-        },
-        "shadowOpacity": 0.15,
-        "shadowRadius": 8,
-      },
-    ]
+    Object {
+      "borderRadius": 5,
+    }
   }
   testID="feedback"
 >
@@ -3074,21 +3002,9 @@ exports[`Storyshots Feedback No media 1`] = `
 exports[`Storyshots Feedback PDF 1`] = `
 <View
   style={
-    Array [
-      Object {
-        "borderRadius": 5,
-      },
-      Object {
-        "elevation": 4,
-        "shadowColor": "#14171A",
-        "shadowOffset": Object {
-          "height": 0,
-          "width": 0,
-        },
-        "shadowOpacity": 0.15,
-        "shadowRadius": 8,
-      },
-    ]
+    Object {
+      "borderRadius": 5,
+    }
   }
   testID="feedback"
 >
@@ -3118,21 +3034,9 @@ exports[`Storyshots Feedback PDF 1`] = `
     >
       <View
         style={
-          Array [
-            Object {
-              "borderRadius": 5,
-            },
-            Object {
-              "elevation": 4,
-              "shadowColor": "#14171A",
-              "shadowOffset": Object {
-                "height": 0,
-                "width": 0,
-              },
-              "shadowOpacity": 0.15,
-              "shadowRadius": 8,
-            },
-          ]
+          Object {
+            "borderRadius": 5,
+          }
         }
       >
         <View
@@ -4282,21 +4186,9 @@ exports[`Storyshots Feedback PDF 1`] = `
 exports[`Storyshots Feedback Title only 1`] = `
 <View
   style={
-    Array [
-      Object {
-        "borderRadius": 5,
-      },
-      Object {
-        "elevation": 4,
-        "shadowColor": "#14171A",
-        "shadowOffset": Object {
-          "height": 0,
-          "width": 0,
-        },
-        "shadowOpacity": 0.15,
-        "shadowRadius": 8,
-      },
-    ]
+    Object {
+      "borderRadius": 5,
+    }
   }
   testID="feedback"
 >
@@ -4348,21 +4240,9 @@ exports[`Storyshots Feedback Title only 1`] = `
 exports[`Storyshots Feedback Unsupported media 1`] = `
 <View
   style={
-    Array [
-      Object {
-        "borderRadius": 5,
-      },
-      Object {
-        "elevation": 4,
-        "shadowColor": "#14171A",
-        "shadowOffset": Object {
-          "height": 0,
-          "width": 0,
-        },
-        "shadowOpacity": 0.15,
-        "shadowRadius": 8,
-      },
-    ]
+    Object {
+      "borderRadius": 5,
+    }
   }
   testID="feedback"
 >
@@ -4392,21 +4272,9 @@ exports[`Storyshots Feedback Unsupported media 1`] = `
     >
       <View
         style={
-          Array [
-            Object {
-              "borderRadius": 5,
-            },
-            Object {
-              "elevation": 4,
-              "shadowColor": "#14171A",
-              "shadowOffset": Object {
-                "height": 0,
-                "width": 0,
-              },
-              "shadowOpacity": 0.15,
-              "shadowRadius": 8,
-            },
-          ]
+          Object {
+            "borderRadius": 5,
+          }
         }
       >
         <View
@@ -5350,21 +5218,9 @@ exports[`Storyshots Feedback Unsupported media 1`] = `
 exports[`Storyshots Feedback Video 1`] = `
 <View
   style={
-    Array [
-      Object {
-        "borderRadius": 5,
-      },
-      Object {
-        "elevation": 4,
-        "shadowColor": "#14171A",
-        "shadowOffset": Object {
-          "height": 0,
-          "width": 0,
-        },
-        "shadowOpacity": 0.15,
-        "shadowRadius": 8,
-      },
-    ]
+    Object {
+      "borderRadius": 5,
+    }
   }
   testID="feedback"
 >
@@ -5394,21 +5250,9 @@ exports[`Storyshots Feedback Video 1`] = `
     >
       <View
         style={
-          Array [
-            Object {
-              "borderRadius": 5,
-            },
-            Object {
-              "elevation": 4,
-              "shadowColor": "#14171A",
-              "shadowOffset": Object {
-                "height": 0,
-                "width": 0,
-              },
-              "shadowOpacity": 0.15,
-              "shadowRadius": 8,
-            },
-          ]
+          Object {
+            "borderRadius": 5,
+          }
         }
       >
         <View

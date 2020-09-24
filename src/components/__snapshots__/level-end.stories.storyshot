@@ -328,21 +328,9 @@ exports[`Storyshots LevelEnd Adaptive (PDF) 1`] = `
         >
           <View
             style={
-              Array [
-                Object {
-                  "borderRadius": 5,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
-                },
-              ]
+              Object {
+                "borderRadius": 5,
+              }
             }
             testID="level-end-feedback"
           >
@@ -372,21 +360,9 @@ exports[`Storyshots LevelEnd Adaptive (PDF) 1`] = `
               >
                 <View
                   style={
-                    Array [
-                      Object {
-                        "borderRadius": 5,
-                      },
-                      Object {
-                        "elevation": 4,
-                        "shadowColor": "#14171A",
-                        "shadowOffset": Object {
-                          "height": 0,
-                          "width": 0,
-                        },
-                        "shadowOpacity": 0.15,
-                        "shadowRadius": 8,
-                      },
-                    ]
+                    Object {
+                      "borderRadius": 5,
+                    }
                   }
                 >
                   <View
@@ -1564,21 +1540,9 @@ exports[`Storyshots LevelEnd Adaptive (PDF) 1`] = `
             </Text>
             <View
               style={
-                Array [
-                  Object {
-                    "borderRadius": 5,
-                  },
-                  Object {
-                    "elevation": 4,
-                    "shadowColor": "#14171A",
-                    "shadowOffset": Object {
-                      "height": 0,
-                      "width": 0,
-                    },
-                    "shadowOpacity": 0.15,
-                    "shadowRadius": 8,
-                  },
-                ]
+                Object {
+                  "borderRadius": 5,
+                }
               }
             >
               <View
@@ -2428,21 +2392,9 @@ exports[`Storyshots LevelEnd Adaptive (image) 1`] = `
         >
           <View
             style={
-              Array [
-                Object {
-                  "borderRadius": 5,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
-                },
-              ]
+              Object {
+                "borderRadius": 5,
+              }
             }
             testID="level-end-feedback"
           >
@@ -2472,21 +2424,9 @@ exports[`Storyshots LevelEnd Adaptive (image) 1`] = `
               >
                 <View
                   style={
-                    Array [
-                      Object {
-                        "borderRadius": 5,
-                      },
-                      Object {
-                        "elevation": 4,
-                        "shadowColor": "#14171A",
-                        "shadowOffset": Object {
-                          "height": 0,
-                          "width": 0,
-                        },
-                        "shadowOpacity": 0.15,
-                        "shadowRadius": 8,
-                      },
-                    ]
+                    Object {
+                      "borderRadius": 5,
+                    }
                   }
                 >
                   <View
@@ -3500,21 +3440,9 @@ exports[`Storyshots LevelEnd Adaptive (image) 1`] = `
             </Text>
             <View
               style={
-                Array [
-                  Object {
-                    "borderRadius": 5,
-                  },
-                  Object {
-                    "elevation": 4,
-                    "shadowColor": "#14171A",
-                    "shadowOffset": Object {
-                      "height": 0,
-                      "width": 0,
-                    },
-                    "shadowOpacity": 0.15,
-                    "shadowRadius": 8,
-                  },
-                ]
+                Object {
+                  "borderRadius": 5,
+                }
               }
             >
               <View
@@ -4364,21 +4292,9 @@ exports[`Storyshots LevelEnd Adaptive (no media) 1`] = `
         >
           <View
             style={
-              Array [
-                Object {
-                  "borderRadius": 5,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
-                },
-              ]
+              Object {
+                "borderRadius": 5,
+              }
             }
             testID="level-end-feedback"
           >
@@ -5353,21 +5269,9 @@ exports[`Storyshots LevelEnd Adaptive (no media) 1`] = `
             </Text>
             <View
               style={
-                Array [
-                  Object {
-                    "borderRadius": 5,
-                  },
-                  Object {
-                    "elevation": 4,
-                    "shadowColor": "#14171A",
-                    "shadowOffset": Object {
-                      "height": 0,
-                      "width": 0,
-                    },
-                    "shadowOpacity": 0.15,
-                    "shadowRadius": 8,
-                  },
-                ]
+                Object {
+                  "borderRadius": 5,
+                }
               }
             >
               <View
@@ -6240,21 +6144,9 @@ exports[`Storyshots LevelEnd Adaptive (unsupported media) 1`] = `
             </Text>
             <View
               style={
-                Array [
-                  Object {
-                    "borderRadius": 5,
-                  },
-                  Object {
-                    "elevation": 4,
-                    "shadowColor": "#14171A",
-                    "shadowOffset": Object {
-                      "height": 0,
-                      "width": 0,
-                    },
-                    "shadowOpacity": 0.15,
-                    "shadowRadius": 8,
-                  },
-                ]
+                Object {
+                  "borderRadius": 5,
+                }
               }
             >
               <View
@@ -7104,21 +6996,9 @@ exports[`Storyshots LevelEnd Adaptive (video) 1`] = `
         >
           <View
             style={
-              Array [
-                Object {
-                  "borderRadius": 5,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
-                },
-              ]
+              Object {
+                "borderRadius": 5,
+              }
             }
             testID="level-end-feedback"
           >
@@ -7148,21 +7028,9 @@ exports[`Storyshots LevelEnd Adaptive (video) 1`] = `
               >
                 <View
                   style={
-                    Array [
-                      Object {
-                        "borderRadius": 5,
-                      },
-                      Object {
-                        "elevation": 4,
-                        "shadowColor": "#14171A",
-                        "shadowOffset": Object {
-                          "height": 0,
-                          "width": 0,
-                        },
-                        "shadowOpacity": 0.15,
-                        "shadowRadius": 8,
-                      },
-                    ]
+                    Object {
+                      "borderRadius": 5,
+                    }
                   }
                 >
                   <View
@@ -8134,21 +8002,9 @@ exports[`Storyshots LevelEnd Adaptive (video) 1`] = `
             </Text>
             <View
               style={
-                Array [
-                  Object {
-                    "borderRadius": 5,
-                  },
-                  Object {
-                    "elevation": 4,
-                    "shadowColor": "#14171A",
-                    "shadowOffset": Object {
-                      "height": 0,
-                      "width": 0,
-                    },
-                    "shadowOpacity": 0.15,
-                    "shadowRadius": 8,
-                  },
-                ]
+                Object {
+                  "borderRadius": 5,
+                }
               }
             >
               <View
@@ -9021,21 +8877,9 @@ exports[`Storyshots LevelEnd Failure 1`] = `
             </Text>
             <View
               style={
-                Array [
-                  Object {
-                    "borderRadius": 5,
-                  },
-                  Object {
-                    "elevation": 4,
-                    "shadowColor": "#14171A",
-                    "shadowOffset": Object {
-                      "height": 0,
-                      "width": 0,
-                    },
-                    "shadowOpacity": 0.15,
-                    "shadowRadius": 8,
-                  },
-                ]
+                Object {
+                  "borderRadius": 5,
+                }
               }
             >
               <View
@@ -9908,21 +9752,9 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
             </Text>
             <View
               style={
-                Array [
-                  Object {
-                    "borderRadius": 5,
-                  },
-                  Object {
-                    "elevation": 4,
-                    "shadowColor": "#14171A",
-                    "shadowOffset": Object {
-                      "height": 0,
-                      "width": 0,
-                    },
-                    "shadowOpacity": 0.15,
-                    "shadowRadius": 8,
-                  },
-                ]
+                Object {
+                  "borderRadius": 5,
+                }
               }
             >
               <View
@@ -10732,21 +10564,9 @@ exports[`Storyshots LevelEnd Finished 1`] = `
             </Text>
             <View
               style={
-                Array [
-                  Object {
-                    "borderRadius": 5,
-                  },
-                  Object {
-                    "elevation": 4,
-                    "shadowColor": "#14171A",
-                    "shadowOffset": Object {
-                      "height": 0,
-                      "width": 0,
-                    },
-                    "shadowOpacity": 0.15,
-                    "shadowRadius": 8,
-                  },
-                ]
+                Object {
+                  "borderRadius": 5,
+                }
               }
             >
               <View
@@ -11789,21 +11609,9 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
             </Text>
             <View
               style={
-                Array [
-                  Object {
-                    "borderRadius": 5,
-                  },
-                  Object {
-                    "elevation": 4,
-                    "shadowColor": "#14171A",
-                    "shadowOffset": Object {
-                      "height": 0,
-                      "width": 0,
-                    },
-                    "shadowOpacity": 0.15,
-                    "shadowRadius": 8,
-                  },
-                ]
+                Object {
+                  "borderRadius": 5,
+                }
               }
             >
               <View
@@ -13105,21 +12913,9 @@ exports[`Storyshots LevelEnd Success 1`] = `
             </Text>
             <View
               style={
-                Array [
-                  Object {
-                    "borderRadius": 5,
-                  },
-                  Object {
-                    "elevation": 4,
-                    "shadowColor": "#14171A",
-                    "shadowOffset": Object {
-                      "height": 0,
-                      "width": 0,
-                    },
-                    "shadowOpacity": 0.15,
-                    "shadowRadius": 8,
-                  },
-                ]
+                Object {
+                  "borderRadius": 5,
+                }
               }
             >
               <View
@@ -14208,21 +14004,9 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
             </Text>
             <View
               style={
-                Array [
-                  Object {
-                    "borderRadius": 5,
-                  },
-                  Object {
-                    "elevation": 4,
-                    "shadowColor": "#14171A",
-                    "shadowOffset": Object {
-                      "height": 0,
-                      "width": 0,
-                    },
-                    "shadowOpacity": 0.15,
-                    "shadowRadius": 8,
-                  },
-                ]
+                Object {
+                  "borderRadius": 5,
+                }
               }
             >
               <View

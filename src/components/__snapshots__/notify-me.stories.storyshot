@@ -106,21 +106,9 @@ exports[`Storyshots NotifyMe Notify Me 1`] = `
         >
           <View
             style={
-              Array [
-                Object {
-                  "borderRadius": 5,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
-                },
-              ]
+              Object {
+                "borderRadius": 5,
+              }
             }
           >
             <View
@@ -341,21 +329,9 @@ exports[`Storyshots NotifyMe Notify Me 1`] = `
         >
           <View
             style={
-              Array [
-                Object {
-                  "borderRadius": 5,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
-                },
-              ]
+              Object {
+                "borderRadius": 5,
+              }
             }
           >
             <View
@@ -565,21 +541,9 @@ exports[`Storyshots NotifyMe Notify Me 1`] = `
         </View>
         <View
           style={
-            Array [
-              Object {
-                "borderRadius": 5,
-              },
-              Object {
-                "elevation": 4,
-                "shadowColor": "#14171A",
-                "shadowOffset": Object {
-                  "height": 0,
-                  "width": 0,
-                },
-                "shadowOpacity": 0.15,
-                "shadowRadius": 8,
-              },
-            ]
+            Object {
+              "borderRadius": 5,
+            }
           }
         >
           <View
