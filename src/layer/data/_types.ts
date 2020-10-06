@@ -140,6 +140,7 @@ export type CardAuthor = {
   authorType: 'coorp' | 'verified' | 'custom' | 'marketplace';
 };
 export type CardStatus = 'isStarted' | 'isLocked' | 'isActive';
+
 export type CardLevel = {
   nbChapters: number;
   ref: string;
@@ -203,6 +204,11 @@ export type DisciplineCard = ICard & {
   skillsHidden: string;
 };
 
+export type ScormCard = ICard & {
+  type: 'scorm';
+  modules: Array<CardLevel>;
+};
+
 export type ChapterCard = ICard & {
   type: 'chapter';
   isStandalone: boolean;
@@ -224,9 +230,10 @@ export type Resource =
   | Chapter
   | ExitNode
   | ChapterCard
-  | DisciplineCard;
+  | DisciplineCard
+  | ScormCard;
 
-export type Card = DisciplineCard | ChapterCard;
+export type Card = DisciplineCard | ChapterCard | ScormCard;
 
 export type Cards = Array<Card>;
 

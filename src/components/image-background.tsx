@@ -36,7 +36,9 @@ const ImageBackground = ({
   ...props
 }: Props) => {
   // @ts-ignore this statement is enough but type is too weak
-  let uri: string | void = source && source.uri;
+  let uri: string | void =
+    (source && source.uri) ||
+    'https://images.unsplash.com/photo-1601732299816-248dd4927d89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80';
 
   if (uri) {
     const {width: _width, height: _height, resizeMode} = props;

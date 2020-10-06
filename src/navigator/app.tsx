@@ -9,6 +9,7 @@ import AuthenticationScreen from '../screens/authentication';
 import AuthenticationDetailsScreen from '../screens/authentication-details';
 import SearchScreen from '../screens/search';
 import SettingsScreen from '../screens/settings';
+import ScormScreen from '../screens/scorm';
 import SlidesNavigator from './slide';
 import navigationOptions, {
   navigationOptionsWithoutHeader,
@@ -70,6 +71,20 @@ export default function AppNavigator(): React.ReactNode {
       <Stack.Screen
         name="Slide"
         component={SlidesNavigator}
+        options={{
+          ...navigationOptions,
+          ...cardTransitionAnimation,
+          headerStyle: {
+            ...navigationOptions.headerStyle,
+            backgroundColor: HEADER_BACKGROUND_COLOR,
+          },
+          header: QuestionHeader,
+          gestureEnabled: true,
+        }}
+      />
+      <Stack.Screen
+        name="Scorm"
+        component={ScormScreen}
         options={{
           ...navigationOptions,
           ...cardTransitionAnimation,

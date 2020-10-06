@@ -4,17 +4,17 @@ import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
 
 import {StackScreenProps} from '@react-navigation/stack';
+import {NotificationType} from 'src/types';
 import {withBackHandler} from '../containers/with-backhandler';
 import Home from '../components/home';
 import Screen from '../components/screen';
 import {selectCard} from '../redux/actions/catalog/cards/select';
-import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
+import type {DisciplineCard, ChapterCard, ScormCard} from '../layer/data/_types';
 import {getToken, getCurrentScreenName} from '../redux/utils/state-extract';
 import theme from '../modules/theme';
 import {PERMISSION_STATUS, PERMISSION_RECURENCE, NOTIFICATION_SETTINGS_STATUS} from '../const';
 import {StoreState} from '../redux/store';
 import {toggle} from '../redux/actions/notifications/settings';
-import {NotificationType} from 'src/types';
 import type {State as NotificationsSettingsState} from '../redux/reducers/notifications/settings';
 
 export interface ConnectedStateProps {
@@ -35,10 +35,11 @@ type ScreenParams = {
   Slide: undefined;
   Search: undefined;
   Settings: undefined;
+  Scorm: undefined;
 };
 
 interface Props
-  extends StackScreenProps<ScreenParams, 'Slide'>,
+  extends StackScreenProps<ScreenParams, 'Slide' | 'Scorm'>,
     ConnectedStateProps,
     ConnectedDispatchProps {}
 
@@ -82,8 +83,13 @@ class HomeScreen extends React.PureComponent<Props> {
     }
   }
 
-  handleCardPress = (item: DisciplineCard | ChapterCard) => {
-    this.props.navigation.navigate('Slide');
+  handleCardPress = (item: DisciplineCard | ChapterCard | ScormCard) => {
+    console.log({item});
+    if (item.type !== 'scorm') {
+      this.props.navigation.navigate('Slide');
+    } else {
+      this.props.navigation.navigate('Scorm', {itemRef: item.modules[0].universalRef});
+    }
     this.props.selectCard(item);
   };
 

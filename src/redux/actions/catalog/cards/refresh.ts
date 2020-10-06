@@ -1,4 +1,4 @@
-import type {DisciplineCard, ChapterCard} from '../../../../layer/data/_types';
+import type {DisciplineCard, ChapterCard, ScormCard} from '../../../../layer/data/_types';
 import translations from '../../../../translations';
 import type {SupportedLanguage} from '../../../../translations/_types';
 import type {StoreAction} from '../../../_types';
@@ -27,7 +27,7 @@ export const refreshCard = (
 
 export const updateCard = (
   language: SupportedLanguage,
-  card: DisciplineCard | ChapterCard,
+  card: DisciplineCard | ChapterCard | ScormCard,
 ): StoreAction<Action> => {
   return async (dispatch, getState, options) => {
     const {services} = options;
