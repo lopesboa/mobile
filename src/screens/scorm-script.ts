@@ -2,7 +2,8 @@ export const INJECTED_JAVASCRIPT = /* javascript*/ `
     var callback = function(data) {
         alert(data)
     }
-    // window.ReactNativeWebView.postMessage("Hello!")
+
+    alert("TEST >>>");
 
     var MESSAGES = {
         SET_ITEM: 'setItem',
@@ -201,5 +202,5 @@ export const INJECTED_JAVASCRIPT = /* javascript*/ `
     return '';
     };
 
-    false;
+    true;
 `;
