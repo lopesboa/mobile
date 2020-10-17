@@ -22,10 +22,10 @@ const styles = StyleSheet.create({
 
 const Card = ({children, style, testID}: Props) => (
   <View style={styles.container} testID={testID}>
-      <Box>
+    <Box>
       <View style={[styles.container, style, styles.overflowHidden]}>{children}</View>
-      </Box>
-    </View>
+    </Box>
+  </View>
 );
 
 export default Card;
