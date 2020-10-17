@@ -17,6 +17,7 @@ export type Colors = {
   battle: string;
   notification: string;
   salmon: string;
+  scorm: string;
 };
 
 export type FontWeightType = 'extraBold' | 'bold' | 'semiBold' | 'regular';
@@ -67,6 +68,7 @@ const theme: Theme = {
     battle: '#FFE100',
     notification: '#FF7043',
     salmon: '#FDE2E5',
+    scorm: '#FFB800',
   },
   spacing: {
     micro: 4,

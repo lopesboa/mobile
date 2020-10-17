@@ -1,13 +1,13 @@
 import * as React from 'react';
 
-import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
+import type {DisciplineCard, ChapterCard, ScormCard} from '../layer/data/_types';
 import {getAuthor} from '../utils/content';
 import {BrandThemeContext} from './brand-theme-provider';
 import CatalogItemFooter from './catalog-item-footer';
 import CatalogItemAuthor from './catalog-item-author';
 
 interface Props {
-  item?: DisciplineCard | ChapterCard;
+  item?: DisciplineCard | ChapterCard | ScormCard;
   size?: 'cover' | 'hero';
   testID?: string;
 }

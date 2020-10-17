@@ -66,6 +66,7 @@ buck-out/
 
 # CocoaPods
 ios/Pods
+ios/Podfile.lock
 
 # Fastlane
 ios/gems

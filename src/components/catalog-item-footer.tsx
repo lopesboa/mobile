@@ -7,7 +7,9 @@ import {
 } from '@coorpacademy/nova-icons';
 
 import {CONTENT_TYPE, AUTHOR_TYPE, SPACE} from '../const';
-import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
+import type {DisciplineCard, ChapterCard, ScormCard} from '../layer/data/_types';
+import {CARD_TYPE} from '../layer/data/_const';
+
 import {getAuthor} from '../utils/content';
 import theme from '../modules/theme';
 import Text from './text';
@@ -22,23 +24,32 @@ import PlaceholderLine, {
 import Space from './space';
 
 interface Props {
-  item?: ChapterCard | DisciplineCard;
+  item?: ChapterCard | DisciplineCard | ScormCard;
   testID: string;
   size?: 'cover' | 'hero';
 }
 
 export const PLACEHOLDER_COLOR = theme.colors.gray.lightMedium;
+export const PLACEHOLDER_COLOR_SCORM = theme.colors.gray.dark;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-end',
+    padding: theme.spacing.small,
+  },
+  black: {
+    color: theme.colors.black,
   },
   icons: {
     flexDirection: 'row',
   },
   textCentered: {
     textAlign: 'center',
+  },
+  scormType: {
+    fontWeight: theme.fontWeight.bold,
+    fontSize: theme.fontSize.small,
   },
   title: {
     color: theme.colors.white,
@@ -98,6 +109,7 @@ const getCompletion = (item: ChapterCard | DisciplineCard) => {
 
 const CatalogItemFooter = ({item, testID, size}: Props) => {
   const isHero = size === 'hero';
+  const isScorm = item && item.type === CARD_TYPE.SCORM;
 
   if (!item) {
     return (
@@ -106,24 +118,29 @@ const CatalogItemFooter = ({item, testID, size}: Props) => {
           <PlaceholderLine
             size={(isHero && 'large') || 'base'}
             width={(isHero && 85) || 65}
-            color={PLACEHOLDER_COLOR}
+            color={!isScorm ? PLACEHOLDER_COLOR : PLACEHOLDER_COLOR_SCORM}
             isCentered={isHero}
           />
           <Space type={SPACE.TINY} />
           <PlaceholderLine
             size={(isHero && 'large') || 'base'}
             width={(isHero && 65) || 90}
-            color={PLACEHOLDER_COLOR}
+            color={!isScorm ? PLACEHOLDER_COLOR : PLACEHOLDER_COLOR_SCORM}
             isCentered={isHero}
           />
           <Space type={SPACE.BASE} />
-          <PlaceholderLine size="small" width={50} color={PLACEHOLDER_COLOR} isCentered={isHero} />
+          <PlaceholderLine
+            size="small"
+            width={50}
+            color={!isScorm ? PLACEHOLDER_COLOR : PLACEHOLDER_COLOR_SCORM}
+            isCentered={isHero}
+          />
           <Space type={SPACE.SMALL} />
           <View style={[styles.progressionBar, isHero && styles.progressionBarCentered]}>
             <PlaceholderLine
               size="tiny"
               width={100}
-              color={PLACEHOLDER_COLOR}
+              color={!isScorm ? PLACEHOLDER_COLOR : PLACEHOLDER_COLOR_SCORM}
               isCentered={isHero}
             />
           </View>
@@ -138,6 +155,7 @@ const CatalogItemFooter = ({item, testID, size}: Props) => {
   const subtitleFontSize = (size && theme.fontSize.regular) || theme.fontSize.small;
   const topIconSize = titleFontSize;
   const iconCertifiedSize = subtitleFontSize * 1.1;
+  const scormColor = item && item.type === CARD_TYPE.SCORM ? theme.colors.scorm : false;
 
   const author = getAuthor(item);
   const subtitle =
@@ -152,13 +170,13 @@ const CatalogItemFooter = ({item, testID, size}: Props) => {
   const itemCompletion = getCompletion(item);
 
   return (
-    <View style={styles.container} testID={testID}>
+    <View style={[styles.container]} testID={testID}>
       <View style={styles.icons}>
         {!isHero && item.type === CONTENT_TYPE.CHAPTER ? (
           <React.Fragment>
             <NovaCompositionCoorpacademyTimer
               testID={`infinite-${testID}`}
-              color={theme.colors.white}
+              color={!isScorm ? theme.colors.white : theme.colors.black}
               height={topIconSize}
               width={topIconSize}
             />
@@ -168,16 +186,23 @@ const CatalogItemFooter = ({item, testID, size}: Props) => {
         {!isHero && item.adaptiv ? (
           <NovaCompositionCoorpacademyAdaptive
             testID={`infinite-${testID}`}
-            color={theme.colors.white}
+            color={!isScorm ? theme.colors.white : theme.colors.black}
             height={topIconSize}
             width={topIconSize}
           />
         ) : null}
       </View>
       <Space type="tiny" />
+      {isScorm ? (
+        <React.Fragment>
+          <Text style={[styles.scormType, {color: scormColor}]}>INTERACTIVE SLIDES</Text>
+          <Space type="tiny" />
+        </React.Fragment>
+      ) : null}
+
       <Text
         testID={`title-${testID}`}
-        style={[styles.title, titleStyle, isHero && styles.textCentered]}
+        style={[styles.title, titleStyle, isHero && styles.textCentered, isScorm && styles.black]}
       >
         {item.title}
       </Text>
@@ -187,7 +212,12 @@ const CatalogItemFooter = ({item, testID, size}: Props) => {
           <View style={styles.subtitleContainer}>
             <Text
               testID={`subtitle-${testID}`}
-              style={[styles.subtitle, subtitleStyle, isHero && styles.textCentered]}
+              style={[
+                styles.subtitle,
+                subtitleStyle,
+                isHero && styles.textCentered,
+                isScorm && styles.black,
+              ]}
             >
               {subtitle}
             </Text>
@@ -196,7 +226,7 @@ const CatalogItemFooter = ({item, testID, size}: Props) => {
                 <Space type="tiny" />
                 <NovaSolidStatusCheckCircle2
                   testID={`certified-${testID}`}
-                  color={theme.colors.white}
+                  color={!isScorm ? theme.colors.white : theme.colors.black}
                   height={iconCertifiedSize}
                   width={iconCertifiedSize}
                 />
@@ -214,7 +244,7 @@ const CatalogItemFooter = ({item, testID, size}: Props) => {
           current={itemCompletion}
           total={1}
           height={isHero ? 3 : 2}
-          backgroundColor={theme.colors.white}
+          backgroundColor={theme.colors.light}
           isInnerRounded
         />
       </View>

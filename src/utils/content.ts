@@ -1,4 +1,4 @@
-import {DisciplineCard, CardLevel, ChapterCard, CardAuthor} from '../layer/data/_types';
+import {DisciplineCard, CardLevel, ChapterCard, CardAuthor, ScormCard} from '../layer/data/_types';
 
 export const pickNextCardLevel = (discipline: DisciplineCard): CardLevel | null => {
   // @ts-ignore
@@ -24,5 +24,5 @@ export const compareCards = (
   return cardB.completion - cardA.completion;
 };
 
-export const getAuthor = (card: DisciplineCard | ChapterCard): CardAuthor | void =>
+export const getAuthor = (card: DisciplineCard | ChapterCard | ScormCard): CardAuthor | void =>
   card.authors && card.authors[0];

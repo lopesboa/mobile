@@ -17,7 +17,7 @@ import {ENGINE} from '../../const';
 import type {JWT, Section} from '../../types';
 import {getItem} from './core';
 import {fetchLevel} from './levels';
-import {Cards, DisciplineCard, ChapterCard, Card, CardLevel, Completion} from './_types';
+import {Cards, DisciplineCard, ChapterCard, Card, CardLevel, Completion, ScormCard} from './_types';
 import {CARD_TYPE, CONTENT_TYPE} from './_const';
 import {buildCompletionKey, mergeCompletion} from './progressions';
 
@@ -34,7 +34,9 @@ const computeCardCompletionRate = (levels: Array<CardLevel>): number =>
   levels.reduce((accumulator, currentValue) => accumulator + currentValue.completion, 0) /
   levels.length;
 
-const cardToCompletion = (card: DisciplineCard | ChapterCard | CardLevel): Completion => ({
+const cardToCompletion = (
+  card: DisciplineCard | ChapterCard | ScormCard | CardLevel,
+): Completion => ({
   stars: card.stars,
   current: card.completion,
 });
@@ -43,6 +45,44 @@ export const updateDisciplineCardDependingOnCompletion = (
   latestCompletions: Array<Completion | null>,
   card: DisciplineCard,
 ): DisciplineCard => {
+  const config = getConfig({
+    ref: ENGINE.LEARNER,
+    version: '1',
+  });
+
+  const levelCards = card.modules.map((levelCard, index) => {
+    const latestCompletion = latestCompletions[index];
+    if (!latestCompletion) return levelCard;
+
+    const cardCompletion = cardToCompletion(levelCard);
+
+    const levelCompletion = mergeCompletion(cardCompletion, latestCompletion);
+    const levelStars = Math.max(levelCard.stars, latestCompletion.stars);
+    return {
+      ...levelCard,
+      completion: computeLevelCompletionRate(
+        levelCompletion,
+        levelCard.nbChapters,
+        config.slidesToComplete,
+      ),
+      stars: levelStars,
+    };
+  });
+
+  const stars = levelCards.reduce((acc, levelCard) => acc + levelCard.stars, 0);
+
+  return {
+    ...card,
+    modules: levelCards,
+    completion: computeCardCompletionRate(levelCards),
+    stars,
+  };
+};
+
+export const updateScormCardDependingOnCompletion = (
+  latestCompletions: Array<Completion | null>,
+  card: ScormCard,
+): ScormCard => {
   const config = getConfig({
     ref: ENGINE.LEARNER,
     version: '1',
@@ -108,6 +148,21 @@ const refreshDisciplineCard = async (disciplineCard: DisciplineCard): Promise<Di
   return updateDisciplineCardDependingOnCompletion(latestCompletions, disciplineCard);
 };
 
+const refreshScormCard = async (scormCard: ScormCard): Promise<ScormCard> => {
+  const latestCompletions = await Promise.all(
+    scormCard.modules.map(
+      async (level): Promise<Completion | null> => {
+        const completionKey = buildCompletionKey(ENGINE.LEARNER, level.universalRef || level.ref);
+        const completionString = await AsyncStorage.getItem(completionKey);
+        if (!completionString) return null;
+        return JSON.parse(completionString);
+      },
+    ),
+  );
+
+  return updateScormCardDependingOnCompletion(latestCompletions, scormCard);
+};
+
 const refreshChapterCard = async (chapterCard: ChapterCard): Promise<ChapterCard> => {
   const cardCompletion: Completion = {
     stars: chapterCard && chapterCard.stars,
@@ -125,32 +180,35 @@ const refreshChapterCard = async (chapterCard: ChapterCard): Promise<ChapterCard
 };
 
 export const refreshCard = (card: Card): Promise<Card> | void => {
-  if (card && card.type === 'course') {
+  if (card && card.type === CARD_TYPE.COURSE) {
     return refreshDisciplineCard(card);
   }
-  if (card && card.type === 'chapter') {
+  if (card && card.type === CARD_TYPE.CHAPTER) {
     return refreshChapterCard(card);
+  }
+  if (card && card.type === CARD_TYPE.SCORM) {
+    return refreshScormCard(card);
   }
   return undefined;
 };
 
 export const getCardFromLocalStorage = async (
   ref: string,
-): Promise<DisciplineCard | ChapterCard | void> => {
+): Promise<DisciplineCard | ChapterCard | ScormCard | void> => {
   const language = translations.getLanguage();
   // @ts-ignore
   const card = await getItem('card', language, ref);
   return refreshCard(card);
 };
 
-const cardsToPairs = (cards: {[key: string]: DisciplineCard | ChapterCard}) => {
+const cardsToPairs = (cards: {[key: string]: DisciplineCard | ChapterCard | ScormCard}) => {
   return Object.entries(cards).reduce((acc, card) => {
     const [cardKey, cardContent] = card;
     return [...acc, [cardKey, JSON.stringify(cardContent)]];
   }, []);
 };
 
-const createDisciplineCardForModules = (card: DisciplineCard, language: SupportedLanguage) => {
+const createCardForModules = (card: DisciplineCard | ScormCard, language: SupportedLanguage) => {
   return card.modules.reduce((acc, mod) => {
     const key = `card:${language}:${mod.universalRef || mod.ref}`;
     const moduleCard = {
@@ -162,23 +220,25 @@ const createDisciplineCardForModules = (card: DisciplineCard, language: Supporte
 };
 
 export const cardsToKeys = (
-  cards: Array<DisciplineCard | ChapterCard>,
+  cards: Array<DisciplineCard | ChapterCard | ScormCard>,
   language: SupportedLanguage,
 ): {
   [key: string]: DisciplineCard | ChapterCard;
 } => {
   return cards.reduce((acc, card) => {
     const cardType = card.type;
-    let modulesCards = {};
+    let disciplineModulesCards = {};
+    let scormModulesCards = {};
     let disciplinesCards = {};
     let chapterCard = {};
+    let scormCard = {};
     if (cardType === CARD_TYPE.COURSE) {
       disciplinesCards = {
         [`card:${language}:${card.ref || card.universalRef}`]: card,
       };
-      modulesCards = {
+      disciplineModulesCards = {
         // @ts-ignore
-        ...createDisciplineCardForModules(card, language),
+        ...createCardForModules(card, language),
       };
     }
     if (cardType === CARD_TYPE.CHAPTER) {
@@ -187,11 +247,23 @@ export const cardsToKeys = (
       };
     }
 
+    if (cardType === CARD_TYPE.SCORM) {
+      scormCard = {
+        [`card:${language}:${card.ref || card.universalRef}`]: card,
+      };
+      scormModulesCards = {
+        // @ts-ignore
+        ...createCardForModules(card, language),
+      };
+    }
+
     const keyedCards = {
       ...acc,
       ...chapterCard,
       ...disciplinesCards,
-      ...modulesCards,
+      ...disciplineModulesCards,
+      ...scormCard,
+      ...scormModulesCards,
     };
     return keyedCards;
   }, {});
@@ -212,9 +284,9 @@ export const saveDashboardCardsInAsyncStorage = async (
 };
 
 export const saveAndRefreshCards = async (
-  cards: Array<DisciplineCard | ChapterCard>,
+  cards: Array<DisciplineCard | ChapterCard | ScormCard>,
   language: SupportedLanguage,
-) => {
+): Promise<Array<DisciplineCard | ChapterCard | ScormCard>> => {
   await saveDashboardCardsInAsyncStorage(cards, language);
   return Promise.all(cards.map(refreshCard).filter(Boolean));
 };
@@ -308,7 +380,7 @@ export const fetchCards = async (
       offset,
       limit,
       lang: language,
-      type: 'course,chapter',
+      type: 'course,chapter,scorm',
     };
     const response = await fetch(`${host}${endpoint}?${buildUrlQueryParams(query)}`, {
       headers: {authorization: token},

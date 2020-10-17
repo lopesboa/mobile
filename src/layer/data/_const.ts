@@ -18,6 +18,7 @@ export const CARD_STATUS = <const>{
 export const CARD_TYPE = <const>{
   COURSE: 'course',
   CHAPTER: 'chapter',
+  SCORM: 'scorm',
 };
 
 export const RESTRICTED_RESOURCE_TYPE = <const>{

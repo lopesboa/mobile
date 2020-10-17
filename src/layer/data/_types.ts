@@ -215,6 +215,11 @@ export type ChapterCard = ICard & {
   accessible: boolean;
 };
 
+export type ScormCard = ICard & {
+  type: 'scorm';
+  modules: Array<CardLevel>;
+};
+
 export type CardType = Pick<DisciplineCard, 'type'> | Pick<ChapterCard, 'type'>;
 
 export type Resource =
@@ -224,7 +229,8 @@ export type Resource =
   | Chapter
   | ExitNode
   | ChapterCard
-  | DisciplineCard;
+  | DisciplineCard
+  | ScormCard;
 
 export type Card = DisciplineCard | ChapterCard;
 
