@@ -1,4 +1,4 @@
-import {toggle as toggleNotificationSetting} from '../notifications/settings';
+import {toggle as toggleNotificationSetting} from '../../notifications/settings';
 
 import {
   ANALYTICS_EVENT_TYPE,

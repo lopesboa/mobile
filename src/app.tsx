@@ -22,23 +22,13 @@ import ConnectionListener from './containers/connection-listener';
 import createDataLayer from './layer/data';
 import createServices from './services';
 import createStore from './redux';
-import type {ReduxDevTools} from './redux/_types';
-
-const reduxDevTools: ReduxDevTools | void =
-  // @ts-ignore
-  window && window.__REDUX_DEVTOOLS_EXTENSION__
-    ? // @ts-ignore
-      window.__REDUX_DEVTOOLS_EXTENSION__()
-    : undefined;
 
 const dataLayer = createDataLayer();
 
 const services = createServices(dataLayer);
 
 // @ts-ignore
-const {store, persistor} = createStore(services, reduxDevTools);
-
-interface Props {}
+const {store, persistor} = createStore(services);
 
 const styles = StyleSheet.create({
   container: {
@@ -53,8 +43,8 @@ const styles = StyleSheet.create({
 
 const ENABLE_ERROR_DEBUG = false;
 
-class App extends React.PureComponent<Props> {
-  constructor(props: Props) {
+class App extends React.PureComponent {
+  constructor(props: any) {
     super(props);
     const currentHandler = getJSExceptionHandler();
     setJSExceptionHandler((error, isFatal) => {

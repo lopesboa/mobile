@@ -1,6 +1,6 @@
 {
   "name": "coorpacademy-mobile",
-  "version": "2.0.121",
+  "version": "2.0.122",
   "private": true,
   "scripts": {
     "postinstall": "npx jetify && npm run update:version && npm run -s pull:firebase:config",
@@ -98,6 +98,7 @@
     "@react-navigation/compat": "^5.2.5",
     "@react-navigation/native": "^5.7.2",
     "@react-navigation/stack": "^5.8.0",
+    "@reduxjs/toolkit": "^1.4.0",
     "app-store-link": "^1.0.2",
     "apsl-react-native-button": "^3.1.1",
     "bluebird": "^3.7.2",

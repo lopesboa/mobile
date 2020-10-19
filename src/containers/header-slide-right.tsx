@@ -9,8 +9,8 @@ import {
   isGodModeEnabled as _isGodModeEnabled,
   isFastSlideEnabled as _isFastSlideEnabled,
 } from '../redux/utils/state-extract';
-import {toggle as toggleGodMode} from '../redux/actions/god-mode';
-import {toggle as toggleFastSlide} from '../redux/actions/fast-slide';
+import {toggle as toggleGodMode} from '../redux/god-mode';
+import {toggle as toggleFastSlide} from '../redux/fast-slide';
 
 export interface ConnectedStateProps {
   count?: number;

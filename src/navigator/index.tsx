@@ -4,7 +4,7 @@ import {NavigationContainer, NavigationState} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {changeScreen} from '../redux/actions/navigation';
+import {changeScreen} from '../redux/navigation';
 import {navigatorRef, isReadyRef} from './helper';
 import {
   navigationOptionsWithoutHeader,

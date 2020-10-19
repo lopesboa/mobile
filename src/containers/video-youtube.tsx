@@ -7,7 +7,7 @@ import type {StateChange} from '../components/video-youtube';
 import type {Step} from '../components/video-overlay';
 import PlayerComponent, {STATE} from '../components/video-youtube';
 import {STEP} from '../components/video-overlay';
-import {toggleFullscreen} from '../redux/actions/video/full-screen';
+import {toggleFullscreen} from '../redux/video';
 import {isVideoFullScreen, getYoutubeAPIKey} from '../redux/utils/state-extract';
 import type {SourceURI} from '../types';
 

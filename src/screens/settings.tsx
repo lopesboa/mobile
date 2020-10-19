@@ -12,8 +12,8 @@ import {StoreState} from '../redux/store';
 import type {PermissionStatus, NotificationType} from '../types';
 import withPermissions from '../containers/with-permissions';
 import type {WithPermissionsProps} from '../containers/with-permissions';
-import {toggle as toggleNotificationSetting} from '../redux/actions/notifications/settings';
-import type {State as NotificationsSettingsState} from '../redux/reducers/notifications/settings';
+import {toggle as toggleNotificationSetting} from '../redux/notifications/settings';
+import type {State as NotificationsSettingsState} from '../redux/notifications/settings';
 import theme from '../modules/theme';
 import translations from '../translations';
 
