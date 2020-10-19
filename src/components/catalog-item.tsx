@@ -65,6 +65,7 @@ class CatalogItem extends React.PureComponent<Props> {
         testID={testID}
         onPress={this.handlePress}
         disabled={!item || isLocked}
+        isHighlight
         style={size !== 'cover' && styles.container}
         analyticsID="card"
         analyticsParams={analyticsParams}

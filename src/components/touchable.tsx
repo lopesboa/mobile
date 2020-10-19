@@ -7,6 +7,7 @@ import type {
   PressEvent,
 } from 'react-native/Libraries/Types/CoreEventTypes';
 
+import theme from '../modules/theme';
 import {ANALYTICS_EVENT_TYPE} from '../const';
 import type {AnalyticsEventParams} from '../types';
 import withAnalytics from '../containers/with-analytics';
@@ -99,6 +100,7 @@ class Touchable extends React.PureComponent<Props> {
       return (
         <TouchableHighlight
           {...props}
+          underlayColor={theme.colors.gray.light}
           onPress={this.handlePress}
           onLongPress={this.handleLongPress}
           activeOpacity={activeOpacity || (disabled ? 1 : 0.85)}

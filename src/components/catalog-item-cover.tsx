@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
 
-import {NovaSolidStatusCheckCircle2} from '@coorpacademy/nova-icons';
+import {NovaCompositionCoorpacademyScorm} from '@coorpacademy/nova-icons';
 import type {DisciplineCard, ChapterCard, ScormCard} from '../layer/data/_types';
 import theme from '../modules/theme';
 import ImageBackground from './image-background';
@@ -87,11 +87,11 @@ class CatalogItemCover extends React.PureComponent<Props> {
             gradientStyle={(size === 'cover' && styles.imageCoverGradient) || styles.imageGradient}
           >
             <View style={styles.iconScormContainer}>
-              <NovaSolidStatusCheckCircle2
+              <NovaCompositionCoorpacademyScorm
                 testID={`icon-scorm-${testID}`}
                 color={theme.colors.white}
-                height={theme.spacing.large}
-                width={theme.spacing.large}
+                height={theme.spacing.medium}
+                width={theme.spacing.medium}
               />
             </View>
           </ImageBackground>
