@@ -50,7 +50,6 @@ class CatalogItem extends React.PureComponent<Props> {
 
   render() {
     const {item, testID = 'catalog-item', section, size} = this.props;
-
     const analyticsParams = item && {
       ref: item.universalRef,
       // TODO :: case when type is SCORM

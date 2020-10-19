@@ -63,7 +63,7 @@ class CatalogSection extends React.Component<Props> {
     const {sectionRef, cards, onCardPress, onScroll, testID} = this.props;
 
     return (
-      <View style={{marginTop: -0}}>
+      <View>
         {this.renderTitle()}
         <View style={styles.separator} />
         <CatalogItems
