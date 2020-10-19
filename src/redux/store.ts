@@ -1,6 +1,7 @@
 /* eslint-disable import/max-dependencies*/
 
-import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
+import {combineReducers} from 'redux';
+import {configureStore} from '@reduxjs/toolkit';
 import {persistStore, persistReducer, createMigrate} from 'redux-persist';
 import {middlewares, reducers as storeReducers} from '@coorpacademy/player-store';
 import AsyncStorage from '@react-native-community/async-storage';
@@ -10,17 +11,17 @@ import type {ReduxState} from '../types/coorpacademy/player-store';
 import type {NetworkState} from '../types';
 import createMigration from './migrate';
 
-import type {State as NavigationState} from './reducers/navigation';
-import navigation from './reducers/navigation';
+import type {State as NavigationState} from './navigation';
+import navigation from './navigation';
 import type {State as CatalogState} from './reducers/catalog';
 import resetOnLogout from './utils/reset-on-logout';
 import type {State as PermissionsState} from './reducers/permissions';
-import type {State as NotificationsState} from './reducers/notifications';
+import type {State as NotificationsState} from './notifications';
 import type {State as AuthenticationState} from './reducers/authentication';
-import type {State as VideoState} from './reducers/video';
-import type {State as GodModeState} from './reducers/god-mode';
-import type {State as AppSessionState} from './reducers/app-session';
-import type {State as FastSlideState} from './reducers/fast-slide';
+import type {State as VideoState} from './video';
+import type {State as GodModeState} from './god-mode';
+import type {State as AppSessionState} from './app-session';
+import type {State as FastSlideState} from './fast-slide';
 import type {State as ErrorsState} from './reducers/ui/errors';
 import type {State as SelectState} from './reducers/ui/select';
 import type {State as AnswersState} from './reducers/ui/answers';
@@ -29,12 +30,12 @@ import type {State as ProgressionsState} from './reducers/progressions/synchroni
 import catalog from './reducers/catalog';
 import authentication from './reducers/authentication';
 import permissions from './reducers/permissions';
-import notifications from './reducers/notifications';
+import notifications from './notifications';
 import progressions from './reducers/progressions/synchronize';
-import video from './reducers/video';
-import godMode from './reducers/god-mode';
-import appSession from './reducers/app-session';
-import fastSlide from './reducers/fast-slide';
+import video from './video';
+import godMode from './god-mode';
+import appSession from './app-session';
+import fastSlide from './fast-slide';
 import errors from './reducers/ui/errors';
 import select from './reducers/ui/select';
 import isValidating from './reducers/ui/answers';
@@ -89,19 +90,14 @@ const reducers = combineReducers({
 });
 
 const createMiddlewares = (options: Options, reduxDevTools?: ReduxDevTools) => {
-  return compose(
-    // @ts-ignore error applying middlewares with multiple types
-    applyMiddleware(
-      ReduxThunkMemoized(options),
-      ErrorLogger(options),
-      ResetDisplayedProgression(options),
-      ProgressionsSynchronization(options),
-      UpdateCardOnProgressionUpdate(options),
-      ErrorHandler(),
-    ),
-    // @ts-ignore
-    reduxDevTools || ((f) => f),
-  );
+  return [
+    ReduxThunkMemoized(options),
+    ErrorLogger(options),
+    ResetDisplayedProgression(options),
+    ProgressionsSynchronization(options),
+    UpdateCardOnProgressionUpdate(options),
+    ErrorHandler(),
+  ];
 };
 
 const reduxPersistedStoreMigration = createMigration<StoreState>();
@@ -117,7 +113,11 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, reducers);
 const create = (options: Options, reduxDevTools?: ReduxDevTools) => {
   // @ts-ignore
-  const store = createStore(persistedReducer, {}, createMiddlewares(options, reduxDevTools));
+  const store = configureStore({
+    reducer: persistedReducer,
+    middleware: [...createMiddlewares(options)],
+    devTools: true,
+  });
   const persistor = persistStore(store);
   return {store, persistor};
 };

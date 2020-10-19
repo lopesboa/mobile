@@ -13,9 +13,9 @@ import {getToken, getCurrentScreenName} from '../redux/utils/state-extract';
 import theme from '../modules/theme';
 import {PERMISSION_STATUS, PERMISSION_RECURENCE, NOTIFICATION_SETTINGS_STATUS} from '../const';
 import {StoreState} from '../redux/store';
-import {toggle} from '../redux/actions/notifications/settings';
+import {toggle} from '../redux/notifications/settings';
 import {NotificationType} from 'src/types';
-import type {State as NotificationsSettingsState} from '../redux/reducers/notifications/settings';
+import type {State as NotificationsSettingsState} from '../redux/notifications/settings';
 
 export interface ConnectedStateProps {
   isFetching: boolean;

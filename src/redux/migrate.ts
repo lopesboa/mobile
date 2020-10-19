@@ -1,5 +1,5 @@
-import {initialState as NotificationsSettingsInitialState} from './reducers/notifications/settings';
-import {initialState as ScheduledNotificationsInitialState} from './reducers/notifications/scheduled-notifications';
+import {initialState as NotificationsSettingsInitialState} from './notifications/settings';
+import {initialState as ScheduledNotificationsInitialState} from './notifications/scheduled';
 
 interface Migration<T> {
   [key: number]: (state: T) => T;

@@ -1,6 +1,6 @@
 import {UI_PROGRESSION_ACTION_TYPES} from '@coorpacademy/player-store';
 import type {SelectAction} from '@coorpacademy/player-store';
-import {NAVIGATION_SCREEN_CHANGE} from '../actions/navigation';
+import {ACTION_NAME as NAVIGATION_SCREEN_CHANGE} from '../navigation';
 import {createBrand} from '../../__fixtures__/brands';
 import type {Options} from '../_types';
 import {sleep} from '../../utils/tests';

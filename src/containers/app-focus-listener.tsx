@@ -1,11 +1,11 @@
 import * as React from 'react';
 import {AppState, AppStateStatus} from 'react-native';
 import {connect} from 'react-redux';
-import {increment as incrementAppSession} from '../redux/actions/app-session';
+import {increment as incrementAppSession} from '../redux/app-session';
 import {
   scheduleNotifications,
   unscheduleLocalNotifications,
-} from '../redux/actions/notifications/scheduled-notifications';
+} from '../redux/notifications/scheduled';
 import {NOTIFICATION_TYPE} from '../const';
 
 interface ConnectedDispatchProps {

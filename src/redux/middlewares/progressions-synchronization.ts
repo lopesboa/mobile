@@ -4,7 +4,7 @@ import {offlineActionTypes} from 'react-native-offline';
 import {PROGRESSION_CREATE_SUCCESS} from '@coorpacademy/player-store';
 import type {Options, StoreAction} from '../_types';
 import type {StoreState} from '../store';
-import type {Action as NavigationAction} from '../actions/navigation';
+import type {Action as NavigationAction} from '../navigation';
 import type {Action as ProgressionAction} from '../actions/progressions/synchronize';
 import {synchronizeProgressions} from '../actions/progressions/synchronize';
 import {FETCH_SUCCESS as FETCH_SECTIONS_SUCCESS} from '../actions/catalog/sections';
