@@ -19,7 +19,7 @@ import orientation from 'react-native-orientation-locker';
 
 import Video, {STEP} from '../components/video';
 import type {Props as ComponentProps, Step, Track} from '../components/video';
-import {toggleFullscreen} from '../redux/actions/video/full-screen';
+import {toggleFullscreen} from '../redux/video';
 import {__STORYBOOK__} from '../modules/environment';
 import {getMatchingLanguage} from '../modules/language';
 import translations from '../translations';

@@ -23,7 +23,7 @@ import type {
 } from '../../types';
 import type {StoreState} from '../store';
 import type {State as BrandState} from '../reducers/authentication/brand';
-import type {State as SettingsNotificationState} from '../reducers/notifications/settings';
+import type {State as SettingsNotificationState} from '../notifications/settings';
 import type {State as UserState} from '../reducers/authentication/user';
 import type {State as TokenState} from '../reducers/authentication/token';
 import type {State as SelectState} from '../reducers/ui/select';

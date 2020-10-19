@@ -4,8 +4,8 @@ import {unselectProgression} from '@coorpacademy/player-store';
 import type {SelectAction} from '@coorpacademy/player-store';
 import type {Options} from '../_types';
 import type {StoreState} from '../store';
-import {NAVIGATION_SCREEN_CHANGE} from '../actions/navigation';
-import type {Action as NavigationAction} from '../actions/navigation';
+import {ACTION_NAME as NAVIGATION_SCREEN_CHANGE} from '../navigation';
+import type {Action as NavigationAction} from '../navigation';
 
 type Action = NavigationAction | SelectAction;
 type State = StoreState;
